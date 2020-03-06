@@ -1,0 +1,61 @@
+/* component/activityItem/activity-item.wxss */
+
+.itemview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+  padding: 30rpx 20rpx 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.bigimg {
+  width: 100%;
+  height: auto;
+  margin-bottom: 6rpx;
+  border-top-left-radius: 15rpx;
+  border-top-right-radius: 15rpx;
+}
+
+
+.btnview {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.leftview {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.titlett {
+  font-size: 26rpx;
+  color: #4C4C4C;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.datetxtdd {
+  font-size: 22rpx;
+}
+
+.addbtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  height: 60rpx;
+  background-color: #ec7803;
+  color: white;
+  border-radius: 30rpx;
+}

@@ -1,0 +1,122 @@
+.activities {
+  width: 710rpx;
+  height: 594rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 2px 2px 6px 3px rgba(0, 0, 0, 0.13);
+  border-radius: 20rpx;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15rpx;
+  
+}
+
+.activityImg {
+  width: 366rpx;
+  height: 528rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 1px 6px 2px rgba(112, 112, 112, 0.27);
+  border-radius: 20rpx;
+  margin-left: 26rpx;
+  position: relative;
+  top: 33rpx;
+}
+
+.activtyFirst {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: row;
+  margin-top: 40rpx;
+  height: auto;
+}
+
+.activityInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.activPoints {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60rpx;
+  margin-left: 10rpx;
+  /* justify-content: flex-end; */
+}
+
+.activNum {
+  font-size: 110rpx;
+  font-family: Adobe Heiti Std;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 1);
+  background: linear-gradient(45deg, rgba(247, 182, 103, 1) 0%, rgba(243, 149, 79, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.activName {
+  font-size: 20rpx;
+  font-family: Adobe Heiti Std;
+  font-weight: normal;
+  color: rgba(243, 149, 79, 1);
+}
+
+.activSecond {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+}
+
+.activTitleOne {
+  font-size: 22rpx;
+  font-family: Adobe Heiti Std;
+  font-weight: normal;
+  color: rgba(120, 120, 120, 1);
+  margin-bottom: 4rpx;
+}
+
+.activTitleTwo {
+  font-size: 30rpx;
+  font-family: Adobe Heiti Std;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 1);
+}
+
+.activThird {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40rpx;
+  margin-left: 20rpx;
+}
+
+.goodsNum {
+  font-size: 22rpx;
+  font-family: Adobe Heiti Std;
+  font-weight: normal;
+  color: rgba(120, 120, 120, 1);
+}
+
+.activFour {
+  margin-top: 60rpx;
+  margin-left: 10rpx;
+  width: 298rpx;
+  height: 60rpx;
+  background: linear-gradient(88deg, rgba(248, 198, 135, 1) 0%, rgba(247, 171, 116, 1) 100%);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.change {
+  font-size: 38rpx;
+  font-family: Adobe Heiti Std;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 1);
+}
+
+.allList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15rpx;
+}

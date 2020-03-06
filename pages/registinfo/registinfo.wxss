@@ -1,0 +1,12 @@
+@import "/libs/wxParse/wxParse.wxss";
+
+page {
+  background-color: white;
+}
+
+.detail {
+  width: 750rpx;
+  height: auto;
+  overflow: hidden;
+  padding: 10rpx;
+}

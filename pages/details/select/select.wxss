@@ -1,0 +1,120 @@
+/* pages/details/select/select.wxss */
+page {
+  background-color: #fff;
+}
+.selectWrapper {
+  width: 100%;
+  /* height: 100%; */
+  background-color: #fff;
+  padding: 0 20rpx;
+  /* height: 70%; */
+  min-height: 300rpx;
+  z-index: 2;
+  position: fixed;
+  bottom: 0rpx;
+  box-shadow: 1px -5px 2px 1px #999;
+}
+.tophover{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 16, 16, 0.708);
+  z-index: 1;
+  position: absolute;
+  top: 0;
+}
+.shopInfo {
+  width:93%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: -20rpx;
+  z-index: 1;
+
+}
+.shopInfo .imgBox{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  position: relative;
+  z-index: 3;
+}
+.shopInfo .imgBox .img {
+  width: 100%;
+  height: 90%;
+  border-radius: 10rpx;
+}
+.shopInfo .rightBox{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 13rpx;
+}
+
+.title{
+  font-size: 30rpx;
+  color: #333;
+  text-overflow: ellipsis;
+  margin-top: 10rpx;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.shopInfo .rightBox .price{
+  font-size: 30rpx;
+  color: coral;
+}
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #eee;
+  margin-top: 190rpx;
+}
+.whiteBlank {
+  width: 100%;
+  height: 30rpx;
+}
+.typeTitle {
+  font-size: 30rpx;
+  color: #333;
+  margin-left: 20rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+.typeWrapper {
+  width: 100%;
+  padding: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -20rpx;
+  margin-top: -20rpx;
+}
+.typeItem {
+  /* border: 1px solid #999; */
+  border-radius: 7rpx;
+  color: #333;
+  font-size: 26rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+.typeItem-active {
+  /* border: 1px solid #999; */
+  border-radius: 7rpx;
+  color: #fff;
+  font-size: 26rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  background-color: coral;
+}
+.confirmBt {
+  width: 70%;
+  height: 70rpx;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 70rpx;
+  background-color: coral;
+}

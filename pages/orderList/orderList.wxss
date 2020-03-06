@@ -1,0 +1,23 @@
+/* pages/orderList/orderList.wxss */
+@import '../pointrecord/pointrecord.wxss';
+@import '../personal/apply/apply.wxss';
+
+.activity .l4 .title {
+  margin-left: 0;
+}
+.activity .intro {
+  width: 100%;
+}
+.orderNo {
+  font-size: 25rpx !important;
+}
+.activity .l4 .people-score {
+  font-size: 30rpx;
+}
+.l2-left {
+  display: flex;
+  align-items: center;
+}
+.activity .l2 {
+  justify-content: space-between;
+}

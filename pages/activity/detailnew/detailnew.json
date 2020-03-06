@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "活动详情",
+  "enablePullDownRefresh": true,
+    "usingComponents": {
+      "my-poster": "/component/poster/index",
+      "poster-activity": "/component/posterActivity/posterActivity"
+    }
+}

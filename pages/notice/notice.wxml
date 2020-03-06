@@ -1,0 +1,50 @@
+<!-- <view class='ul'> -->
+<view class='li'>已选参与人</view>
+<view class='choiceAll'>
+  <view class='choiceAll-item' wx:for='{{choiceJoinPerson}}' wx:key='{{index}}'>
+    <image class='choiceHeadImg' src='{{item.headImg}}' mode='aspectFill'></image>
+    <text>{{item.name}}</text>
+    <image class='del' bindtap='del' src='https://url.songshuqubang.com/micsoft/img/delect.png' mode='widthFix' data-id='{{item.id}}' data-type='{{item.school?"stu":"prn"}}'></image>
+  </view>
+  <view class='choice' bindtap='addPerson'>
+    <image src='https://url.songshuqubang.com/micsoft/img/jiahao.png' mode='widthFix'></image>
+  </view>
+</view>
+
+<view class='li'>
+  <text>活动须知</text>
+</view>
+
+<view class='richContent'>
+  <import src="/libs/wxParse/wxParse.wxml" />
+  <template is="wxParse" data="{{wxParseData:noticeInfo.nodes}}" />
+</view>
+
+<!-- 弹窗 -->
+<view class='choose' wx:if='{{choose}}'>
+
+  <view wx:for='{{joinPerson}}' wx:key='{{index}}' class='choose-item' data-id='{{item.id}}' data-type='{{item.school.name?"stu":"prn"}}' bindtap='choosePerson'>
+    <image class='headImg' src='{{item.headImg}}' mode='aspectFill'></image>
+    <view class='choose-item-mess'>
+      <text>{{item.name}}</text>
+      <text>{{item.school.name?item.school.name:"成年人"}}</text>
+      <text>{{item.idNo}}</text>
+    </view>
+
+    <image src='https://url.songshuqubang.com/micsoft/img/icon_edit.png' class='card_img' bindtap='editUser' data-index='{{index}}' data-id='{{item.id}}' data-type='{{item.school.name?"stu":"prn"}}'></image>
+
+  </view>
+  <view class='addPerson'>添加
+    <text bindtap='add' data-type='prn'>成年人</text>/
+    <text bindtap='add' data-type='stu'>未成年人</text>
+  </view>
+</view>
+
+<view class='footer' wx:else>
+  <block wx:if="{{agreeRule}}">
+    <icon type="success" size="20" color="rgb(255,94,0)" bindtap='aggreeRules' />
+  </block>
+  <view class='rulesCircle' bindtap='aggreeRules' wx:else></view>
+  <text bindtap='aggreeRules'>我同意</text>
+  <button class='btn' bindtap='subMessage'>确认报名</button>
+</view>

@@ -1,0 +1,2 @@
+/* pages/personal/modifyMi/modifyMi.wxss */
+@import '../../login/login.wxss';

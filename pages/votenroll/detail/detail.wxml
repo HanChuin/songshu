@@ -1,0 +1,45 @@
+<!--pages/votenroll/detail/detail.wxml-->
+
+<my-poster id="getPoster" bindmyevent="myEventListener" avater="{{voteDetailList.img}}" codeimg="http://i4.hexun.com/2018-07-05/193365388.jpg" productname="{{voteDetailList.name}}"  productSrc='{{productSrc}}' codeSrc='{{codeSrc}}'>
+</my-poster>
+
+
+<view class='box'>
+  <view class='title'>{{voteDetailList.name?voteDetailList.name:'无名氏'}}</view>
+
+  <view class='idAticketAvote'>
+
+    <view class='idBox'>
+      <view class='id'>{{voteDetailList.id?voteDetailList.id:'0'}}</view>
+      <text>编号</text>
+    </view>
+
+    <text class='line'></text>
+
+    <view class='ticketBox'>
+      <view class='ticket'>{{voteDetailList.voteNum?voteDetailList.voteNum:'0'}}</view>
+      <text>票数</text>
+    </view>
+
+    <text class='line'></text>
+
+    <view class='voteBox'>
+      <view class='vote'>{{num}}</view>
+      <text>排名</text>
+    </view>
+
+  </view>
+  <!-- <image src='{{voteDetailList.img}}'></image> -->
+  <view class='desTitle'>参赛介绍</view>
+  <view class='descript'>{{voteDetailList.introduce}}</view>
+  <view wx:for='{{voteDetailList.imgsList}}' wx:key='{{index}}'>
+    <image src='{{item}}' mode='widthFix' ></image>
+  </view>
+
+</view>
+
+<view class='foot'>
+  <view bindtap='vote'>给TA投票</view>
+  <button class='sharestyle'  bindtap="getSharePoster" wx:if='{{!fromShare}}'>分享</button>
+  <button class='sharestyle'  bindtap="goToJoin" wx:else>我要参加</button>
+</view>

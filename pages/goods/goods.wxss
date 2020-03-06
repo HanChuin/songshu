@@ -1,0 +1,136 @@
+/* pages/goods/goods.wxss */
+.swiperWrapper {
+  width: 100%;
+  height: 400rpx;
+  position: relative;  
+}
+.swiperBox {
+  height: 100%;
+}
+.swiper-img {
+  width: 100%;
+  height: 400rpx;
+}
+.swiper-img2 {
+  width: 100%;
+}
+
+/*用来包裹所有的小圆点  */
+.dots{  
+  width: 350rpx;
+  height: 5rpx; 
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 50%;
+  margin-left: -175rpx;
+  bottom: 30rpx;
+  justify-content: center;
+  align-items: center;
+}  
+/*未选中时的小圆点样式 */
+.dot{  
+  /* width: 100rpx;   */
+  flex:1;
+  height: 5rpx;   
+  margin-right: 26rpx;
+  background-color: white;
+}  
+/*选中以后的小圆点样式  */
+.active{  
+  /* width: 100rpx;    */
+  flex:1;
+  height: 5rpx;
+  background-color: coral;
+}  
+.bottomBox {
+  width: 100%;
+  height: 80rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottomBox .bt{
+  width: 100%;
+  background-color: rgb(255, 94, 0);
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.infoview {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.infoview .name {
+  font-size: 36rpx;
+  padding-top: 10rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-bottom: 10rpx;
+  color: #333;
+}
+
+.infoview .l2{
+  display: flex;
+  align-items: center;
+  width: 92%;
+  margin: 0 auto;
+  padding: 60rpx 0;
+  /* padding-right: 76rpx; */
+}
+.infoview .l2 .convert-num{
+  color: #ff8100;
+}
+.infoview .l2 .l2content{
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.infoview .l2 .fr{
+  margin-left: 0;
+}
+.infoview .l2 .amount-wrap{
+  display: flex;
+  align-items: center;
+}
+.infoview .l2 image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.infoview .l2 .amount{
+  font-size: 28rpx;
+  color: #ff8100;
+}
+
+.richContent {
+  margin-top: 1rpx;
+  background-color: white;
+  width: 100%;
+  height: auto;
+  margin-bottom: 80rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.richContent .detailtitle {
+  font-size: 35rpx;
+  color: red;
+  margin-top: 20rpx;
+}
+.blank {
+  width: 100%;
+  height: 20rpx;
+}

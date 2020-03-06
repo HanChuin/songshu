@@ -1,0 +1,300 @@
+<!--
+/**
+ *                             _ooOoo_
+ *                            o8888888o
+ *                            88" . "88
+ *                            (| -_- |)
+ *                            O\  =  /O
+ *                         ____/`---'\____
+ *                       .'  \\|     |//  `.
+ *                      /  \\|||  :  |||//  \
+ *                     /  _||||| -:- |||||-  \
+ *                     |   | \\\  -  /// |   |
+ *                     | \_|  ''\---/''  |   |
+ *                     \  .-\__  `-`   ___/-. /
+ *                   ___`. .'  /--.--\  `. . __
+ *                ."" '<  `.___\_<|>_/___.'  >'"".
+ *               | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+ *               \  \ `-.   \_ __\ /__ _/   .-` /  /
+ *          ======`-.____`-.___\_____/___.-`____.-'======
+ *                             `=---='
+ *          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *                     屈原保佑        永无BUG
+ *                   写字楼里写字间，写字间里程序员；
+ *                   程序人员写程序，又拿程序换酒钱。
+ *                   酒醒只在网上坐，酒醉还来网下眠；
+ *                   酒醉酒醒日复日，网上网下年复年。
+ *                   但愿老死电脑间，不愿鞠躬老板前；
+ *                   奔驰宝马贵者趣，公交自行程序员。
+ *                   别人笑我忒疯癫，我笑自己命太贱；
+ *                   不见满街漂亮妹，哪个归得程序员？
+*/-->
+
+
+<!-- 定位与搜索 -->
+<view class="locatSech">
+  <view class="locatView">
+    <image class="image" bindtap="changeCity" src="../../img/icon_location.png" mode="widthFix"></image>
+    <view bindtap="changeCity">{{city}}</view>
+  </view>
+
+  <view class="inputView">
+    <input placeholder="{{songshuTop[0].title}}" placeholder-style="font-size:26rpx"></input>
+    <view class="inputIcon">
+      <image class="searchIcon" src="../../img/search.png" mode="widthFix"></image>
+    </view>
+  </view>
+
+</view>
+
+<!-- 轮播图改 -->
+<view class="swiper">
+  <swiper previous-margin='10px' autoplay="{{autoplay}}" next-margin='10px' bindchange="swiperChange" style='height:{{swiperH}};' circular="{{circular}}" duration="{{duration}}" interval="{{interval}}" previous-margin='90rpx' next-margin='90rpx'>
+    <swiper-item wx:for='{{bannerUrls}}' wx:key='{{index}}'>
+      <image bindtap='toNewsDetail' class='le-img {{nowIdx==index?"le-active":""}}' bindload='getHeight' lazy-load="true" src='{{item.img+imgSet}}' data-index='{{index}}' style='height:{{swiperH}};'></image>
+    </swiper-item>
+  </swiper>
+  <view class="swiper-dots">
+    <view class="swiper-dots-item {{nowIdx==index?'swiper-dots-active':''}}" wx:for='{{bannerUrls}}' wx:key='{{index}}'></view>
+  </view>
+</view>
+
+<view class="box">
+
+  <!-- 松鼠头条 -->
+  <view class="top r15">
+    <view class="top-title">
+      <image mode="widthFix" lazy-load="true" src="https://url.songshuqubang.com/micsoft/img/song.png"></image>
+      <image mode="widthFix" lazy-load="true" src="https://url.songshuqubang.com/micsoft/img/shu.png"></image>
+      <image mode="widthFix" lazy-load="true" src="https://url.songshuqubang.com/micsoft/img/tou.png"></image>
+      <image mode="widthFix" lazy-load="true" src="https://url.songshuqubang.com/micsoft/img/tiao.png"></image>
+    </view>
+    <view class="top-content">
+      <swiper class="top-swiper_container" vertical="true" autoplay="true" circular="true" interval="3500" bindchange='topChange'>
+        <navigator open-type="navigate" url="{{topUrl}}" wx:for="{{songshuTop}}" wx:key='{{index}}'>
+          <swiper-item>
+            <view class="top-swiper_item">{{item.title}}</view>
+          </swiper-item>
+        </navigator>
+      </swiper>
+      <button class="btn" data-current="{{topCurrent}}" bindtap="topKnow">了解一下</button>
+    </view>
+  </view>
+
+  <!-- 趣益便利店 -->
+  <view class="box-title">
+    <image mode="widthFix" src="https://url.songshuqubang.com/micsoft/img/titleIcon.png"></image>趣益便利店</view>
+  <view class="shop r15">
+    <view class="shop-con">
+      <view class="shop-left">
+        <image class="shop-left-img1" mode="widthFix" src="https://url.songshuqubang.com/micsoft/img/shopleft1.png"></image>
+        <image class="shop-left-img2" mode="widthFix" bindtap="linkUrl1" src="https://url.songshuqubang.com/micsoft/img/shopleft2.png"></image>
+      </view>
+      <view class="shop-right">
+        <image class="shop-right-topimg" mode="widthFix" src="https://url.songshuqubang.com/micsoft/img/shoptop.png"></image>
+        <view class="shop-right-con">
+          <view class="shop-right-items">
+            <view class="shop-right-item" wx:for='{{shopList}}' wx:key='{{index}}' bindtap="shopClickTo" data-type="{{item.type}}" wx:if='{{item.type!="serv"}}'>
+              <view class="shop-right-item-img1">
+                <image lazy-load="true" mode="widthFix" src="{{item.icon+imgSet}}"></image>
+              </view>
+              <view class="shop-right-item-img2">
+                <image lazy-load="true" mode="widthFix" src="{{item.name+imgSet}}"></image>
+              </view>
+            </view>
+            <button class="shop-right-item" wx:for='{{shopList}}' wx:key='{{index}}' data-type="{{item.type}}" wx:if='{{item.type=="serv"}}' open-type='contact' bindcontact="handleContact">
+              <image class="shop-right-item-img1" lazy-load="true" mode="widthFix" src="{{item.icon+imgSet}}"></image>
+              <image class="shop-right-item-img2" lazy-load="true" mode="widthFix" src="{{item.name+imgSet}}"></image>
+            </button>
+          </view>
+          <view class="shop-right-conc">
+            <view class="shop-right-conc-a"></view>
+            <view class="shop-right-conc-b"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <image class="shop-img" mode="widthFix" src="https://url.songshuqubang.com/micsoft/img/shopallbg.png"></image>
+  </view>
+
+  <!-- 文艺大赛 -->
+  <view class="box-title">
+    <image mode="widthFix" src="https://url.songshuqubang.com/micsoft/img/titleIcon.png"></image>青少年文艺大赛</view>
+  <view class="box-contain">
+    <view class="box-top-con">
+      <view class="box-top-left">
+        <view class="top-left-item" wx:if="{{selectCyType == 1}}">
+          <text class="top-left-item-txt">写作</text>
+          <view class="top_left_bot"></view>
+        </view>
+        <view wx:else class="top-left-item" bindtap="changeCxTypeAction">
+          <text class="top-left-item-txt2">写作</text>
+        </view>
+        <view class="top-left-item" wx:if="{{selectCyType == 2}}">
+          <text class="top-left-item-txt">表演</text>
+          <view class="top_left_bot"></view>
+        </view>
+
+        <view class="top-left-item" wx:else bindtap="changeCxTypeAction">
+          <text class="top-left-item-txt2">表演</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="cysdbg">
+
+      <view class="cysd_left" bindtap="catCydsAction">
+
+        <view animation="{{imgAnimation5}}" class="{{currentIndex == 5 ? 'viewStyle' : 'viewStyle2'}}" style="z-index:{{hidden5}}">
+          <image src="https://url.songshuqubang.com/image/wyds/cover/img_qietu5.png" mode="widthFix" class="imgSty">
+          </image>
+        </view>
+
+        <view animation="{{imgAnimation4}}" class="{{currentIndex == 4 ? 'viewStyle' : 'viewStyle2'}}" style="z-index:{{hidden4}}">
+          <image src="https://url.songshuqubang.com/image/wyds/cover/img_qietu4.png" mode="widthFix" class="imgSty">
+          </image>
+        </view>
+
+        <view animation="{{imgAnimation3}}" class="{{currentIndex == 3 ? 'viewStyle' : 'viewStyle2'}}" style="z-index:{{hidden3}}">
+          <image src="https://url.songshuqubang.com/image/wyds/cover/img_qietu3.png" mode="widthFix" class="imgSty">
+          </image>
+        </view>
+
+        <view animation="{{imgAnimation2}}" class="{{currentIndex == 2 ? 'viewStyle' : 'viewStyle2'}}" style="z-index:{{hidden2}}">
+          <image src="https://url.songshuqubang.com/image/wyds/cover/img_qietu2.png" mode="widthFix" class="imgSty">
+          </image>
+        </view>
+
+        <view animation="{{imgAnimation1}}" class="{{currentIndex == 1? 'viewStyle' : 'viewStyle2'}}" style="z-index:{{hidden1}}">
+          <image src="https://url.songshuqubang.com/image/wyds/cover/img_qietu1.png" mode="widthFix" class="imgSty">
+          </image>
+        </view>
+
+      </view>
+      <view class="cysd_right">
+        <view class="cysd_right_lab" bindtap="catCydsAction" data-type="1">
+          <text class="cysd_right_txt1">【小学】- {{selectCyType ==1 ?'写作组':'表演组'}}</text>
+          <image src="https://url.songshuqubang.com/image/icon/icon_right_333.png" class="cysd_right_img"></image>
+        </view>
+        <text class="cysd_right_txt2">{{selectCyType == 1 ? projectNum[0]: projectNum[3]}} 人参与</text>
+        <view class="cysd_right-line"></view>
+        <view class="cysd_right_lab" bindtap="catCydsAction" data-type="2">
+          <text class="cysd_right_txt1">【初中】- {{selectCyType ==1 ?'写作组':'表演组'}}</text>
+          <image src="https://url.songshuqubang.com/image/icon/icon_right_333.png" class="cysd_right_img"></image>
+        </view>
+        <text class="cysd_right_txt2">{{selectCyType == 1 ? projectNum[1]: projectNum[4]}} 人参与</text>
+        <view class="cysd_right-line"></view>
+        <view class="cysd_right_lab" bindtap="catCydsAction" data-type="3">
+          <text class="cysd_right_txt1">【高中】- {{selectCyType ==1 ?'写作组':'表演组'}}</text>
+          <image src="https://url.songshuqubang.com/image/icon/icon_right_333.png" class="cysd_right_img"></image>
+        </view>
+        <text class="cysd_right_txt2">{{selectCyType == 1 ? projectNum[2]: projectNum[5]}} 人参与</text>
+        <view class="cysd_right-line"></view>
+        <view class="apply-btns">
+          <view class="apply-btn" bindtap="catCyds2Action">大赛规则</view>
+          <view class="apply-btn" bindtap="catReportAction" data-type="1">晋级名单</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- WOW积分 -->
+  <view class="box-title">
+    <image mode="widthFix" src="https://url.songshuqubang.com/micsoft/img/titleIcon.png"></image>WOW积分</view>
+  <view class="wow r15">
+    <view class="wow-items">
+      <scroll-view class="scroll-view_x1" scroll-x style="width: auto;overflow:hidden;">
+        <view class="wow-item" wx:for='{{wowList}}' wx:key='{{index}}' bindtap='goosDetail' data-data="{{item}}">
+          <view class="wow-item-con">
+            <image class="wow-item-img" lazy-load="true" src="{{item.seqimg}}" mode="widthFix"></image>
+            <view class="wow-item-point">{{item.point}}积分</view>
+            <view class="wow-item-name">{{item.goodsName}}</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="wow-bot">
+      <view class="wow-bot-mypoint">我的积分：
+        <text>{{sysUserInfo!=''?sysUserInfo.point:'0'}}</text> 分</view>
+      <view class="wow-bot-htp" bindtap="toPointCenter">
+        <image class="wow-bot-img" src="https://url.songshuqubang.com/micsoft/img/wowicon.png" mode="widthFix"></image>
+        公益积分怎么玩？
+      </view>
+    </view>
+  </view>
+
+  <!-- 公益联盟 -->
+  <view class="box-title">
+    <image mode="widthFix" src="https://url.songshuqubang.com/micsoft/img/titleIcon.png"></image>公益联盟</view>
+  <view class="union r15">
+    <scroll-view class="scroll-view_x1" scroll-x style="width: auto;overflow:hidden;">
+      <view class="union-item" wx:for='{{partner}}' wx:key='{{index}}' bindtap="goToPartnerDetail" data-id="{{item.id}}">
+        <image lazy-load="true" src="{{item.logo+imgSet}}" mode="aspectFill" class="union-logo"></image>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 主题活动 -->
+  <!-- <view class="all-activities"> -->
+  <view class="box-title">
+    <image mode="widthFix" lazy-load="true" src="https://url.songshuqubang.com/micsoft/img/titleIcon.png"></image>{{otherTheme}}</view>
+  <view class="funact">
+    <view class="theme-items r15" wx:for='{{otherActivities}}' wx:key='{{index}}' bindtap='toActivityDetail' data-id='{{item.activityId}}'>
+      <image class="theme-img" src="{{item.activity.cover+imgSet}}" lazy-load="true" mode="widthFix"></image>
+      <view class="theme-obj">
+        <view class="theme-obj-left">
+          <view class="theme-obj-left-name">{{item.activity.name}}</view>
+          <view class="theme-obj-left-time">{{item.activity.activeTime}}</view>
+        </view>
+        <view class='addbtn' bindtap="toActivityDetail" data-id='{{item.activityId}}'>
+          <text>详情</text>
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+  <!-- </view> -->
+
+  <!-- 趣活动 -->
+  <view class="box-title" wx:if='{{activities.length>0}}'>
+    <image mode="widthFix" src="https://url.songshuqubang.com/micsoft/img/titleIcon.png"></image>趣活动</view>
+  <view class="funact" wx:if='{{activities.length>0}}'>
+    <view class="funact-items r15" wx:for='{{activities}}' wx:key='{{index}}' bindtap='toActivityDetail' data-id='{{item.activity.id}}'>
+      <image lazy-load="true" class='funact-item-img' src='{{item.activity.cover+imgSet}}' mode='widthFix'></image>
+      <view class="funact-item-obj">
+        <view class="funact-obj-left">
+          <view class="funact-obj-left-name">{{item.activity.name}}</view>
+          <view class="funact-obj-left-time">{{item.activity.activeTime}}</view>
+        </view>
+        <!-- <button class="btn btnw">报 名</button> -->
+        <view class='addbtn'>
+          <text>详情</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 趣视频 -->
+  <!-- <view class="box-title" wx:if='{{videos.length>0}}'>
+    <image mode="widthFix" src="https://url.songshuqubang.com/micsoft/img/titleIcon.png"></image>趣视频</view>
+  <view class="funvideo r15" wx:if='{{videos.length>0}}'>
+    <view class="funvideo-item {{index==0?'funvideo-item-w60':''}} {{index==1?'funvideo-item-w30':''}}" wx:for="{{videos}}" wx:key="{{index}}" data-index='{{index}}' data-tag='3' bindtap='videoDetail'>
+      <view class="funvideo-item-cover" wx:if='{{index!=0}}'>
+        <image class="funvideo-item-playIcon" src="https://url.songshuqubang.com/micsoft/img/playAudio_icon.png" mode="widthFix"></image>
+      </view>
+      <image class='funvideo-item-img' src="{{item.conver}}" mode="aspectFill"></image>
+      <view class='funvideo-item-title {{index==0||index==1?"funvideo-item-2":""}}'>{{item.title}}</view>
+      <view class="funvideo-item-text"></view>
+    </view>
+  </view> -->
+</view>
+
+<view class="cover" wx:if='{{showAd}}'>
+  <view class="cover-con" bindtap="closeAll"></view>
+  <image src="{{adImgUrl}}" class="adStyle" mode="widthFix" bindtap="catAdAction" lazy-load="true"></image>
+  <image class="rpoint-close" src="https://url.songshuqubang.com/micsoft/img/rpointclose.png" mode="widthFix" bindtap="closeAll"></image>
+</view>
+
+<view class="empty"></view>
+<tabbar tabbar="{{tabbar}}"></tabbar>

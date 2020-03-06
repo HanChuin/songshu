@@ -1,0 +1,40 @@
+
+<!-- <import src="../details-template/details-template.wxml" />
+<import src="../select/select.wxml" /> -->
+
+<view class='swiperWrapper'>
+<swiper class='swiperBox' autoplay='true' bindchange="swiperChange">
+<block wx:for='{{detail.imgLst}}' wx:key='*this'>
+  <swiper-item>
+    <image src='{{item}}' 
+    class='swiper-img' 
+    mode='scaleToFill'
+    lazy-load="true"
+    ></image>
+  </swiper-item>
+</block>
+</swiper>
+  <view class="dots">  
+    <block wx:for="{{detail.imgLst}}" wx:key="this.id">  
+      <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>  
+    </block>  
+  </view>  
+</view>
+<template is="detailsTempate" data="{{...detail,orgDetail, goodsList,showInfo,showinfo,end,handleClick,activityDetail,sel}}" />
+  <!-- <template is="selectTemplate" data="{{detail,typeArr,typeSel,animationData,handleSelect,selectShow,hiddenSelect}}" /> -->
+<view class='bottomBox'>
+  <view class='item item1' bindtap='phoneCall'>
+    <image src='https://url.songshuqubang.com/micsoft/img/ui-biaoji01.png' class='icon'></image>
+    <text class='text'>客服</text>
+  </view>
+  <button open-type='share' class='shareBt'>
+  <view class='item item2' bindtap='sharePage'>
+    <image src='https://url.songshuqubang.com/micsoft/img/ui-biaoji02.png' class='icon'></image>
+    <text class='text'>分享</text>
+  </view>
+  </button>
+  <view class='btBox'>
+    <button class='bt bt1' catchtap='exitActivity'>退出活动</button>
+    <button class='bt bt2' disabled='{{detail.state!="进行中"}}' bindtap='signIn'>签到</button>
+  </view>
+</view>

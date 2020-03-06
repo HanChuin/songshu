@@ -1,0 +1,21 @@
+<view class="tabbar_view">
+
+<view class="tabbar_box">
+  <image src="https://url.songshuqubang.com/image/micsoft/bg/tabbar.png" class="tabg"></image>
+  <block wx:for="{{tabbar.list}}" wx:key="{{item.pagePath}}">
+    <navigator wx:if="{{item.isSpecial}}" class="{{index==2?'mid':'tabbar_nav'}} " hover-class="none" url="{{item.pagePath}}" style="color:{{tabbar.selectedColor}}" open-type="navigate">
+      <view class='special-wrapper'>
+        <image class="tabbar_icon" src="{{item.iconPath}}"></image>
+      </view>
+      <image class='special-text-wrapper'></image>
+      <text class="special-text">{{item.text}}</text>
+    </navigator>
+    <navigator bindtap="navito" wx:else class="{{index==2?'mid':'tabbar_nav'}}" hover-class="none" data-url="{{item.pagePath}}" url="{{item.pagePath}}" style="color:{{item.selected ? tabbar.selectedColor : tabbar.color}}" open-type="switchTab" data-ind="{{index}}">
+      <image bindtap="{{index==2?'qrcode':''}}" class="{{index==2?'tabbar_icon_mid':'tabbar_icon'}}" src="{{item.selected ? item.selectedIconPath : item.iconPath}}" animation="{{index==0?ani:''}}"></image>
+      <text wx:if="{{index!==2}}" class="{{item.selected? special-text:normal-text}}">{{item.text}}</text>
+    </navigator>
+  </block>
+</view>
+
+<view class="{{isIphoneX?'tabbar_bottomx':'tabbar_bottom'}}"></view>
+</view>

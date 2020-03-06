@@ -1,0 +1,6 @@
+<view class="containview">
+  <input class="inputstyle" bindinput="chageName" placeholder="请输入作品名称" wx:if="{{type == 'name'}}"></input>
+  <textarea wx:else class="textareastyle"  bindinput="changeDesc" placeholder="请输入作品描述"></textarea>
+</view>
+
+<view bindtap="saveAction" class="btnStyle">保存</view>

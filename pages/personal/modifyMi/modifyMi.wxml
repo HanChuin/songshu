@@ -1,0 +1,31 @@
+<!--pages/personal/modifyMi/modifyMi.wxml-->
+
+<view class='mainpage'>
+  <view class='topview'>
+    <!-- banner背景图片 -->
+    <image class='banner' src='https://url.songshuqubang.com/micsoft/img/org1.png' mode='widthFix'></image>
+    <!-- banner logo -->
+    <image src='https://url.songshuqubang.com/micsoft/img/org3.png' class='banner-logo' mode='widthFix'></image>
+  </view> 
+
+  <view class='middleview'>
+    <view class='bottomBox'></view>
+    <view class='middleContent'>
+      <view class='inputBoxReg'>
+        <view class='inputRowReg'>
+          <input type="number" maxlength='11' bindinput="mobileInp" value='{{phone}}' placeholder='手机号' placeholder-class='placeholder'></input>
+          <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class='phoneBtn'>获取手机号</button>
+        </view>
+        <view class='inputRowReg'>
+          <input class="rowinput" type="text" maxlength='11' bindinput="yzmInp" value='{{yzm}}' placeholder='验证码' placeholder-class='placeholder'></input>
+          <text class='sendCode' catchtap='sendCode' wx:if="{{canSend}}">发送</text>
+          <text class='sendCode timing' wx:else>{{sendTime}}</text>
+        </view>
+        <view class='inputRowReg'>
+          <input bindinput="passwordInp" value='{{password}}' placeholder='新密码' placeholder-class='placeholder' type='password'></input>
+        </view>
+      </view>
+      <button class='registerBt' bindtap='toRegister'>提交</button>
+    </view>
+  </view>
+</view>

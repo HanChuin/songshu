@@ -1,0 +1,132 @@
+<!-- 顶部 -->
+<view class="topview">
+  <view class="topviewimg2"></view>
+  <!--活动信息-->
+  <view class="topinfoview" style="opacity:{{topopacity}}">
+    <image src="https://url.songshuqubang.com/image/wyds/cover/z1_meitu_1.png" class="topinfoviewimg" mode="widthFix"></image>
+    <view class="ti-r">
+      <text class="ti-r-tit">美好的时代-2019张家港首届青少年文艺大赛</text>
+      <view class="ti-r-bo">
+        <text class="ti-r-bo-1"></text>
+        <view class="ti-r-bo-r" bindtap="toPointCenter">
+          <view class="ti-give">
+            <image src="https://url.songshuqubang.com/micsoft/img/add_icon__.png" class="ti-r-bo-r-img" mode="widthFix"></image>
+          </view>
+          <view class="ti-r-bo-r-i">
+            <text class="ti-r-bo-r-t">100</text>
+            <text class="ti-r-bo-r-tt">积分</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="bodystyle">
+  <view class='body-topspace'></view>
+  <view class="body-item-style">
+    <image src="https://url.songshuqubang.com/micsoft/img/icon_age.png" mode="widthFix" class="body-item-li"></image>
+    <text class="body-item-txt">参赛 类型</text>
+  </view>
+
+  <view class="body-item-style">
+    <Select items="{{type1Array}}" currentIndex="{{type1Index}}" bind:confirmEvent="_confirmType1Event"></Select>
+  </view>
+
+  <view class="line"></view>
+
+  <view class="body-item-style">
+    <image src="https://url.songshuqubang.com/micsoft/img/icon_age.png" mode="widthFix" class="body-item-li"></image>
+    <text class="body-item-txt">参赛 年龄</text>
+  </view>
+
+
+  <view class="body-item-style">
+    <Select items="{{type2Array}}" currentIndex="{{type2Index}}"  bind:confirmEvent="_confirmType2Event"></Select>
+  </view>
+
+  <view class="line"></view>
+  <view class="body-item-style">
+    <image src="https://url.songshuqubang.com/micsoft/img/icon_age.png" mode="widthFix" class="body-item-li"></image>
+    <text class="body-item-txt">参赛 项目</text>
+  </view>
+
+  <swiper class="swiper-block" previous-margin="250rpx" next-margin="250rpx" bindchange="_confirmType3Event" circular="true" easing-function="linear">
+    <block wx:for="{{type3Array}}">
+      <swiper-item>
+        <view class="{{type3Index == index ? 'swipe-item1':'swipe-item2'}}">
+          <image src="{{item.url}}" class="slide-image" mode="widthFix" />
+          <text>{{item.name}}</text>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="swiper-dots">
+    <view class="swiper-dots-item {{type3Index==index?'swiper-dots-active':''}}" wx:for='{{type3Array}}' wx:key='{{index}}'></view>
+  </view>
+  
+  <view class="line"></view>
+
+
+  <view class="body-item-style">
+    <image src="https://url.songshuqubang.com/micsoft/img/icon_age.png" mode="widthFix" class="body-item-li"></image>
+    <text class="body-item-txt">参赛 信息</text>
+  </view>
+
+  <view class="{{nameFocus ? 'body-item-input1' : 'body-item-input2'}}">
+    <input placeholder="用户名称" bindinput="changeName" class="inputstyle" bindblur="nameBlur" value="{{userName}}" bindfocus="nameFocus"></input>
+  </view>
+  <picker bindchange="bindSchoolChange" range-key="name" range="{{schoolData}}">
+    <view class="{{schoolFocus ? 'body-item-input1' : 'body-item-input2'}}">
+      <text placeholder="学校"  class="inputstyle" bindblur="schoolBlur" bindfocus="schoolFocus">{{school}}</text>
+    </view>
+  </picker>
+
+
+  <picker bindchange="bindClassChange"  range="{{classData}}" mode="multiSelector">
+  <view class="{{classFocus ? 'body-item-input1' : 'body-item-input2'}}">
+    <text placeholder="班级" class="inputstyle" bindblur="classBlur" bindfocus="classFocus">{{classStr}}</text>
+  </view>
+  </picker>
+
+  <view class="{{phoneFocus ? 'body-item-input1' : 'body-item-input2'}}">
+    <input placeholder="联系方式" value="{{userPhone}}" bindinput="changePhone" class="inputstyle" bindblur="phoneBlur" bindfocus="phoneFocus"></input>
+  </view>
+
+  <view class="bottomstyle"></view>
+
+
+</view>
+
+
+<view class='bottomBox'>
+
+  <button open-type="contact" bindcontact="handleContact" class='contactBt'>
+    <view class='item item1' bindtap='phoneCall'>
+      <image src='https://url.songshuqubang.com/micsoft/img/icon_erji.png' class='icon' mode="widthFix"></image>
+    </view>
+  </button>
+
+  <button class='shareBt' open-type="share" wx:if='{{!fromShare}}'>
+    <view class='item item2'>
+      <image src='https://url.songshuqubang.com/micsoft/icon/icon_share_black.png' class='icon' mode="widthFix"></image>
+    </view>
+
+  </button>
+
+  <button class='shareBt' bindtap='goToHome' wx:else>
+    <view class='item item2'>
+      <image src='/img/tab1.png' class='icon' mode="widthFix"></image>
+    </view>
+  </button>
+
+
+
+  <button class='bt' bindtap="joinMatch" disabled="{{detail.activeState!=1}}" wx:if="{{state == 0 || state == 1}}">
+    {{btnStr}}
+  </button>
+
+  <button class="bt2" disabled="true" wx:else>已报名</button>
+  
+</view>

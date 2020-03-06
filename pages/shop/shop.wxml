@@ -1,0 +1,162 @@
+<view style="width:100%; overflow: hidden;">
+  <view class="card" wx:if='{{tab==0||tab==1||tab==3}}'>
+    <view class="card-con">
+      <image class="card_img" src="https://url.songshuqubang.com/micsoft/img/rpointwow.png" mode="widthFix"></image>
+      <view class="card_body">
+        <view class="card_top">
+          <view class="card_top1">
+            <view class="card_point">{{nowLevel?nowLevel:"请登录"}} {{sysUserInfo.point}}<text>公益积分</text></view>
+            <view class="card_rule" bindtap="toPointCenter">公益积分规则</view>
+          </view>
+          <view class="card_top2">有效期 永久有效</view>
+        </view>
+        <view class="card_bot">
+          <view>{{nowLevel?nowLevel:"???"}}</view>
+          <progress class='progress' percent='{{per}}' activeColor='#FF852B'  active='false'stroke-width='10'border-radius='30' backgroundColor='#eeeeee' />
+          <view>{{nextLevel?nextLevel:"???"}}</view>
+        </view>
+        <view class="card_top3">您距离{{nextLevel?nextLevel:"???"}}还差{{endIntegral-sysUserInfo.integral?endIntegral-sysUserInfo.integral:"???"}}成长值</view>
+      </view>
+    </view>
+  </view>
+  <view class="card_tab2" wx:if='{{tab==2}}'>
+    <image class="card2_img card2img1" src="https://url.songshuqubang.com/micsoft/img/rpointwow.png" mode="widthFix"></image>
+    <image class="card2_img card2img2" src="https://url.songshuqubang.com/micsoft/img/rpointwow.png" mode="widthFix"></image>
+    <view class="card2_con">
+      <view class="top3">
+        <view class="top3-item {{index==1?'top1-item':''}}" wx:for='{{top3Point}}' wx:key='{{index}}'>
+          <view class="top3_header">
+            <view class="top3_head_  {{index==1?'top3_head__':''}}">
+              <image class="top3_head" src="{{item.headImg}}" mode="aspectFill"></image>
+            </view>
+            <view class="top3_no">
+              <view class="top3_no_in">{{item.no}}</view>
+            </view>
+          </view>
+          <view class="top3_point">{{item.integral}}</view>
+          <view class="top3_num">{{item.userName}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="card_shadow"></view>
+</view>
+
+<view class="tab">
+  <!-- <text bindtap="changeTab" class="{{tab==3?'tab_activity':''}}" data-tag="allGoods">所有商品</text> -->
+  <text bindtap="changeTab" class="{{tab==0?'tab_activity':''}}" data-tag="shop">热门商品</text>
+  <!-- <view class="tab-line"></view> -->
+  <text bindtap="changeTab" class="{{tab==1?'tab_activity':''}}" data-tag="point">领取积分</text>
+  <!-- <view class="tab-line"></view> -->
+  <text bindtap="changeTab" class="{{tab==2?'tab_activity':''}}" data-tag="vote">成长排行</text>
+</view>
+
+<!-- 搜索 -->
+<view class="search" wx:if='{{tab==3}}'>
+  <image src="https://url.songshuqubang.com/micsoft/img/searchIcon.png" mode="widthFix" class="searchIcon"></image>
+  <input class="searchInput" placeholder="星巴克 美式咖啡" placeholder-style="color:#fff;"></input>
+  <image src="https://url.songshuqubang.com/micsoft/img/pointALL.png" mode="widthFix" class="searchAllImg"></image>
+</view>
+
+<!-- 热门商品 -->
+<view class='goods-wrap' wx:if='{{tab==3}}'>
+  <view class="goods-left">
+    <view class="good-item" wx:for='{{leftLidt}}' wx:key='{{index}}' bindtap='goodsDetail' data-data="{{item}}">
+      <image class="good-item-img" src="{{item.seqimg+imgSet}}" mode="widthFix"></image>
+      <view class="good-item-desc">
+        <view class="goods-name">{{item.goodsName}}</view>
+        <text class="goods-partner">商家：{{item.partnerName}}</text>
+        <view class="goods-desc">
+          <view class="goods-point">{{item.point}}积分</view>
+          <view class="goods-person">11人兑换</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="goods-right">
+    <view class="good-item" wx:for='{{rightLidt}}' wx:key='{{index}}' bindtap='goodsDetail' data-data="{{item}}">
+      <image class="good-item-img" src="{{item.seqimg}}" mode="widthFix"></image>
+      <view class="good-item-desc">
+        <view class="goods-name">{{item.goodsName}}</view>
+        <text class="goods-partner">商家：{{item.partnerName}}</text>
+        <view class="goods-desc">
+          <view class="goods-point">{{item.point}}积分</view>
+          <view class="goods-person">11人兑换</view>
+        </view>
+      </view>
+    </view>  
+  </view>
+  
+</view>
+
+<!-- 所有商品 -->
+<view class='goods-wrap1' wx:if='{{tab==0 }}' wx:for='{{list}}' wx:key='{{index}}'>
+  <view class='{{index%2==1?"goods-l1":"goods1"}} goods1' bindtap='goodsDetail' data-data="{{item}}" data-index='{{index}}'>
+    <view class="goods-imgs1">
+    <image class='goods-img1' src='{{item.kouimg+imgSet}}' mode="aspectFill"></image>
+    </view>
+    <view class="goodsInfo1">
+      <view class="goodsInfoName1">{{item.goodsName}}</view>
+      <view class="goodsInfoStore1">商家:{{item.partnerName}}</view>
+      <view class="goodsPoint1">
+        <view class="goodsPoint-p11">{{item.point}}</view>
+        <view class="goodsPoint-p21">公益积分</view>
+        <image class="goodsPoint-img1" src="https://url.songshuqubang.com/micsoft/img/err-white.png" style="width:18rpx;" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+  <view class="goodsLine1">
+    <view class="circle-l1"></view>
+    <view class="line1"></view>
+    <view class="circle-r1"></view>
+  </view>
+</view>
+
+<!-- 领取积分 -->
+<view class="receive-points" wx:if='{{tab==1}}'>
+  <view class="rp-title">做任务赚积分</view>
+  <view class="rp-c" wx:for='{{pointList}}' wx:key='{{index}}'>
+    <view class="rp-content">
+      <view class="rpc-c">
+        <view class="rpc-img">
+          <image src="{{item.img}}" mode="widthFix"></image>
+        </view>
+        <view class="rpc-con">
+          <view class="rpc-title">{{item.title}}</view>
+          <view class="rpc-point">{{item.point?'奖励'
+          +item.point+'积分':'叠加奖励公益积分'}}</view>
+        </view>
+      </view>
+      <button wx:if='{{index == 1}}' class="btn"  open-type='contact' bindcontact="handleContact"  data-tag="{{index}}">{{item.finish?'已完成':'立即前往'}}</button>
+      <button wx:else class="btn" bindtap="pointGo"  open-type="{{index==4?'share':''}}"  data-tag="{{index}}">{{item.finish?'已完成':'立即前往'}}</button>
+    </view>
+    <view class="line1" wx:if='{{index<pointList.length-1}}'></view>
+  </view>
+</view>
+
+<!-- 签到弹窗 -->
+<view class="rpoint" wx:if='{{showSign}}' >
+  <view class="rpoint-title">已累计签到<text>{{signDay}}</text>天</view>
+  <view class="rpoint-desc">以7天为一个周期，每周一数据清零</view>
+  <view class="rpoint-c">
+    <view class="rpoint-con">
+      <view class="rpoint-7days">
+        <view class="rpoint-item" wx:for='{{7}}' wx:key='{{index}}'>
+          <view class="rpoint-item-con {{item<signDay?'rpoint-activity':''}}">
+            <view class="rpoint-item-con1">+{{item+1}}</view>
+            <view class="rpoint-item-con2">公益积分</view>
+          </view>
+          <view class="rpoint-item-t">第{{item+1}}天</view>
+        </view>
+      </view>
+      <button class="btn rpoint-btn" bindtap='signIn'>立即签到</button>
+      <view class="rpoint-t">公益积分可前往积分商城进行兑换哦！</view>
+    </view>
+    <image class="rpoint-bg" src="https://url.songshuqubang.com/micsoft/img/rpointbg.png" mode="aspectFit"></image>
+  </view>
+  <image class="rpoint-close" src="https://url.songshuqubang.com/micsoft/img/rpointclose.png" mode="widthFix" bindtap="closePoint"></image>
+</view>
+
+<view class="empty vote_empty" wx:if='{{tab==2}}'></view>
+<view class="empty" wx:if='{{tab!=2}}'></view>
+<tabbar tabbar="{{tabbar}}" wx:if='{{tab!=2}}'></tabbar>

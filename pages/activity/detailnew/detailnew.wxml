@@ -1,0 +1,133 @@
+<poster-activity id="getPoster" bindmyevent="myEventListener" avater="{{detail.cover}}" userName="{{userName}}" activityName="{{detail.name}}" activityAddress='{{detail.address}}' activityDateStr='{{detail.activeTime}}' productSrc='{{productSrc}}' qrCodeImg='{{codeSrc}}'
+  logoSrc='{{userSrc}}'>
+</poster-activity>
+
+
+<!-- 顶部 -->
+<view class="topview">
+  <view class="topviewimg">
+    <image src="{{conver+imgSet}}" mode="widthFix"></image>
+  </view>
+  <view class="topviewimg2"></view>
+  <!--活动信息-->
+  <view class="topinfoview" style="opacity:{{topopacity}}">
+    <image src="{{detail.cover2}}" class="topinfoviewimg" mode="widthFix"></image>
+    <view class="ti-r">
+      <text class="ti-r-tit">{{detail.name}}</text>
+      <view class="ti-r-bo">
+        <text class="ti-r-bo-1">¥0.0</text>
+
+        <view class="ti-r-bo-r" bindtap="toPointCenter">
+          <view class="ti-give">
+            <image src="https://url.songshuqubang.com/micsoft/img/add_icon__.png" class="ti-r-bo-r-img" mode="widthFix"></image>
+          </view>
+          <view class="ti-r-bo-r-i">
+            <text class="ti-r-bo-r-t">{{detail.point}}</text>
+            <text class="ti-r-bo-r-tt">积分</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="bodystyle">
+  <view class='body-topspace'></view>
+  <!-- 活动内容 -->
+  <view class='body-item'>
+    <view class="body-item-l">
+      <view class="body-item-li"><image src="https://url.songshuqubang.com/micsoft/img/icon_age.png" mode="widthFix"></image></view>
+      <text>适用年龄：</text>
+      <text class="body-item-l-age">{{detail.agestr}}</text>
+    </view>
+    <view class="body-item-r">
+      <text>名额剩余：</text>
+      <text>{{detail.limitNum - detail.applyNum}}</text>
+    </view>
+  </view>
+  <view class='body-item'>
+    <view class="body-item-l">
+      <view class="body-item-li">
+        <image src="/img/icon_time.png" mode="widthFix"></image>
+      </view>
+      <text>{{detail.activeTime}}</text>
+      <text></text>
+    </view>
+    <view class="body-item-r">
+      <text>报名中</text>
+    </view>
+  </view>
+  <view class='body-item'>
+    <view class="body-item-l">
+      <view class="body-item-li-ad"><image src="/img/icon_location.png" mode="widthFix"></image></view>
+      <text class="body-item-l-add">{{detail.address}}</text>
+    </view>
+    <view class="body-item-nav" bindtap="intoMap">
+      <image src="https://url.songshuqubang.com/micsoft/img/icon_navi.png" class="body-item-nav-img"></image>
+    </view>
+  </view>
+
+  <!-- 分割线 -->
+  <view class="body-space-line"></view>
+
+  <!-- 详情 -->
+  <text class="body-detail-title">活动详情</text>
+
+  <view class="detail">
+    <import src="../../../libs/wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:newsactivityDetail.nodes}}" />
+
+    <!-- <view class="moredetail">
+    <text>更多信息</text>
+  </view> -->
+
+  </view>
+</view>
+
+
+
+<view class='bottomBox'>
+
+  <button open-type="contact" bindcontact="handleContact" class='contactBt'>
+    <view class='item item1' bindtap='phoneCall'>
+      <image src='https://url.songshuqubang.com/micsoft/img/icon_erji.png' class='icon' mode="widthFix"></image>
+    </view>
+  </button>
+
+  <button class='shareBt' bindtap='getSharePoster' wx:if='{{!fromShare}}'>
+    <view class='item item2'>
+      <image src='https://url.songshuqubang.com/micsoft/icon/icon_share_black.png' class='icon' mode="widthFix"></image>
+    </view>
+
+  </button>
+
+  <button class='shareBt' bindtap='goToHome' wx:else>
+    <view class='item item2'>
+      <image src='/img/tab1.png' class='icon' mode="widthFix"></image>
+    </view>
+  </button>
+
+
+  <block wx:if="{{detail.activeState == 3}}">
+    <button class='bt' disabled='false'>
+      {{btnStr}}
+    </button>
+  </block>
+
+  <block wx:else>
+    <view wx:if="{{userActivityInfo}}" class='btns'>
+      <view class="btnsleft" bindtap="onBindTakeOutActivity">
+        退出活动
+      </view>
+      <view class="btnsright" bindtap="getLocation">
+        {{signStr}}
+      </view>
+    </view>
+
+    <button wx:else class='bt' disabled='{{detail.activeState!=1}}' bindtap='joinActivity'>
+      {{btnStr}}
+    </button>
+
+  </block>
+</view>

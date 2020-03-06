@@ -1,0 +1,25 @@
+/* pages/question/question.wxss */
+
+@import '../vote/vote.wxss';
+.startAns {
+  width: 210rpx;
+  height: 40rpx;
+  background: #ec7803;
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+.startAns::after{
+  border: 0;
+}
+.ans-bot {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.startAns {
+  margin-right: 30rpx;
+  margin-top: 15rpx;
+  border-radius: 15rpx;
+}

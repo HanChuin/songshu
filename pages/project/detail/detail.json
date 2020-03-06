@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "activityItem": "/component/activityItem/activity-item"
+  },
+  "backgroundColor": "#f6f6f6",
+  "enablePullDownRefresh": true
+}

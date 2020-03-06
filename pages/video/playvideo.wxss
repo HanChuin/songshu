@@ -1,0 +1,54 @@
+/* pages/video/playvideo.wxss */
+page{
+  background: #fff;
+}
+
+.videostyle {
+  width: 750rpx;
+}
+.title {
+  font-size: 40rpx;
+  color: #000;
+  padding: 28rpx 26rpx 24rpx;
+  border-bottom: #dedede 1px solid;
+}
+.des {
+  padding: 32rpx 38rpx 34rpx 28rpx;
+  font-size: 28rpx;
+  border-bottom: #dedede 1px solid;
+}
+.des-title {
+  color: #000;
+}
+.des-content {
+  color: #999;
+}
+.more {
+  padding: 34rpx 60rpx 54rpx 28rpx;
+}
+.more-title {
+  font-size: 32rpx;
+  color: #000;
+}
+.more-items {
+  margin-top: 32rpx;
+  display: flex;
+}
+.more-items image {
+  width: 260rpx;
+  height: 180rpx;
+  border-radius: 15rpx;
+  margin-right: 20rpx;
+}
+.more-item-title {
+  font-size: 32rpx;
+  color: #000;
+  padding: 20rpx 2rpx 0;
+}
+.more-item-content {
+  width: 380rpx;
+  height: 100rpx;
+  font-size: 24rpx;
+  color: #999;
+  overflow: hidden;
+}

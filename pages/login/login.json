@@ -1,0 +1,9 @@
+{
+    "navigationBarBackgroundColor": "#FF902E",
+    "navigationBarTitleText": "",
+    "usingComponents": {
+      "Tabbar": "/component/tabbar/tabbar"
+    },
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false
+  }

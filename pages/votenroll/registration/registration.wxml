@@ -1,0 +1,52 @@
+<!--pages/votenroll/registration/registration.wxml-->
+
+<!-- 参赛人名 -->
+<view class='name flex bgWhite'>
+  <text class='title'>参赛名称</text>
+  <input class='{{taRN?"taR":"taL"}}' placeholder="您参选所展示投票的名字" placeholder-style='color:#c7c7c7;font-size:24rpx;letter-spacing:-5;' bindblur='onBlurN' bindfocus='onFocusN' bindinput="changeName"></input>
+</view>
+
+<view class='line'></view>
+
+<!-- 联系电话 -->
+<view class='mob flex bgWhite'>
+  <text class='title'>联系电话</text>
+  <input class='{{taRT?"taR":""}}' placeholder="联系电话，仅主办方可见" type='number' maxlength="11" placeholder-style='color:#c7c7c7;font-size:24rpx;letter-spacing:-5;' bindblur='onBlurT' bindfocus='onFocusT' bindinput="changePhone"></input>
+</view>
+
+<!-- 参赛图片 -->
+<view class='pic bgWhite' id='pic'>
+  <text class='title'>参赛图片</text>
+  <text>（最多5张）</text>
+  <view class='picContent'>
+
+    <view class='addPics' wx:for='{{imgListShow}}' data-index='{{index}}' wx:key='{{index}}' bindtap='delImg'>
+      <image src='{{item}}' mode='aspectFill'></image>
+      <image class="closePic" src='https://url.songshuqubang.com/micsoft/img/close.png' mode='widthFix'></image>
+      <view class="closePicBox">
+        <image class="closePic" src='https://url.songshuqubang.com/micsoft/img/close.png' mode='widthFix'></image>
+      </view>
+    </view>
+
+    <view wx:if='{{imgsListLen}}' class='content' bindtap='uploadPic'>
+      <view class='image'>
+        <view class='rowLine'></view>
+        <view class='colLine'></view>
+      </view>
+      <text>添加图片</text>
+    </view>
+  </view>
+
+</view>
+
+<!-- 参赛介绍 -->
+<view class='sec bgWhite'>
+  <text class='title'>参赛介绍</text>
+  <text>（限200字）</text>
+  <textarea placeholder="写一句200字以内的介绍" maxlength='200' placeholder-class='secPlaceholder' bindblur='textBlur' bindinput="changeDesc" />
+</view>
+
+<!-- 报名提交 -->
+<view class='submit'>
+  <text bindtap='submit'>提交报名</text>
+</view>

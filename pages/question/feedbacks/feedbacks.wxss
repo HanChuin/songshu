@@ -1,0 +1,25 @@
+/* pages/question/feedbacks/feedbacks.wxss */
+
+.box {
+  background-color: white;
+  height: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column
+}
+.hr{
+  background: #EEE;
+  height:1rpx
+}
+.twoView{
+  margin-top: 30rpx
+}
+.question {
+  font-size: 40rpx;
+}
+
+.yes {
+  width: 230rpx;
+margin-top: 250rpx
+}

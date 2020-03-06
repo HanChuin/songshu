@@ -1,0 +1,45 @@
+/* pages/index/city/city.wxss */
+page {
+  background: #fff;
+}
+.page {
+  width: 100%;
+}
+
+.nowCity {
+  padding: 20rpx 30rpx;
+  margin-bottom: 20rpx;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+}
+.nowCity text {
+  color: #666;
+}
+.cityTitle {
+  margin-bottom: 10rpx;
+}
+.lctView {
+  position: relative;
+}
+.locate, .hotCity, .willCity {
+  padding: 10rpx 30rpx;
+}
+
+.cityView {
+  margin: 30rpx 0;
+  position: relative;
+}
+
+.cityImg {
+  width: 100%;
+}
+.cityName {
+  position: absolute;
+  top: 20rpx;
+  left: 0;
+  display: inline-block;
+  padding: 6rpx 14rpx 6rpx 10rpx;
+  background: #fff;
+  color: #000;
+  font-size: 22rpx;
+}

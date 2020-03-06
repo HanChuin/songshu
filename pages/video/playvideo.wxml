@@ -1,0 +1,14 @@
+<video src="{{videoUrl}}" binderror="videoErrorCallback" class="videostyle"  enable-danmu  autoplay='true' controls></video>
+
+<view class='title'>{{video.title}}</view>
+<view class='des'><text class='des-title'>简介:</text><text class='des-content'>{{video.desc}}</text></view>
+<view class='more'>
+  <view class='more-title'>更多视频</view>
+  <view class='more-items' wx:for='{{more}}' wx:key='{{index}}' bindtap='gotoVideo' data-id='{{item.id}}'>
+    <image src='{{item.conver}}' mode='aspectFill'></image>
+    <view class='more-item'>
+      <view class='more-item-title'>{{item.title}}</view>
+      <view class='more-item-content'>{{item.desc}}</view>
+    </view>
+  </view>
+</view>

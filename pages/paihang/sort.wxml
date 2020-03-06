@@ -1,0 +1,69 @@
+<view style="width:100%; overflow: hidden;">
+  <view class="card" wx:if='{{tab==0||tab==1}}'>
+  </view>
+  <view class="card_tab2" wx:if='{{tab==2}}'>
+    <image class="card2_img card2img1" src="https://url.songshuqubang.com/micsoft/img/rpointwow.png" mode="widthFix"></image>
+    <image class="card2_img card2img2" src="https://url.songshuqubang.com/micsoft/img/rpointwow.png" mode="widthFix"></image>
+    <view class="card2_con">
+      <view class="top3">
+        <view class="top3-item {{index==1?'top1-item':''}}" wx:for='{{top3Point}}' wx:key='{{index}}'>
+          <view class="top3_header">
+            <view class="top3_head_  {{index==1?'top3_head__':''}}">
+              <image class="top3_head" src="{{item.headImg}}" mode="aspectFill"></image>
+            </view>
+            <view class="top3_no">
+              <view class="top3_no_in">{{item.no}}</view>
+            </view>
+          </view>
+          <view class="top3_point">{{item.integral}}</view>
+          <view class="top3_num">{{item.userName}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="card_shadow"></view>
+</view>
+<!-- 成长排行 -->
+<view class="top10" wx:if='{{tab==2}}'>
+  <view class="top10-item" wx:for='{{top7Point}}' wx:key='{{index}}'>
+    <view class="top10_left">
+      <view class="top10_no">{{item.no}}</view>
+      <view class="top10_head_">
+        <image class="top10_head" src="{{item.headImg}}" mode="aspectFill"></image>
+      </view>
+      <view class="top10_info">
+        <view class="top10_name">{{item.userName}}</view>
+        <view class="top10_num">趣味号:{{item.userNo}}</view>
+      </view>
+    </view>
+    <view class="top10_right">
+      <view class="top10_point">{{item.integral}}</view>
+      <view class="top10_desc">成长积分</view>
+    </view>
+  </view>
+</view>
+
+<!-- 我的排名 -->
+<view class="vote_bot" wx:if='{{tab==2}}'>
+  <view class="top10_left">
+    <view class="vote_bot_no">
+      <view class="top10_no {{myNo=='未上榜'?'wsb':''}}">{{myNo}}</view>
+      <view class="vote_desc">我的排名</view>
+    </view>
+    <view class="my_head">
+      <image class="top10_head" src="{{sysUserInfo.headimg}}" mode="aspectFill"></image>
+    </view>
+    <view class="top10_info">
+      <view class="top10_name">{{sysUserInfo.userName}}</view>
+      <view class="top10_num">趣味号:{{sysUserInfo.userNo}}</view>
+    </view>
+  </view>
+  <view class="top10_right">
+    <view class="top10_point my_point">{{sysUserInfo.integral}}</view>
+    <view class="top10_desc">成长积分</view>
+  </view>
+</view>
+
+<view class="empty vote_empty" wx:if='{{tab==2}}'></view>
+<view class="empty" wx:if='{{tab!=2}}'></view>
+<tabbar tabbar="{{tabbar}}" wx:if='{{tab!=2}}'></tabbar>

@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "tabbar": "../../component/tabbar/tabbar",
+    "my-poster": "../../component/posterIndex/posterIndex"
+  }
+}

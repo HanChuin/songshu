@@ -1,0 +1,114 @@
+page {
+  background-color: white;
+}
+
+.top1style {
+  width: 100%;
+  height: 200rpx;
+  background-color: rg
+}
+
+.top1img {
+  width: 100%;
+  opacity: 0.1;
+}
+
+.top1grey {
+  position: absolute;
+  top: 0;
+  height: 320rpx;
+  width: 100%;
+  background-color: rgba(0 , 0, 12, 0.3)
+} 
+
+.top2botttxt{
+  color: #F08200;
+  font-size: 30rpx;
+}
+
+
+
+.top2style {
+  position: absolute;
+  top: 0;
+  display: flex;
+  width: 750rpx;
+  flex-direction: row;
+  padding-left: 25rpx;
+  padding-right: 25rpx;
+  padding-top: 25rpx;
+  padding-bottom: 25rpx;
+  z-index: 9999;
+}
+
+.top2right {
+  width: 508rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.top2righttitle {
+  color: white;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+
+.top2style .banner{
+  border-radius: 5rpx;
+  width: 180rpx;
+  margin-right: 12rpx;
+}
+
+
+.top2bott {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   height: 120rpx;
+   align-items: flex-end;
+}
+
+.top2bottimg {
+  width: 140rpx;
+  height: 140rpx;
+}
+
+
+.body1style {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-top-left-radius: 18rpx;
+  border-top-right-radius: 18rpx;
+  z-index: 99;
+}
+.top2bri {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 140rpx;
+  height: 140rpx;
+}
+
+.top2bri2 {
+  position: absolute;
+  width: 140rpx;
+  height: 140rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.top2bri21 {
+  color: white;
+  font-size: 36rpx;
+}
+
+.top2bri22 {
+  color: white;
+  font-size: 20rpx;
+}

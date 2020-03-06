@@ -1,0 +1,38 @@
+<!--pages/index/city/city.wxml-->
+<view class="page">
+
+  <view class="nowCity">您正在浏览：
+    <text>{{city}}</text>
+  </view>
+
+  <view class="locate">
+    <view class="cityTitle">定位</view>
+    <view class="lctView" wx:if="{{cityData}}">
+      <image class="cityImg" src="{{cityData.img}}" mode="widthFix"></image>
+      <view class="cityName">{{cityData.name}}</view>
+    </view>
+    <view wx:else>
+      请手动选择城市
+    </view>
+  </view>
+
+  <view class="hotCity">
+    <view>热门城市</view>
+    <block>
+      <view class="cityView" wx:for="{{cityList}}" wx:key="{{index}}" data-id="{{item.id}}" data-name="{{item.name}}" bindtap="changeCity">
+        <image class="cityImg" src="{{item.img}}" mode="widthFix"></image>
+        <view class="cityName">{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+
+  <view class="willCity">
+    <view>即将开通</view>
+    <block>
+      <view class="cityView" wx:for="{{cityList2}}" wx:key="{{index}}">
+        <image class="cityImg" src="{{item.img}}" mode="widthFix"></image>
+        <view class="cityName">{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+</view>

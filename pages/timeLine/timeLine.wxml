@@ -1,0 +1,215 @@
+
+<!-- 顶部信息 -->
+<view class="topview">
+  <!-- 用户信息 -->
+  <view class="userinfoview">
+    <!-- 头像 + 徽章 -->
+    <view class="headview">
+      <view class="headlogoview" wx:if="{{loginState}}">
+        <image src="{{sysUserInfo.headImg}}?imageView2/0/interlace/1/q/10|imageslim" class="headimg" mode="aspectFill" lazy-load="true" ></image>
+      </view>
+      <view wx:else class="headlogoview">
+        <image src="/img/tabMidAct.png" class="headimg"></image>
+      </view>
+      <image src="{{levellogo}}" wx:if="{{loginState}}" class="userlevellog"></image>
+    </view>
+
+    <!-- 昵称 + 数组 -->
+    <view class="infoview">
+      <!-- nick -->
+      <view class="nickview" bindtap="navigationToEdit" wx:if="{{loginState}}">
+        <view class="nicktview">
+          <text class="nicknametxt">{{sysUserInfo.userName}}</text>
+          <text class="desctext">感谢您为公益事业作出的贡献</text>
+        </view>
+        <image src="/img/icon_edit.png" class="editimg"></image>
+      </view>
+
+      <view wx:else class="nickview">
+        <view class="nicktview">
+          <text class="nicknametxt" bindtap="loginAction">点击登录</text>
+        </view>
+      </view>
+
+      <!-- 数组 -->
+      <view class="dataview">
+        <view class="dataitemview">
+          <view class="datalabelview">
+            <text class="txt1">{{sysUserInfo.times || 0}}</text>
+            <text class="txt2">h</text>
+          </view>
+          <text class="datatiptxt">公益时长</text>
+        </view>
+        <view class="dataitemview">
+          <view class="datalabelview">
+            <text class="txt1">{{sysUserInfo.integral || 0}}</text>
+          </view>
+          <text class="datatiptxt">成长积分</text>
+        </view>
+        <view class="dataitemview">
+          <view class="datalabelview">
+            <text class="txt1">0/10</text>
+          </view>
+          <text class="datatiptxt">公益勋章</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 模块按钮 -->
+
+  <view class="{{styleType==1 ? 'modelview' : 'modelview2'}}" >
+    <view class="modelitemview" bindtap="navigateToFamily">
+      <text>松鼠家人</text>
+      <image src="/img/icon_grzx_1.png" mode="aspectFit" class="modefimg1"></image>
+    </view>
+    <view class="modelitemview" bindtap="navigationToFaq">
+      <text>玩转松鼠</text>
+      <image src="/img/icon_grzx_game.png" mode="aspectFit" class="modefimg2"></image>
+
+    </view>
+    <view class="modelitemview" bindtap="navigateToAbout">
+      <text>关于我们</text>
+      <image src="/img/icon_grzx_family.png" mode="aspectFit" class="modefimg3"></image>
+
+    </view>
+    <view class="modelitemview" bindtap="navigationToCard">
+      <text>松鼠卡包</text>
+      <image src="/img/icon_grzx_card_grey.png" mode="aspectFit" class="modefimg4"></image>
+
+    </view>
+  </view>
+</view>
+
+
+<!-- 时间轴数据 -->
+<view class="{{styleType==1 ?  'timelineview':'timelineview2'}}">
+
+  <view class="timelinedateview" >
+    <view class="labelview">
+      <text class="txt1">公益时光机</text>
+      <text class="txt2">回忆您在松鼠趣邦的温暖故事</text>
+    </view>
+  </view>
+
+  <view class="infosview" wx:for="{{infos}}" wx:key='{{index}}' data-data="{{item}}">
+    <!-- 活动 -->
+    <view class="activityview" wx:if="{{item.type== 1}}">
+      <view class="leftview">
+        <view class="iconview">
+          <image src="/img/logo_activity.png" class="iconimg1" mode="widthFix"></image>
+        </view>
+        <view class="topitemView">
+          <text class="date" style='margin-left: 20rpx;'>{{item.dateStr}}</text>
+          <image src="/img/icon_location.png" class="location"></image>
+          <text class="address" style='margin-left: 10rpx;'>{{item.address}}</text>
+        </view>
+      </view>
+      <view class="rightView">
+        <view class="timeAxis"></view>
+        <view class="titleB">
+          <view class="avtiTitle">
+            <text class="activitiesTitle">{{item.title}}</text>
+          </view>
+          <view class="activitiesView">
+            <scroll-view scroll-x='true' style='width:100%;white-space:nowrap'>
+            <block wx:for="{{item.imgs}}" wx:key='{{index}}' wx:for-item="one" wx:for-index="i">
+           <image  wx:if="{{i==0}}" bindtap="navigateToActivity" class="firstView"  src="{{one}}?imageMogr2/auto-orient/thumbnail/!20p/blur/1x0/quality/50|imageslim" lazy-load="true"  data-id="{{item.recordId}}">
+            </image>
+            <image wx:else bindtap="catimgAction" data-imgs="{{item.imgs}}" data-src="{{one}}"  class="secondView" src="{{one}}?imageView2/1/w/400/h/400/q/50|imageslim" lazy-load="true" mode="aspectFill"></image> 
+            </block>
+            </scroll-view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+    <!-- 兑换 -->
+    <view class="activityview" wx:if="{{item.type== 3}}" bindtap="navigateToOrder" data-id="{{item.recordId}}">
+      <view class="leftview">
+        <view class="iconview">
+          <image src="/img/logo_shoper.png" class="iconimg" mode="widthFix"></image>
+        </view>
+        <view class="topitemView">
+          <text class="date" style='margin-left: 20rpx;'>{{item.dateStr}}</text>
+          <image src="/img/icon_location.png" class="location"></image>
+          <text class="address" style='margin-left: 10rpx;'>{{item.address}}</text>
+        </view>
+      </view>
+      <view class="rightView">
+        <view class="timeAxis"></view>
+        <view class="titleB">
+          <view class="shoperTitle">
+            <text class="activitiesTitle">今日您兑换{{item.title}}一份</text>
+            <text class="activitiesPoint">-{{item.point}}积分</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!--  -->
+    <view class="activityview" wx:if="{{item.type== 2}}">
+      <view class="leftview">
+        <view class="iconview">
+          <image src="/img/logo_mission.png" class="iconimg" mode="widthFix"></image>
+        </view>
+        <view class="topitemView">
+          <text class="date" style='margin-left: 20rpx;'>{{item.dateStr}}</text>
+          <image src="/img/icon_location.png" class="location"></image>
+          <text class="address" style='margin-left: 10rpx;'>线上任务</text>
+        </view>
+      </view>
+      <view class="rightView">
+        <view class="timeAxis"></view>
+        <view class="titleB">
+          <view class="shoperTitle">
+            <text class="activitiesTitle">完成“{{item.title}}”任务</text>
+            <text class="activitiesPoint">+{{item.point}}积分</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 勋章  -->
+    <view class="activityview" wx:if="{{item.type== 4}}">
+      <view class="leftview">
+        <view class="iconview">
+          <image src="/img/tab3.png" class="iconimg" mode="widthFix"></image>
+        </view>
+        <view class="topitemView">
+          <text class="date" style='margin-left: 20rpx;'>{{item.dateStr}}</text>
+        </view>
+      </view>
+      <view class="rightView">
+        <view class="timeAxis"></view>
+        <view class="titleB">
+          <view class="dutyTitle">
+            <text class="activitiesTitle">获得“创意达人”勋章</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 注册 -->
+    <view class="activityview" wx:if="{{item.type== 5}}">
+      <view class="leftview">
+        <view class="iconview">
+          <image src="/img/icon_markOne.png" class="iconimg" mode="widthFix"></image>
+        </view>
+        <view class="topitemView">
+          <text class="date" style='margin-left: 20rpx;'>{{item.dateStr}}</text>
+        </view>
+      </view>
+      <view class="title">
+        <view class="dutyTitle">
+          <text class="activitiesTitle">开始您的公益之旅</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="{{isIphoneX?'bottomview1':'bottomview2'}}"></view>
+
+<tabbar tabbar="{{tabbar}}"></tabbar>

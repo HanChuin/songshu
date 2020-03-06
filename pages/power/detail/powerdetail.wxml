@@ -1,0 +1,35 @@
+<!-- 商品图片 -->
+<view class='white'> 
+  <image src='{{info.banner}}' class='goodsimg'  lazy-load="true" ></image>
+</view>
+<!-- 商品详情 -->
+
+
+<view class='infoview'>
+  <text class='name'>{{info.title}}</text>
+</view>
+
+<!--合作机构-->
+<view class='shopperinfo' bindtap='click'>
+    <view class='dsa'>
+      <view class='www'>
+        <image class='logo'src='{{info.partner.logo}}' ></image>
+      </view>
+      <view class='ooo'>
+        <text class='xxx'>{{info.partner.name}}</text>
+        <text class='aaa' >{{info.partner.title}}</text>
+      </view>
+    </view>   
+    <view class='bbb'  >
+    <!-- <text>商家详情</text> -->
+      <image class='understand'src='https://url.songshuqubang.com/micsoft/img/more.png' ></image>
+    </view>
+</view>
+<view class='richContent'>
+      <import src="/libs/wxParse/wxParse.wxml" />
+      <template is="wxParse" data="{{wxParseData:powerDetailInfo.nodes}}" />
+</view>
+
+<view class='bottomBox' >
+  <button class='bt' bindtap='convert'>{{btnStr}}</button>
+</view>

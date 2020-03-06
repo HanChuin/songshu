@@ -1,0 +1,39 @@
+/* component/select/select.wxss */
+
+.contain-style {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.item-noselect{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  color: #333;
+  width: 200rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  border-radius: 15rpx;
+  margin-right: 15rpx;
+  border: 1px #f0f0f0 solid;
+}
+
+.item-select {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px orange solid;
+  border-radius: 15rpx;
+  background-color: #fff;
+  color: #333;
+  width: 200rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  margin-right: 15rpx;
+}

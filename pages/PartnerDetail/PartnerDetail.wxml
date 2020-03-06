@@ -1,0 +1,10 @@
+<!--pages/PartnerDetail/PartnerDetail.wxml-->
+<image src="{{list.logo}}" mode="widthFix"></image>
+<view>{{list.name}}</view>
+<view>{{list.title}}</view>
+<image src="{{list.headImg}}" mode="widthFix"></image>
+
+<import src="../../libs/wxParse/wxParse.wxml" />
+<template is="wxParse" data="{{wxParseData:detail.nodes}}" />
+
+<image wx:for='{{imgList}}' wx:key='{{index}}' src="{{item}}" mode="widthFix"></image>

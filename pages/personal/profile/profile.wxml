@@ -1,0 +1,56 @@
+<!--pages/personal/profile/profile.wxml-->
+<view class='avatar-wrap' bindtap='changeHeadAction'>
+  <text>头像</text>
+  <view class='fr'>
+    <image class='avatar' src='{{headUrl}}'></image>
+    <image class="more-arrow" src='https://url.songshuqubang.com/micsoft/img/more.png'></image>
+  </view>
+</view>
+
+<view class='hr'></view>
+<view class='ul'>
+
+  <view class='li'>
+    <text>姓名</text>
+    <input type='text' class='contact-person' value='{{name}}' bindinput='nameInput' placeholder='请输入学生信息'></input>
+  </view>
+
+  <view class='hr'></view>
+
+    <view class='li'>
+    <text>性别</text>
+    <view>
+      <text class='schooltxt'>{{sex}}</text>
+      <image class="more-arrow" src='https://url.songshuqubang.com/micsoft/img/more.png'></image>
+    </view>
+  </view>
+
+  <view class='hr'></view>
+
+  <view class='li'>
+    <text>学校</text>
+    <view>
+      <text class='schooltxt'>{{school}}</text>
+      <image class="more-arrow" src='https://url.songshuqubang.com/micsoft/img/more.png'></image>
+    </view>
+  </view>
+
+  <view class='hr'></view>
+
+  <view class='li'>
+    <text>身份证</text>
+    <input type='text' class='contact-person' value='{{idcard}}' bindinput='idCardInput' placeholder='请输入身份证'></input>
+  </view>
+
+  <view class='hr'></view>
+
+  <view class='li'>
+    <text>个人说明</text>
+    <input type='text' class='contact-person' value='{{instruction}}' bindinput='instructInp' placeholder='请输入个人说明'></input>
+  </view>
+
+</view>
+
+<view class='footer' wx:if="{{isedit}}">
+  <button class='btn' bindtap='saveInfoAction'>保存修改</button>  
+</view>

@@ -1,0 +1,34 @@
+<!--pages/changeHead/changeHead.wxml-->
+
+
+<view class="box" wx:if="{{tab==0}}">
+  <view class="head" bindtap="fixHead">
+    <text>头像</text>
+    <view class="fix">
+      <image class="headImg" mode="aspectFill" src="{{head}}"></image>
+    </view>
+  </view>
+  <view class="name" bindtap="tofixName">
+    <text>昵称</text>
+    <view class="fix">
+      <text>{{name}}</text>
+    </view>
+  </view>
+  <view class="phone">
+    <text>手机号</text>
+    <view class="fix" bindtap="{{phone?'':'bdphone'}}">
+      <text>{{phone?phone:'绑定手机号'}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="box2" wx:if="{{tab==1}}">
+  <input value='{{name}}' bindinput='fixName'></input>
+  <text bindtap="finish">完成</text>
+</view>
+
+
+<view class="btnview" bindtap="logoutAction">
+  <text>退出登录</text>
+</view>
+

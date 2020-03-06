@@ -1,0 +1,203 @@
+/* pages/order/order.wxss */
+page {
+  background-color: #ebebeb;
+}
+.order-wrapper {
+  width: 100%;
+}
+.header {
+  background-color: #fff;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  height: 200rpx;
+  border: 1px solid #eee;
+  border-radius: 10rpx;
+  box-shadow: 0 0 1px 1px #eee;
+  display: flex;
+  align-items: center;
+  padding: 15rpx;
+  box-sizing: border-box;
+}
+.header > image {
+  width: 170rpx;
+  height: 170rpx;
+  margin-left: 20rpx;
+}
+.header .rightContent {
+  width: 50%;
+  height: 170rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 60rpx;
+}
+.header .rightContent .title {
+  font-size: 30rpx;
+  color: #333;
+}
+.header .rightContent .waste {
+  display: flex;
+  align-items: center;
+}
+.header .rightContent .price {
+  font-size: 30rpx;
+  color: #666;
+}
+.header .rightContent .price:nth-child(2) {
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+.header .rightContent .num {
+  font-size: 25rpx;
+  color: #999;
+}
+.hr {
+  width: 100%;
+  height: 8px;
+  margin-top: 20rpx;
+}
+.shouhuoInfo {
+  display: flex;
+  padding: 0 20rpx;
+  align-items: center;
+  justify-content:  space-between;
+  box-sizing: border-box;
+  background-color: #fff;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+   border: 1px solid #eee;
+  border-radius: 10rpx;
+  box-shadow: 0 0 1px 1px #eee;
+
+}
+.shouhuoInfo image {
+  width: 60rpx;
+  height: 60rpx;
+}
+.shouhuoInfo .rightBox {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 15rpx 0;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+.shouhuoInfo .rightBox-none {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 15rpx 0;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.shouhuoInfo .rightBox .shrInfo {
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shouhuoInfo .rightBox .shrInfo > text {
+  color: #666;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+.addressBox {
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+.addressBox > text {
+  color: #666;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+.addressBox > .addressInput {
+  width: 80%;
+}
+.addressText {
+  color: #888;
+  width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bottomBox {
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 -5rpx 1rpx 1rpx #eee; 
+}
+.bottomBox .priceBox {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20rpx;
+}
+.bottomBox .priceBox text {
+  font-size: 30rpx;
+  color: #333;
+}
+.bottomBox .priceBox text:nth-child(2){
+  font-size: 35rpx;
+  color: #ff8100;
+  margin-left: 15rpx;
+}
+.bottomBox .bt {
+  height: 70%;
+  width: 60%;
+  background-color: #ff8100;
+  line-height: 60rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 35rpx;
+  border-radius: 15px;
+}
+.bottomBox .bt::after {
+  border: 0;
+}
+.bottomBox .bt:active {
+  opacity: 0.8;
+}
+
+
+/* .radio-group {
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+.radio {
+    display: block;
+    border-top: 1px solid #ddd;
+    padding: 5px;
+} */
+
+
+.radio-group {
+    border-bottom: 1px solid #ddd;
+}
+.radio {
+    display: block;
+    border-top: 1px solid #ddd;
+    padding: 5px;
+    /* flex-direction: column */
+}
+.choose{
+  display: flex;
+  flex-direction: column
+}

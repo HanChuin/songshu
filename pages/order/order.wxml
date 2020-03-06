@@ -1,0 +1,92 @@
+<!--pages/order/order.wxml-->
+<view class='order-wrapper'>
+ 
+ 
+  <view class='header'>
+    <image src='{{cover}}' mode="aspectFit"></image>
+    <view class='rightContent'>
+      <text class='title'>{{goodsName}}</text>
+      <view class='waste'>
+        <!-- <text class='price'>¥ {{amount}}</text> -->
+        <text class='price'>积分: {{point}}</text>
+      </view>
+      <text class='num'>数量: x{{num}}</text>
+    </view>
+  </view>
+
+  
+  <view class='shouhuoInfo' hidden='{{type}}' bindtap='selectAddress'>
+    <image src='https://url.songshuqubang.com/micsoft/img/position2-icon.png'></image>
+    <view class='rightBox' wx:if="{{name.length>=1}}">
+      <view class='shrInfo'>
+        <!-- <text>收货人:</text> -->
+        <text class='addressText'>{{name}}</text>
+      </view>
+      <view class='addressBox'>
+        <!-- <text>收货地址:</text> -->
+        <text class='addressText'>{{address}}</text>
+      </view>
+      <view class='shrInfo'>
+        <!-- <text>手机号:</text> -->
+        <text class='addressText'>{{tel}}</text>
+      </view>
+    </view>
+    <view class='rightBox-none' wx:else>
+      <text>请选择收货地址</text>
+    </view>
+    <image src='https://url.songshuqubang.com/micsoft/img/more.png'></image>
+  </view>
+
+<view class="section_gap" hidden='{{both}}'>
+  <radio-group class="radio-group" >
+    <view class='choose'>
+      <radio class="radio"  bindtap='click' >
+        <text>邮寄方式</text>
+      </radio>
+      <view class='shouhuoInfo' hidden='{{action}}' bindtap='selectAddress'>
+    <image src='https://url.songshuqubang.com/micsoft/img/position2-icon.png'></image>
+    <view class='rightBox' wx:if="{{name.length>=1}}">
+      <view class='shrInfo'>
+        <!-- <text>收货人:</text> -->
+        <text class='addressText'>{{name}}</text>
+      </view>
+      <view class='addressBox'>
+        <!-- <text>收货地址:</text> -->
+        <text class='addressText'>{{address}}</text>
+      </view>
+      <view class='shrInfo'>
+        <!-- <text>手机号:</text> -->
+        <text class='addressText'>{{tel}}</text>
+      </view>
+    </view>
+    <view class='rightBox-none' wx:else>
+      <text>请选择收货地址</text>
+    </view>
+    <image src='https://url.songshuqubang.com/micsoft/img/more.png'></image>
+  </view>
+    </view>
+                
+    <view>
+      <radio class="radio" hidden='{{both}}' bindtap='onclick'>
+        <text>面提方式</text>
+      </radio>
+    </view>
+                
+  </radio-group>
+</view>
+
+  <!-- <view>
+      <text>兑换二维码</text>
+  </view>  -->
+
+</view>
+
+ <view class='bottomBox'>
+  <view class='priceBox'>
+    <text>积分:</text>
+    <text> {{point}}</text>
+  </view>
+  <view class='bt' bindtap='toOrderDetail'>
+    提交订单
+  </view>
+</view>

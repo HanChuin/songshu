@@ -1,0 +1,46 @@
+/* pages/orderDetail/orderDetail.wxss */
+
+.order-detail {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.picture{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+}
+.canvasStyle{
+  width: 300rpx;
+  height: 300rpx;
+}
+.order-detail .li {
+  width: 90%;
+  margin: 0 auto;
+  height: 60rpx;
+  padding: 15rpx;
+  border-top: 1px solid #eee;
+  line-height: 60rpx;
+}
+.order-detail .li:nth-last-child(1) {
+  border-bottom: 1px solid #eee;
+}
+.orderNo {
+  font-size: 30rpx;
+  color: #666;
+}
+.orderName {
+  font-size: 35rpx;
+  color: #333;
+}
+.amount {
+  color: coral;
+  font-size: 30rpx;
+}
+.state {
+  color: red;
+}

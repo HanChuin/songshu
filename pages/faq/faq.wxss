@@ -1,0 +1,116 @@
+/* pages/faq/faq.wxss */
+page {
+  background-color: #fff;
+}
+
+.top {
+  background: #F08200;
+  color: #fff;
+  display: flex;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+}
+.topLeft {
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+}
+
+.topLeft .name {
+  font-size: 34rpx;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.topLeft .desc {
+  font-size: 24rpx;
+  margin-top: 8rpx;
+}
+.topRight {
+  width: 180rpx;
+}
+.content {
+  color: #000;
+  margin: 0 30rpx 0 30rpx;
+}
+.content .title {
+  font-size: 30rpx;
+  margin: 40rpx 0 20rpx 0;
+}
+.content .tab {
+  display: flex;
+}
+
+.content .tab .tab-item {
+  width: 125rpx;
+  font-size: 24rpx;
+  border-right: 1px solid #d8d8d8; 
+  border-bottom: 1px solid #d8d8d8; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content .tab .tab-item .icon {
+  width: 45rpx;
+  height: 45rpx;
+  margin-bottom: 5rpx;
+}
+
+.tittle {
+  font-size: 20rpx;
+  color: #010101;
+}
+
+.content .tab .tab-items {
+  width: 75%;
+  font-size: 24rpx;
+}
+.content .tab .tab-items .items{
+  border-bottom: 1px solid #d8d8d8; 
+  padding: 20rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.con {
+  border-top: 1px solid #d8d8d8; 
+
+}
+
+.gcover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.cover {
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  width: 100%;
+  height: 700rpx;
+}
+.cover-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 25rpx;
+}
+.cover-title {
+  color: #000;
+  font-size: 31rpx;
+}
+.cover-top image {
+  width: 40rpx;
+}
+
+.cover-answer {
+  color: #000;
+  border-top: 1px solid #888682;
+  padding: 25rpx;
+}

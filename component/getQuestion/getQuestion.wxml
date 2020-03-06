@@ -1,0 +1,25 @@
+<!--component/getQuestion/getQuestion.wxml-->
+<view QType='{{QuesType}}' ItemAns='{{Items}}'>
+
+  <!-- 单选 -->
+  <radio-group wx-if='{{QType==1}}'>
+      <label class='answer-items' wx-for='{{ItemAns}}' wx-key='{{index}}'>
+        <radio class='answer-box' value="" checked="" data-id='' color='#ef8c16' />
+        <text class='answer-item'>{{item}}</text>
+      </label>
+  </radio-group>
+
+  <!-- 复选 -->
+  <checkbox-group wx-if='{{QType==2}}' bindchange="checkboxChange">
+      <label class='answer-items'>
+        <checkbox class='answer-box' value="" checked="" data-id='' color='#ef8c16' />
+        <text class='answer-item'></text>
+      </label>
+  </checkbox-group>
+
+  <!-- 填空 -->
+  <view wx-if='{{QType==3}}' class='section'>
+    <textarea class='answer-area'></textarea>
+  </view>
+
+</view>

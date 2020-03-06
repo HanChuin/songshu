@@ -1,0 +1,49 @@
+<view class='box-style'>
+  <view class="box-title">
+    <image mode="widthFix" src="https://url.songshuqubang.com/micsoft/img/titleIcon.png"></image>公益项目组</view>
+</view>
+
+<!-- 所有项目 -->
+<view class="swiper">
+
+  <swiper circular="true" duration="500" interval="3000" previous-margin='20rpx' next-margin='490rpx' bindchange="swiperChange" easing-function='linear' style='height:340rpx'>
+
+    <block wx:for='{{list}}' wx:key='{{index}}'>
+      <swiper-item item-id='{{index}}'>
+        <!-- 大图 -->
+        <image class='animaltion {{nowIdx==index?"animaltion-active":""}}' lazy-load="true" src='{{item.img2}}' data-index='{{index}}' style='height:336rpx;width:240rpx' bindtap="toActivityDetail" data-index='{{index}}' />
+      </swiper-item>
+
+    </block>
+  </swiper>
+
+  <view class="projectNew" wx:for='{{list}}' wx:key='{{index}}' wx:if='{{nowIdx==index}}'>
+
+    <text class="projecttitlestyle">《{{item.name}}》</text>
+    <view class="projectAction" bindtap="toActivityDetail" data-index='{{index}}'>
+      <text style="color:white">立即查看</text>
+    </view>
+  </view>
+</view>
+
+<view class="keystyle">
+  <view class='keyitemstyle {{item.id == nowIdx?"select":"" }}' wx:for='{{keyWords}}' bindtap="toActivityDetail" data-index="{{item.id}}" wx:key="{{index}}">
+    <text>{{item.key}}</text>
+  </view>
+
+</view>
+
+<view class="space"></view>
+<view class="box-title">
+  <image mode="widthFix" src="https://url.songshuqubang.com/micsoft/img/titleIcon.png"></image>近期活动
+</view>
+
+<!-- 关键词 -->
+
+<block wx:for="{{activities}}" wx:key='{{index}}' wx:for-item='item'>
+  <activityItem data-index="{{index}}" coverUrl="{{item.cover}}" title="{{item.title}}" subTitle="{{item.subTitle}}" btnStr="{{item.btnStr}}" btnEnable="{{item.state}}" bindclientEvent="toastAction"></activityItem>
+</block>
+
+<view class="bottomstyle"></view>
+
+<tabbar tabbar="{{tabbar}}"></tabbar>

@@ -1,0 +1,7 @@
+<!--pages/news/news.wxml-->
+<view class="page-body">
+  <view class="page-section page-section-gap">
+    <web-view src="{{webUrl}}"></web-view>
+  </view>
+</view>
+

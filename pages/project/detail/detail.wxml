@@ -1,0 +1,36 @@
+<!--banner-->
+<image src="{{info.img1}}" class="bannerstyle" mode="widthFix"></image>
+
+
+<view class="containstyle">
+  <view class="favstyle">
+    <view class="favicon" bindtap="favAction">
+      <image wx:if="{{favState == 1}}" src="/img/alnotice_white.png" class="favimg"></image>
+      <image wx:else src="/img/nonotice.png" class="favimg"></image>
+    </view>
+  </view>
+
+
+  <view class="labelstyle">
+    <view class="skstyle"></view>
+    <text class="projecttxtstyle">{{info.name}}</text>
+    <view class="rightstyle">
+      <text>关注度：{{info.favNum}}</text>
+      <text>参与度：{{info.catNum}}</text>
+    </view>
+  </view>
+
+  <view class="labelstyle">
+    <text class="descstyle">{{info.desc2}}</text>
+  </view>
+
+  <view class="label2style">
+    <view class="skstyle"></view>
+    <text class="projecttxtstyle">项目活动</text>
+  </view>
+
+
+  <block wx:for="{{activities}}" wx:key='{{index}}' wx:for-item='item'>
+    <activityItem  data-index="{{index}}" coverUrl="{{item.cover}}" title="{{item.title}}" subTitle="{{item.subTitle}}" btnStr="{{item.btnStr}}" btnEnable="{{item.state}}" bindclientEvent="toastAction"></activityItem>
+  </block>
+</view>

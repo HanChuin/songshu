@@ -1,0 +1,225 @@
+/* pages/personal/worker/worker.wxss */
+page {
+  background-color: #f7f7f7;
+}
+.usern {
+  font-size: 20rpx;
+}
+
+/* 头部 */
+.topinfoview {
+  width: 100%;
+  height: 362rpx;
+  /* background: #FF902E; */
+  position: relative;
+}
+.headerbgi {
+  width: 100%;
+  position: absolute;
+  top: -50rpx;
+  z-index: -1;
+}
+
+/* 头像框 */
+.head {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  margin:  0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 已登录状态 */
+
+/* 头像 */
+.avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+
+/* 个人信息 */
+.middle {
+  display: flex;
+  color: #fff;
+  /* width: 33%; */
+  flex-wrap: wrap;
+  height: 30rpx;
+  text-align: center;
+  margin-top: 12rpx;
+  font-size: 24rpx;
+}
+.middle .name{
+  width: 100%;
+}
+.middle .name view {
+  white-space: nowrap;
+  width: 35%;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+.pointAndVip{
+  display: flex;
+  width: 20%;
+  margin: 12rpx auto 0;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.pointAndVip .line {
+  height: 54rpx;
+  width: 1px;
+  background: #fff;
+}
+
+/* 未登录状态 */
+.l1_btn {
+  color: #fff;
+}
+.tologinAndToregist {
+  margin: 40rpx auto;
+  display: flex;
+  width: 80%;
+  justify-content: center;
+}
+
+.empty {
+  width: 30rpx;
+}
+
+/* 9宫格 */
+.weui_bcb{
+  width: 658rpx;
+  height: 620rpx;
+  background: #fff;
+  box-shadow: 0 10rpx 48rpx rgba(5, 5, 5,0.3);
+  margin: -100rpx auto 0;
+  border-radius: 20rpx;
+}
+.weui-grids {
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  margin-top: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 20rpx;
+}
+
+.weui-grid {
+  position: relative ;
+  float: left;
+  padding: 20px 20px;
+  width: 33.3333%;
+  box-sizing: border-box;
+}
+
+.weui-gridBtn {
+  position: relative ;
+  float: left;
+  padding: 0;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.weui-grid:before,.weui-gridBtn:before {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  color: #D9D9D9;
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+  -webkit-transform: scaleX(0.5);
+          transform: scaleX(0.5);
+}
+.weui-grid:after,.weui-gridBtn:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  color: #D9D9D9;
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+}
+.weui-grid:active,.weui-gridBtn:active {
+  background-color: #ECECEC;
+}
+.weui-gridBtn::after{
+  border: 0;
+}
+.weui-grid__icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #ff734b;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.weui-grid__icon image {
+  display: block;
+  width: 50%;
+  height: 50%;
+}
+.weui-grid__icon + .weui-grid__label {
+  margin-top: 1px;
+}
+.weui-grid__label {
+  display: block;
+  text-align: center;
+  /* font-weight: bold; */
+  color: #6F6F6F;
+  font-size: 11px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.weui-gridBtn .weui-grid__label {
+  /* padding: 0; */
+  /* margin: 0; */
+  height: 26rpx;
+  line-height: 26rpx;
+}
+
+
+.nologin {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-top: 30rpx;
+  align-items: center;
+  color: white;
+}
+
+.loginbtn {
+  width: 320rpx;
+  height: 80rpx;
+  margin-top: 30rpx;
+  border: white 1px solid;
+  border-radius: 40rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}

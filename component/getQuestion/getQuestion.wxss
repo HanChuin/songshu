@@ -1,0 +1,28 @@
+/* component/getQuestion/getQuestion.wxss */
+
+.answer-items {
+  display: flex;
+  width: 630rpx;
+  height: 82rpx;
+  border: 1px solid #dedede;
+  border-radius: 15rpx;
+  box-shadow: 0 0 42rpx rgba(9,9,9, .04);
+  margin: 20rpx 0 40rpx;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+
+textarea.answer-area{
+  height: 200rpx;
+  display: flex;
+  width: 630rpx;
+  border: 1px solid #dedede;
+  border-radius: 15rpx;
+  box-shadow: 0 0 42rpx rgba(9,9,9, .06);
+  padding: 10rpx;
+}
+
+.answer-items-check{
+  border: 1px solid #ef8c16;
+}

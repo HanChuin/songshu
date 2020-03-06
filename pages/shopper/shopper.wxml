@@ -1,0 +1,24 @@
+<view class='white'>
+  <image src='{{shoperInfo.headImg}}' class='goodsimg'></image>
+</view>
+
+<!-- 商家信息，name，简介 -->
+<view class='shop'>
+  <view class='shopper'>
+    <!-- <text class='lange'>{{shoperInfo.name}}</text> -->
+    <!-- <text class='langu'>{{shoperInfo.title}}</text> -->
+  </view>
+</view>
+
+<!--去掉的地图view class="page-section page-section-gap">
+  <map style="width: 100%; height: 150px;" latitude="{{shoperInfo.lat}}" longitude="{{shoperInfo.lng}}" markers="{{markers}}" bindtap='localtion'></map>
+</view-->
+<view class='black'>
+    <view class='richContent'>
+    <!-- <text class='detailtitle'>了解详情</text> -->
+    <import src="/libs/wxParse/wxParse.wxml" />
+    <!-- <view class='blank'></view> -->
+    <template is="wxParse" data="{{wxParseData:shopperDetail.nodes}}" />
+  </view>
+</view>
+  

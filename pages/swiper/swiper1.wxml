@@ -1,0 +1,31 @@
+
+<view animation="{{imgAnimation5}}"  class="{{currentIndex == 5 ? 'viewStyle' : 'viewStyle2'}}" style="z-index:{{hidden5}}">
+  <image src="https://url.songshuqubang.com/image/wyds/cover/img_qietu5.png" mode="widthFix" class="imgSty">
+  </image>
+</view>
+
+
+<view animation="{{imgAnimation4}}" class="{{currentIndex == 4 ? 'viewStyle' : 'viewStyle2'}}" style="z-index:{{hidden4}}">
+  <image src="https://url.songshuqubang.com/image/wyds/cover/img_qietu4.png" mode="widthFix" class="imgSty">
+  </image>
+</view>
+
+<view animation="{{imgAnimation3}}" class="{{currentIndex == 3 ? 'viewStyle' : 'viewStyle2'}}" style="z-index:{{hidden3}}">
+  <image src="https://url.songshuqubang.com/image/wyds/cover/img_qietu3.png" mode="widthFix" class="imgSty">
+  </image>
+</view>
+
+<view animation="{{imgAnimation2}}"  class="{{currentIndex == 2 ? 'viewStyle' : 'viewStyle2'}}" style="z-index:{{hidden2}}">
+  <image src="https://url.songshuqubang.com/image/wyds/cover/img_qietu2.png" mode="widthFix" class="imgSty">
+  </image>
+</view>
+
+<view animation="{{imgAnimation1}}" class="{{currentIndex == 1? 'viewStyle' : 'viewStyle2'}}" style="z-index:{{hidden1}}">
+  <image src="https://url.songshuqubang.com/image/wyds/cover/img_qietu1.png" mode="widthFix" class="imgSty">
+  </image>
+</view>
+
+
+<button bindtap="startAnimationOne">开始</button>
+
+<button bindtap="recoveAnimation">恢复</button>

@@ -1,0 +1,11 @@
+<!--pages/order/order-result/order-result.wxml-->
+<view class='orderResult'>
+  <view class='middleBox' wx:if="{{orderData.trade_state==='SUCCESS'}}">
+    <icon type='success' size='80' class='iconSty'></icon>
+    <text>{{content}}</text>
+  </view>
+  <view class='middleBox' wx:else>
+    <icon type='cancel' size='80' class='iconSty'></icon>
+    <text>{{content}}</text>
+  </view>
+</view>

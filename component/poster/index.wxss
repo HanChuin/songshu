@@ -1,0 +1,64 @@
+.commodity_screen2 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.685);
+  overflow: hidden;
+  z-index: 9999;
+  color: #fff;
+}
+
+ 
+/* 海报 */
+
+.poste_box {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.poste_content {
+  width: 85%;
+  margin: auto;
+  overflow: hidden;
+  margin-bottom: 50%;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  z-index: 9999;
+  border-radius: 25rpx;
+}
+
+ 
+
+.close-poste {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  position: fixed;
+  bottom: 10rpx;
+  z-index: 9999;
+  text-align: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+.btn {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FF7200;
+}
+.canvasView{
+  border-radius:25rpx
+}

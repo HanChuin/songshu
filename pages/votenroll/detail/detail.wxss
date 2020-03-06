@@ -1,0 +1,130 @@
+/* pages/votenroll/detail/detail.wxss */
+.box {
+  background: #fff;
+  padding-top: 32rpx;
+  margin-bottom: 130rpx;
+  /* font-family:  */
+}
+.title {
+  color: #000;
+  font-size: 36rpx;
+  letter-spacing: 25;
+  text-align: center;
+}
+
+.idAticketAvote{
+  display: flex;
+  justify-content: space-around;
+  margin: 20rpx auto 28rpx;
+  width: 90%;
+  align-items: center;
+}
+.line {
+  width: 1px;
+  height: 54rpx;
+  background: #878787;
+}
+.idBox,.ticketBox,.voteBox {
+  text-align: center;
+}
+.idBox view,.ticketBox view,.voteBox view {
+  font-size: 32rpx;
+  letter-spacing: 25;
+  color: #FFAE4E;
+  line-height: 40rpx;
+}
+.idBox text,.ticketBox text,.voteBox text {
+  font-size: 28rpx;
+  letter-spacing: 25;
+  color: #999;
+  line-height: 40rpx;
+}
+
+.desTitle{
+  color: #FFAE4E;
+  font-size: 32rpx;
+  letter-spacing: 25;
+  margin-top: 18rpx;
+  text-align: center;
+}
+.descript {
+  color: #929292;
+  margin: 26rpx 28rpx 30rpx;
+}
+
+.foot {
+  display:flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 130rpx;
+  width: 100%;
+  background: #fff;
+}
+
+
+.sharestyle {
+  width: 288rpx;
+  height: 64rpx;
+  background: #FF982A;
+  border-radius: 32rpx;
+  text-align: center;
+  line-height: 64rpx;
+  color: #fff;
+  font-size: 32rpx;
+  margin: 28rpx auto 0;
+}
+.sharestyle::after {
+  border: 0;
+}
+
+.foot view {
+  width: 288rpx;
+  height: 64rpx;
+  background: #FF982A;
+  border-radius: 32rpx;
+  text-align: center;
+  line-height: 64rpx;
+  color: #fff;
+  font-size: 32rpx;
+  margin: 28rpx auto 0;
+}
+
+
+/* cover */
+.cover{
+  position: fixed;
+  z-index: 333;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.33);
+}
+
+/* 投票完成框 */
+.toast{
+  position: fixed;
+  z-index: 666;
+  top: 50%;
+  left: 212rpx;
+  width: 328rpx;
+  height: 210rpx;
+  margin-top: -105rpx;
+  border-radius: 15rpx;
+  background: #fff;
+  text-align: center;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* align-content: center; */
+}
+.toast image {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 34rpx auto 26rpx;
+}
+.toast view {
+  color: #000;
+  font-size: 36rpx;
+  letter-spacing: 25;
+}

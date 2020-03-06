@@ -1,0 +1,36 @@
+<!--pages/faq/faq.wxml-->
+<view class='faq'>
+  <view class='top'>
+    <view class='topLeft'>
+      <view class='name'>Hi,{{userName?userName:"请登录"}}</view>
+      <view class='desc'>已为您定制如下问题</view>
+    </view>
+    <image src='https://url.songshuqubang.com/micsoft/img/faqICON.png' mode='widthFix' class='topRight'></image>
+  </view>
+  <view class='content'>
+    <view class='title'>猜您想问</view>
+
+    <view class='con'>
+
+      <view class='tab' wx:for='{{problem}}' wx:for-item='problem' wx:key='{{index}}'>
+        <view class='tab-item'>
+          <image src='{{problem.icon}}' mode='widthFix' class='icon'></image>
+          <view class='tittle'>{{problem.name}}</view>
+        </view>
+        <view class='tab-items'>
+          <view class='items' wx:for='{{problem.ans}}' wx:key='{{index}}' data-tag='{{item.type}}' data-id='{{item.id}}' bindtap='showAns'>{{item.question}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='gcover' wx:if='{{idShowAns}}' bindtap='close'></view>
+
+<view class='cover' wx:if='{{idShowAns}}'>
+  <view class='cover-top'>
+    <text class='cover-title'>{{thisQues.ques}}</text>
+    <image src='https://url.songshuqubang.com/micsoft/img/close.png' mode='widthFix' bindtap='close'></image>
+  </view>
+  <view class='cover-answer'>{{thisQues.ans}}</view>
+</view>

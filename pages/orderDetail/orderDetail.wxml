@@ -1,0 +1,14 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<view class='order-detail'>
+  <text class='li orderNo'>订单编号：{{orderNo}}</text>
+  <text class='li orderName'>{{orderName}}</text>
+  <text class='li' wx:if="{{amount>0}}">金额：<text class='amount'>¥ {{amount}}</text></text>
+  <text class='li point'>积分：{{point}}</text>
+  <text class='li time'>创建时间：{{time}}</text>
+  <text class='li payType'>种类：{{payType == '1'?'商品':'活动'}}</text>
+  <text class='li'>订单状态：<text class='state'>{{state}}</text></text>
+  <text wx:if="{{code.length>0}}" class='li'>兑换码：<text class='amount'>{{code}}</text></text>
+  <view class='picture'>
+    <canvas class='canvasStyle' canvas-id='canvas' bindlongtap='saveInAlumbAction' ></canvas>
+  </view>
+</view>

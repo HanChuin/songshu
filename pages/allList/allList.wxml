@@ -1,0 +1,28 @@
+<view class="allList" wx:for='{{list}}' wx:key='{{index}}' bindtap='goodsDetail' data-data="{{item}}">
+    <view class="activities">
+      <image class="activityImg" src="{{item.cover}}"></image>
+      <view class="activityInfo">
+        <view class="activtyFirst">
+          <text class="activNum">{{item.point}}</text>
+          <view class="activPoints">
+            <text class="activName">公益</text>
+            <text class="activName">积分</text>
+          </view>
+        </view>
+
+        <view class="activSecond">
+          <text class="activTitleOne">{{item.partnerName}}</text>
+          <text class="activTitleTwo">{{item.goodsName}}</text>
+        </view>
+
+        <view class="activThird">
+          <text class="goodsNum">本月仅剩余：{{item.goodsNum}}/份</text>
+          <text class="goodsNum">已兑换数量：{{item.count}}/份</text>
+        </view>
+        <view class="space"></view>
+        <view class="activFour">
+          <text class="change">立即兑换</text>
+        </view>
+      </view>
+    </view>
+  </view>

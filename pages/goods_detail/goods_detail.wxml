@@ -1,0 +1,47 @@
+<!-- 商品图片 -->
+<view class='white'>
+  <image src='{{goodsDetail.imgs+imgSet}}' class='goodsimg' lazy-load="true"></image>
+</view>
+<!-- 商品详情 -->
+<view class='infoview'>
+  <text class='name'>{{goodsDetail.goodsName}}</text>
+  <view class='l2'>
+    <view class='l2content'>
+      <view class='fr'>数量：</view>
+      <view class='convert-num'>{{goodsDetail.goodsNum}}</view>
+    </view>
+
+    <view class='l2content'>
+      <view class='fr'>积分：</view>
+      <view class='amount-wrap'>
+        <image src='https://url.songshuqubang.com/micsoft/img/point.png'></image>
+        <view class='amount'>{{goodsDetail.point}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--合作机构-->
+<view class='shopperinfo' bindtap='click'>
+  <view class='dsa'>
+    <view class='www'>
+      <image class='logo' src='{{goodsDetail.partner.logo}}'></image>
+    </view>
+    <view class='ooo'>
+      <text class='xxx'>{{goodsDetail.partner.name}}</text>
+      <text class='aaa'>{{goodsDetail.partner.title}}</text>
+    </view>
+  </view>
+  <view class='bbb'>
+    <!-- <text>商家详情</text> -->
+    <image class='understand' src='https://url.songshuqubang.com/micsoft/img/more.png'></image>
+  </view>
+</view>
+<view class='richContent'>
+  <import src="/libs/wxParse/wxParse.wxml" />
+  <template is="wxParse" data="{{wxParseData:goodsDetailInfo.nodes}}" />
+</view>
+
+<view class='bottomBox'>
+  <button class='bt' bindtap='convert'>立即兑换</button>
+</view>

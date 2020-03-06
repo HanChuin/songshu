@@ -1,0 +1,111 @@
+<view class='mainpage' style='background:#fff;'>
+
+  <view class='topview'>
+    <!-- banner背景图片 -->
+    <image class='banner' src='https://url.songshuqubang.com/micsoft/img/org1.png' mode='widthFix'></image>
+    <!-- banner logo -->
+    <image src='https://url.songshuqubang.com/micsoft/img/org3.png' class='banner-logo' mode='widthFix'></image>
+  </view>
+
+  <view class='middleview'>
+    <!-- 中间登录注册 -->
+    <view class='middleContent'>
+      <!-- 登录和注册tab切换 -->
+      <view class='middleTab'>
+        <view class='tabLeft {{loginORregister ? "tabClass" : ""}}' bindtap='tabLogin'>登录</view>
+        <view class='tabRight {{!loginORregister ? "tabClass" : ""}}' bindtap='tabRegister'>注册</view>
+      </view>
+
+      <!-- 登录注册tab切换内容 -->
+      <view class='tabContent'>
+
+        <!-- 登录内容 -->
+        <block wx:if='{{loginORregister}}'>
+
+          <!-- 验证码登录 tab内容 -->
+          <view class='inputBox'>
+            <view class='inputRow'>
+              <input class="rowinput" type="number" maxlength='11' bindinput="mobileInp" value='{{loginData.mobile}}' placeholder='请输入手机号' placeholder-class='placeholder'></input>
+              <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class='phoneBtn' data-type='login'>获取手机号</button>
+            </view>
+            <view class='inputRow' wx:if='{{loginFlag}}'>
+              <input class="rowinput" type="password" bindinput="passwordInp" value='{{loginData.password}}' placeholder='请输入密码' placeholder-class='placeholder'></input>
+            </view>
+            <view class='inputRow' wx:else>
+              <input class="rowinput2" type="number" bindinput="msgInp" value='{{loginData.msg}}' placeholder='请输入验证码' placeholder-class='placeholder'></input>
+              <text class='yzm' catchtap='sendMes' wx:if="{{canSendL}}">发送</text>
+              <text class='yzm timing' wx:else>{{sendTimeL}}</text>
+            </view>
+          </view>
+
+          <!-- 切换密码登录 -->
+          <view class='loginWay'>
+            <view class='message' wx:if="{{loginFlag}}" catchtap='changeLoginWay'>
+              <image class='message-icon' src='https://url.songshuqubang.com/micsoft/img/login-icon.png'></image>
+              <text class='text'>使用短信登录</text>
+            </view>
+            <view class='message' wx:else catchtap='changeLoginWay'>
+              <image class='message-icon' src='https://url.songshuqubang.com/micsoft/img/login-icon.png'></image>
+              <text class='text'>使用密码登录</text>
+            </view>
+
+            <text class='text forget' bindtap='forgetPwdAction'>忘记密码?</text>
+          </view>
+
+        </block>
+
+
+        <!-- 注册内容 -->
+        <block wx:else>
+          <view class='inputBoxReg'>
+            <view class='inputRowReg'>
+              <input type="number" maxlength='11' bindinput="phoneInp" value='{{registerData.phone}}' placeholder='手机号' placeholder-class='placeholder'></input>
+              <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class='phoneBtn' data-type='reg'>获取手机号</button>
+            </view>
+            <view class='inputRowReg'>
+              <input class="rowinput" type="text" maxlength='11' bindinput="yzmInp" value='{{registerData.yzm}}' placeholder='验证码' placeholder-class='placeholder'></input>
+              <text class='sendCode' catchtap='sendCode' wx:if="{{canSendR}}">发送</text>
+              <text class='sendCode timing' wx:else>{{sendTimeR}}</text>
+            </view>
+            <view class='inputRowReg'>
+              <input type="password" bindinput="passwordInpR" value='{{registerData.password}}' placeholder='密码' placeholder-class='placeholder'></input>
+            </view>
+          </view>
+        </block>
+      </view>
+
+      <!-- 登录按钮 -->
+      <button wx:if='{{loginORregister}}' class='loginBt' bindtap='toLogin'>登录</button>
+
+      <!-- 注册按钮 -->
+      <button wx:else class='registerBt' bindtap='toRegister'>{{isBind?'立即绑定':'注册'}}</button>
+    </view>
+
+    <!-- 微信一键登录 -->
+    <block wx:if='{{loginORregister}}'>
+      <view class='wxlogin' catchtap="prevent">
+        <view class='wxLoginLTL'>
+          <view class='wxlogin-line'></view>
+          <view class='wxlogin-text'>微信一键登录</view>
+          <view class='wxlogin-line'></view>
+        </view>
+        <button bindgetuserinfo="getUserInfoCallback" class='wxloginBt' open-type='getUserInfo'>
+          <image src="https://url.songshuqubang.com/micsoft/img/wx.png" class='wxlogin-icon'></image>
+        </button>
+      </view>
+    </block>
+
+    <!-- 服务条款 -->
+    <block wx:else>
+      <view class='rules'>
+        <image class="rulestyle" wx:if="{{agreeRule}}" src="https://url.songshuqubang.com/micsoft/img/check-box-outline.png" bindtap='aggreeRules'></image>
+        <image class="rulestyle" wx:else src="https://url.songshuqubang.com/micsoft/img/check-box-outline-bl.png"  bindtap='aggreeRules'></image>
+        <view>
+          <text class='rules-text'>我已同意</text>
+          <text class='rules-text2' bindtap='tocatAction'>服务条款</text>
+        </view>
+      </view>
+    </block>
+  </view>
+
+</view>

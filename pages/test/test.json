@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "my-poster": "/component/poster/index",
+    "poster-activity": "/component/posterActivity/posterActivity"
+  }
+}

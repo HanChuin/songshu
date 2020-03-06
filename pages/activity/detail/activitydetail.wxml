@@ -1,0 +1,30 @@
+<!-- * 新活动详情页面 -->
+
+ 
+<!-- 顶部最底层 -->
+<view  class='top1style'>
+  <image src="{{conver}}" class='top1img' mode="widthFix"></image>
+  <view class="top1grey"></view>
+</view>
+
+<!--顶部标题-->
+<view class="top2style">
+ <image src="https://url.songshuqubang.com/image/temp/icon_test_hb.png" class="banner" mode="widthFix"></image>
+  <view class="top2right">
+    <text class="top2righttitle">弄潮儿立头-张家港海事局参观活动题目</text>
+    <view class="top2bott">
+      <text class="top2botttxt">12.00</text>
+
+      <view class='top2bri'>
+      <image src="https://url.songshuqubang.com/image/micsoft/activity/WechatIMG65.png" class="top2bottimg" mode="widthFix"></image>
+      <view class="top2bri2">
+        <text class="top2bri21">20</text>
+        <text class="top2bri22">积分</text>
+      </view>
+      </view>
+
+    </view>
+  </view>
+</view>
+
+<view class="body1style"></view>

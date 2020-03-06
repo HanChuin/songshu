@@ -1,0 +1,39 @@
+<!--pages/personal/apply/apply.wxml-->
+<view class='tabview'>
+  <view class='tabitem {{indexTap==1?"tabitem-active":""}}' bindtap='changeIndex' data-indextap='1'>
+    正在进行中
+  </view>
+  <view class='tabitem {{indexTap==3?"tabitem-active":""}}' bindtap='changeIndex' data-indextap='3'>
+    已经结束
+  </view>
+</view>
+
+<view class='activity-wrap' wx:if="{{activities.length>0}}">
+  <block wx:for="{{activities}}" wx:key='{{index}}' wx:for-item='item'>
+    <view class='activity' data-record="{{item.recordId}}" data-id='{{item.id}}' data-state="{{item.activityState}}" data-end='{{item.endDays}}' data-ssid='{{item.standardId}}' data-stuid='{{item.studentId}}' bindtap='toActivityDetail'>
+
+      <view class='itemview'>
+        <image class='bigimg' src='{{item.cover+imgSet}}' mode="widthFix"></image>
+        <view class='btnview'>
+          <view class='leftview'>
+            <text class='titlett'>{{item.name}}</text>
+            <text class='datetxtdd'>{{item.distanceStr}}</text>
+            <view class='l2'>
+              <image src='https://url.songshuqubang.com/micsoft/img/clock-icon.png'></image>
+              <view>
+                <text>{{item.activeTime}}</text>
+              </view>
+            </view>
+          </view>
+          <view class='addbtn' wx:if="{{indexTap==1}}">
+            <text>查看</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class='nodataView' wx:else>
+  <image src='https://url.songshuqubang.com/micsoft/img/nodata.png' class='nodataImg'></image>
+  <text class='nodataText'>暂时没有任何项目</text>
+</view>

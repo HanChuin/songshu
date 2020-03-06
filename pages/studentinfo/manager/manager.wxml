@@ -1,0 +1,41 @@
+<!-- 资料管理 -->
+
+<view class='activity-wrap' wx:if="{{users.length > 0 }}">
+
+  <view wx:for="{{users}}" wx:key="*this" class='user_card {{!item.isStudent?"mb":""}}'>
+
+    <view class='notStudent' wx:if="{{!item.isStudent}}"  bindtap='editUser' data-index='{{index}}' data-id='{{item.id}}'>
+
+      <image src='{{item.headImg}}' mode='aspectFill' class='card_head'></image>
+      <view class='ns-items'>
+        <view class='name'>{{item.name}}</view>
+        <image bindtap='editUser' data-index='{{index}}' data-id='{{item.id}}' src='https://url.songshuqubang.com/micsoft/img/icon_edit.png' class='card_img' mode='widthFix'></image>
+      </view>
+      <text class='idNo'>{{item.idNo}}</text>
+
+    </view>
+
+    <view class='isStudent' wx:else  bindtap='editUser' data-index='{{index}}' data-id='{{item.id}}'>
+      <view class='isSI'>
+        <image src='{{item.headImg}}' mode='aspectFill' class='card_head'></image>
+        <view class='studentItem'>
+          <view class='name'>{{item.name}}</view>
+          <view>{{item.school.name}}</view>
+        </view>
+      </view>
+      <image bindtap='editUser' data-index='{{index}}' data-id='{{item.id}}' src='https://url.songshuqubang.com/micsoft/img/icon_edit.png' class='card_img' mode='widthFix'></image>
+    </view>
+
+  </view>
+</view>
+
+<view class='activity-wrap2' wx:else>
+  <view class='empty-view'>
+    <image src='https://url.songshuqubang.com/micsoft/img/icon_empty_data.png' class='empty_icon'></image>
+    <text>您还未添加未成年人和成年人信息</text>
+  </view>
+</view>
+
+<view class='btns-wrap'>
+  <button class='btn_add' bindtap='addUser' size="default">新增</button>
+</view>

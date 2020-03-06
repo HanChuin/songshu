@@ -1,0 +1,10 @@
+<!--pages/question/feedbacks/feedbacks.wxml-->
+<view class='box'>
+  <view class='hr'></view>
+  <image src='https://url.songshuqubang.com/micsoft/img/yesone.png' class='yes' mode="widthFix"></image>
+
+  <view class='twoView'>
+    <text class='question'>问卷提交成功，感谢您的参与</text>
+  </view>
+
+</view>

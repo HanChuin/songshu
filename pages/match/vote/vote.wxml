@@ -1,0 +1,38 @@
+<!--顶部滑动-->
+<scroll-view scroll-x="true" class="topscrollview">
+  <view wx:for="{{itemArray}}" class="itemstyle" bindtap="chooseItemAction" data-index="{{index}}">
+    <view class="item1">
+      <text class="label1{{currentIndex == index ? 'active' : ''}}">{{item.label}}</text>
+    </view>
+    <view class="item1{{currentIndex == index ? 'active' : ''}}">
+      <text class="label2{{currentIndex == index ? 'active' : ''}}">{{item.group}}</text>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="searchview">
+  <input class="inputview" bindinput="changeSearchKey"></input>
+  <view class="search-btn" bindtap="searchAction">
+    <text>搜索</text>
+  </view>
+</view>
+
+<view class="lstview" wx:for="{{projectList}}" wx:key="*this">
+  <view class="containview">
+    <video src="{{item.furl}}" class="videoview" wx:if="{{currentIndex < 3}}"></video>
+    <image wx:else src="{{item.furl}}?imageView2/0/q/75|imageslim" bindtap="handleDetail" data-id="{{item.id}}" class="videoview" mode="aspectFill"></image>
+    <view class="voteNumView">
+      <text class="voteNumTxt">已投 {{item.voteNum}} 票</text>
+    </view>
+  </view>
+  <view class="txtview" bindtap="handleDetail" data-id="{{item.id}}">
+    <view class="txtview-left">
+      <text class="item-name-txt">{{item.worksName}}</text>
+      <text class="item-des-txt">{{item.worksDescription}}</text>
+    </view>
+    <view class="txtview-right">
+      <image src="https://url.songshuqubang.com/micsoft/micsoft/icon_tp_2.png" class="item-tp-img" mode="widthFix" wx:if="{{item.voteState == 1}}"></image>
+      <image src="https://url.songshuqubang.com/micsoft/micsoft/icon_tp_1.png" class="item-tp-img" mode="widthFix" wx:else></image>
+    </view>
+  </view>
+</view>

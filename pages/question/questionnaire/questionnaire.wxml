@@ -1,0 +1,44 @@
+<!--pages/questionnaire/questionnaire.wxml-->
+
+<!-- 头部图片 -->
+<view class='head'>
+  <!-- <view class='title'>标题标题标题标题标题</view> -->
+  <image class='headerImg' src='{{actList.cover}}' mode='widthFix'></image>
+</view>
+
+<!-- 调查问卷问题 -->
+<form bindsubmit='formSubmit' bindreset='formReset' >
+
+  <view class='ques' wx:for='{{list}}' wx:key='{{index}}' wx:for-item='ansItem'>
+
+    <view class='question-title'>Q{{index +1}}:{{ansItem.title}}</view>
+
+    <!-- 单选 -->
+    <radio-group wx:if='{{ansItem.type==1}}' bindchange="radioChange">
+      <label class='answer-items' wx:for='{{ansItem.answer}}' wx:key='{{index}}' bindtap='radioTap' data-id='{{item.id}}' data-fId='{{ansItem.id}}'>
+        <radio class='answer-box' value="" checked="{{item.checked}}"  color='#ef8c16' />
+        <text class='answer-item'>{{item.answer}}</text>
+      </label>
+    </radio-group>
+
+    <!-- 复选 -->
+    <checkbox-group data-id='{{ansItem.id}}' wx:if='{{ansItem.type==2}}' bindchange="checkboxChange">
+      <label class='answer-items' wx:for='{{ansItem.answer}}' wx:key='{{index}}' data-id='{{item.id}}' data-fId='{{ansItem.id}}' bindtap='checkboxTap'>
+        <checkbox class='answer-box' value="" checked="{{item.checked}}"  color='#ef8c16' />
+        <text class='answer-item'>{{item.answer}}</text>
+      </label>
+    </checkbox-group>
+
+    <!-- 填空 -->
+    <view wx:if='{{ansItem.type==3}}' class='section'>
+      <textarea class='answer-area' auto-height bindinput='textInput' data-fId='{{ansItem.id}}'></textarea>
+    </view>
+
+  </view>
+
+  <button class='nextBtn' form-type='submit'>提交</button>
+</form>
+
+<view wx:for='{{ansItems}}' wx:key='{{index}}'>
+  <view>{{item}}</view>
+</view>

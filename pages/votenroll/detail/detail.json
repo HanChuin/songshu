@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "my-poster": "/component/poster/index"
+  },
+  "navigationBarBackgroundColor": "#FFAE4E",
+  "navigationBarTitleText": "投票",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true
+}

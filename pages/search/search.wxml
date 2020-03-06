@@ -1,0 +1,72 @@
+<!--pages/search/search.wxml-->
+<view class='header'>
+  <view class='inp-wrap'>
+    <image class='search-icon' src='https://url.songshuqubang.com/search.png'></image>
+    <input class='inp' value='{{seachKey}}' placeholder="活动名称" bindinput="searchInp"></input>
+    <image class='cancel-btn' 
+    src='/img/cancel.png' 
+    bindtap='cleanSearchKeyClick'></image>
+  </view>
+  <text class='search-btn' bindtap='searchClick'>搜索</text>
+</view>
+<view class='hr'></view>
+<view class='content' wx:if="{{activities.length == 0}}">
+  <view class='top'>
+    <view>搜索历史</view>
+    <view class="clear-btn" bindtap='cleanClick'>
+      <image src='https://url.songshuqubang.com/micsoft/img/rubbish-icon.png'></image>
+      <text>清空</text>
+    </view>
+  </view>
+  <view class='history-wrap'>
+    <view 
+    wx:for="{{historyKeys}}" 
+    class='item' 
+    data-key='{{item}}'
+    bindtap='historyClick'
+    wx:key="{{index}}">{{item}}</view>
+  </view>
+</view>
+
+<!-- <view class='associate-wrap' wx:if="{{result.length >0}}">
+  <view class='li'>市中山公园亲子公益活动</view>
+  <view class='li'>市中山公园亲子公益活动</view>
+  <view class='li'>市中山公园亲子公益活动</view>
+  <view class='li'>市中山公园亲子公益活动</view>
+  <view class='li'>市中山公园亲子公益活动</view>
+</view> -->
+
+<!-- 活动 -->
+<view class='activity-wrap'>
+  <block wx:for="{{activities}}" wx:key='{{index}}' wx:for-item='item'>
+    <view class='activity'>
+      <image class='img' src='{{item.activityThumb}}'></image>
+      <view class='intro'>
+        <view class='l1'>
+          <text>{{item.name}}</text>
+          <text class='distance'>{{item.distanceStr}}</text>
+        </view>
+        <view class='l2'>
+          <image src='https://url.songshuqubang.com/micsoft/img/clock-icon.png'></image>
+          <view>
+            <text>活动时间</text>
+            <text>{{item.start}}</text>
+            <text>-</text>
+            <text>{{item.end}}</text>
+          </view>
+        </view>
+        <view class='l3'>
+          <view wx:for="{{item.tagLst}}" wx:for-item="curitem" wx:key='{{index}}'>{{curitem}}</view>
+        </view>
+        <view class='l4'>
+          <view>参加人数</view>
+          <view class='people-num'>{{item.inUsers}}</view>
+          <view class='deadline'>
+            还剩
+            <text class='day-num'>9</text>天报名截止
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

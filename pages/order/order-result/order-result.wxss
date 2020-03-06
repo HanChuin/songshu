@@ -1,0 +1,33 @@
+/* pages/order/order-result/order-result.wxss */
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.orderResult {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.orderResult .middleBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  height: 50%;
+}
+.orderResult .middleBox text {
+  font-size: 38rpx;
+  color: #666;
+  margin-top: 25rpx;
+}
+.price {
+  color: #333 !important;
+  font-size: 45rpx !important;
+  margin-top: 25rpx !important;
+}
+.iconSty {
+  margin-top: 330rpx;
+}

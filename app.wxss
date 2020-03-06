@@ -1,0 +1,169 @@
+/**app.wxss**/
+
+/* @import "/template/tabBar/tabBar.wxss"; */
+
+page {
+  width: 100%;
+  height: 100%;
+  color: #999;
+  font-family: SimHei;
+  font-size: 28rpx;
+  background-color: #f2f2f2;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+view, navigator, block {
+  box-sizing: border-box;
+}
+
+image {
+  width: 100%;
+  display: block;
+  border: none;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.hr {
+  width: 100%;
+  border: none;
+  height: 1px;
+  margin: 0 auto;
+  border-top: 1px solid #f2f2f2;
+}
+
+.more-arrow {
+  width: 32rpx;
+  height: 32rpx;
+  display: inline-block;
+  vertical-align: middle；;
+}
+.empty {
+  width: 100%;
+  height: 200rpx;
+}
+
+/* 图片置灰 */
+
+.gray {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+/* 页面图标 */
+
+.add-img-icon {
+  display: inline-block;
+  width: 154rpx;
+  height: 154rpx;
+}
+
+.add-icon {
+  display: inline-block;
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+}
+
+.positions2-icon {
+  display: inline-block;
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+}
+
+.clock-icon {
+  display: inline-block;
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+}
+
+.main-icon {
+  display: inline-block;
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+}
+
+.qr-code-icon {
+  display: inline-block;
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+}
+
+.delete-icon {
+  display: inline-block;
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+}
+
+.drawing {
+  background: #fff;
+  padding: 32rpx;
+}
+
+/* 展示星星评分 */
+
+.star {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  margin: 5rpx;
+  vertical-align: top;
+}
+
+/* 多张图片展示 */
+
+.img-item {
+  display: inline-block;
+  width: 154rpx;
+  height: 154rpx;
+  margin-right: 3rpx;
+  margin-bottom: 3rpx;
+}
+
+/* 默认padding值页面 */
+
+.page-wraper {
+  padding: 32rpx;
+}
+
+.box-cont {
+  padding: 0 20rpx;
+}
+
+.box-app {
+  width: 100%;
+  overflow: hidden;
+}
+
+.fix-iphonex-button {
+  bottom: 68rpx !important;
+}
+
+.fix-iphonex-button::after {
+  content: ' ';
+  position: fixed;
+  bottom: 0 !important;
+  height: 68rpx !important;
+  width: 100%;
+  background: #fff;
+}

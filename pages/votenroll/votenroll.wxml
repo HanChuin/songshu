@@ -1,0 +1,150 @@
+<!--pages/votenroll/votenroll.wxml-->
+<my-poster id="getPoster" bindmyevent="myEventListener" avater="{{imgUrl}}" codeimg="{{codeImg}}" productname="{{voteInfo.title}}" productSrc='{{productSrc}}' codeSrc='{{codeSrc}}'>
+</my-poster>
+<view class='cover' wx:if='{{showDialog}}' bindtap='cancelCover'></view>
+
+<view class='box'>
+
+  <!-- 顶部活动图片和说明 -->
+  <view class='topPicAndExplain'>
+    <image src='{{imgUrl}}' class='topPic' mode="widthFix"></image>
+  </view>
+
+  <!-- 活动说明 -->
+  <view class='topExplain' bindtap='activity'>活动说明</view>
+
+  <!-- 标题 -->
+  <view class='votenrollTitle'>{{voteInfo.title}}</view>
+
+  <!-- 投票倒计时 -->
+  <view class='voteCountDown'>
+    <view class='voteCountDownTitle'>距离投票结束</view>
+    <view class='voteCountDownTime'>
+      <!-- {{sec}} -->
+      <text>{{day}}</text>天
+      <text>{{hour}}</text>小时
+      <text>{{min}}</text>分钟
+    </view>
+  </view>
+
+  <!-- 统计栏 -->
+  <view class='voteStatistics'>
+    <view>
+      <text>{{personTotal}}</text>
+      <view>报名人数</view>
+    </view>
+    <view>
+      <text>{{ticketTotal}}</text>
+      <view>总票数</view>
+    </view>
+    <view>
+      <text>{{viewTotal}}</text>
+      <view>浏览次数</view>
+    </view>
+  </view>
+
+  <!-- 搜索栏 -->
+  <view class='voteSearch'>
+    <view class="section">
+      <input class='voteInput' placeholder="" value="{{searchKey}}" bindinput='search' />
+      <button size='mini' class='voteSearchBtn' bindtap='searchBtn'>搜索</button>
+    </view>
+  </view>
+
+  <!-- 最新与排行 -->
+  <view class='newAndAmong'>
+
+    <view class='newAndAmongTab'>
+      <view class='roteNewTab {{tabIndex?"":"tabIndex"}}' bindtap='changeTabClass' data-item='new'>最新</view>
+      <view class='roteAmongTab {{tabIndex?"tabIndex":""}}' bindtap='changeTabClass' data-item='among'>排行</view>
+    </view>
+
+    <!-- 最新 -->
+    <view wx:if='{{!tabIndex}}'>
+      <view class='roteNewItems'>
+        <view wx:for='{{floatNewListLeft}}' wx:key='{{index}}' class='roteNewItem' bindtap='goToVote' data-num='{{item.index}}' data-id='{{item.id}}'>
+          <image src='{{item.img}}' mode='widthFix'></image>
+          <view class='rniNameAndTickets'>
+            <view class='rniName'>{{item.name?item.name:'无名氏'}}</view>
+            <view class='rniTicket'>{{item.voteNum}}票</view>
+          </view>
+          <view class='rniRoteBtn' data-id='{{item.id}}' data-num='{{item.num}}'>投 票</view>
+        </view>
+      </view>
+
+      <view class='roteNewItems'>
+        <view wx:for='{{floatNewListRight}}' wx:key='{{index}}' class='roteNewItem' bindtap='goToVote' data-id='{{item.id}}'>
+          <image src='{{item.img}}' mode='widthFix'></image>
+          <view class='rniNameAndTickets'>
+            <view class='rniName'>{{item.name?item.name:'无名氏'}}</view>
+            <view class='rniTicket'>{{item.voteNum}}票</view>
+          </view>
+          <view class='rniRoteBtn' data-id='{{item.id}}' data-num='{{item.num}}'>投 票</view>
+        </view>
+      </view>
+    </view>
+    <!-- 排行 -->
+    <view class='roteAmongItem' wx:else>
+
+      <view class='amongTop3'>
+        <view wx:for='{{top3List}}' wx:key='{{index}}' class='voteListItem'>
+          <view class='top3IdAndName'>{{item.attendId}}号 {{item.name}}</view>
+          <view class='top3Ticket'>{{item.voteNum}}票</view>
+          <view class='top3Num'>{{item.index}}</view>
+          <image src='{{item.img}}' mode='aspectFill'></image>
+        </view>
+      </view>
+
+      <view class='amongTop7'>
+        <view wx:for='{{top7List}}' wx:key='{{index}}' class='top7ListItem'>
+          <view class='top7Left'>
+            <view class='top7Num'>{{index+4}}</view>
+            <image src='{{item.img}}' mode='aspectFill'></image>
+            <view class='top7Id'>{{item.attendId}}号</view>
+            <view class='top7Name'>{{item.name}}</view>
+          </view>
+
+          <view class='top7Right'>
+            <view class='top7Ticket'>{{item.voteNum}}票</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='clear'></view>
+
+  <!-- botBar -->
+  <view class='bottomBar'>
+    <view class='enter' bindtap='registration'>
+      <image src='https://url.songshuqubang.com/micsoft/img/xsbm.png' class='bottom-icon' mode='aspectFill'></image> 选手报名</view>
+    <button class='sharebtn' bindtap="getSharePoster" hover-class='btn_hover' wx:if='{{!fromShare}}'>
+      <view class='share'>
+        <image src='https://url.songshuqubang.com/micsoft/img/share1.png' class='bottom-icon' mode='aspectFill'></image>
+        <text>分享活动</text>
+      </view>
+    </button>
+
+    <button class='sharebtn' bindtap="goToHome" hover-class='btn_hover' wx:else>
+      <view class='share'>
+        <image src='/img/tab1_active.png' class='bottom-icon' mode='aspectFill'></image>
+        <text>回到首页</text>
+      </view>
+    </button>
+  </view>
+
+  <!-- 弹窗 -->
+  <view class="zan-dialog {{showDialog?'zan-dialog--show':''}}">
+    <view class="zan-dialog__mask" bindtap="toggleDialog" />
+    <view class="zan-dialog__container">
+      <view class='popup'>
+        <view class='popupTitle'>{{voteInfo.title}}</view>
+        <view class='richContent'>
+          <import src="/libs/wxParse/wxParse.wxml" />
+          <template is="wxParse" data="{{wxParseData:voteDetialInfo.nodes}}" />
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

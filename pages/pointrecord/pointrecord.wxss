@@ -1,0 +1,41 @@
+/* pages/pointrecord/pointrecord.wxss */
+@import '../index/index.wxss';
+page{
+  background: #fff;
+}
+
+.activity-wrap {
+  padding: 0 20rpx;
+}
+.activity {
+  margin-top: 20rpx;
+}
+.l1 {
+  font-size: 28rpx;
+  margin: 10rpx 0;
+  color: #4c4c4c;
+}
+.clock-icon {
+  width: 30rpx;
+  margin-right: 10rpx;
+}
+.l2 {
+  display: flex;
+  align-items: center;
+  margin: 10rpx 0;
+}
+.personNum {
+  display: flex;
+  align-items: center;
+}
+
+.activity .l4 .title {
+  margin-left: 0;
+}
+.activity .l4 .people-score {
+  font-size: 30rpx;
+}
+
+.l1,.l2,.l4 {
+  margin-left: 20rpx;
+}

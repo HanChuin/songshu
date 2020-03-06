@@ -1,0 +1,41 @@
+
+<image src="http://ssbbimg.tianyihui1688.com/image/vip/img_vip.png" class="vipimg" mode="widthFix"></image>
+
+<view class='infoview'>
+  <text  class='infotxt'>会员权益</text>
+  <text space="emsp">{{vipinfo}}</text>
+  <view class='infoitem'>
+    <image src='http://ssbbimg.tianyihui1688.com/icon/vip/icon_vip1.png' class="infoicon"></image>
+    <view class='infoitemtxt'>
+    <text class='infoitemtitile'>折扣优惠</text>
+    <view></view>
+    <text space="emsp">{{vipinfo1}}</text>
+    </view>
+  </view>
+  <view class='infoitem'>
+    <image src='http://ssbbimg.tianyihui1688.com/icon/vip/icon_vip3.png' class="infoicon"></image>
+
+    <view class='infoitemtxt'>
+    <text class='infoitemtitile'>积分兑换</text>
+    <view></view>
+    <text space="emsp">{{vipinfo2}}</text>
+    </view>
+  </view>
+  <view class='infoitem'>
+    <image src='http://ssbbimg.tianyihui1688.com/icon/vip/icon_vip4.png' class="infoicon"></image>
+
+    <view class='infoitemtxt'>
+    <text class='infoitemtitile'>生日关怀</text>
+    <view></view>
+    <text space="emsp">{{vipinfo3}}</text>
+    </view>
+  </view>
+  <view class='infoitem'>
+    <image src='http://ssbbimg.tianyihui1688.com/icon/vip/icon_vip2.png' class="infoicon"></image>
+    <view class='infoitemtxt'>
+    <text class='infoitemtitile'>服务优享</text>
+    <view></view>
+    <text space="emsp">{{vipinfo4}}</text>
+    </view>
+  </view>
+</view>

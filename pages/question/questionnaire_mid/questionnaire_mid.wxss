@@ -1,0 +1,12 @@
+/* pages/question/questionnaire_mid/questionnaire_mid.wxss */
+page{
+  background: #fff;
+}
+/* .startAnsBtn {
+  position: fixed;
+  bottom: 0;
+  background: #ef8c16;
+  color: #fff;
+  width: 80%;
+  margin: 0 10%;
+} */

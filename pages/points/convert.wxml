@@ -1,0 +1,74 @@
+<!--pages/points/convert.wxml-->
+<view class='container'>
+  <view class='section' wx:for="{{list}}" wx:key="index" data-data="{{item}}" bindtap='showMask'>
+    <view class='header'>
+      <view class='time-wrap'>
+        <view class='data'>{{item.createAt}}</view>
+        <!-- <view class='time'>12:21</view> -->
+      </view>
+      <view class='status' wx:if="{{item.orderStatus == 2}}">待取货</view>
+      <view class='status' wx:elif="{{item.orderStatus == 3}}">已取货</view>
+    </view>
+    <view class='hr'></view>
+    <view class='content'>
+      <image class='goods-img' src='{{item.goodsThumb}}'></image>
+      <view class='desc'>
+        <view class='l1'>
+          <view class='goods-name'>{{item.goodsName}}</view>
+          <view class='goods-num'>{{item.num}}台</view>
+        </view>
+        <view class='l2'>
+          <view class='goods-type'>{{item.goodsCategory}}</view>
+          <view class='amount-wrap'>
+            <view class='tit'>消耗</view>
+            <image class="gray" src='/img/cash-icon.png'></image>
+            <view class='amount'>{{item.goodsPoint}}</view>
+          </view>
+        </view>
+        <view class='l3 clearfix'>
+           <button class='receive-btn' wx:if="{{item.orderStatus == 2}}">取货</button>
+          <button class='detail-btn' plain="true" wx:elif="{{item.orderStatus == 3}}">详情</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='mask' hidden='{{maskIsShow}}'>
+  <view class='pop'>
+    <view class='head clearfix'>
+       <view class='pop-headline'>取货信息</view> 
+       <view class='pop-status' wx:if="{{maskData.orderStatus == 2}}">待取货</view>
+       <view class='pop-status' wx:elif="{{maskData.orderStatus == 3}}">已取货</view>
+    </view>
+    <view class='hr'></view>
+    <view class='ul'>
+      <view class='li clearfix' bindtap='chooseLocation'>
+        <image class="first-icon" src='https://url.songshuqubang.com/micsoft/img/position2-icon.png'></image>
+        <view class='tit'>取货地址</view>
+        <view class='addr tit2'>{{maskData.getAddress}}</view>
+        <image class='more-arrow' src='https://url.songshuqubang.com/micsoft/img/more.png'></image>
+      </view>
+      <!-- <view class='hr'></view> -->
+      <view class='li clearfix'>
+        <image class='first-icon' src='/img/tel-icon.png'></image>
+        <view class='tit'>联系电话</view>
+        <view class='tel tit2' data-phone="{{maskData.phone}}" bindtap='phoneCall'>{{maskData.phone}}</view>
+        <image class='tel2-icon' src='/img/tel-green-icon.png'></image>
+      </view>
+      <!-- <view class='hr'></view> -->
+    </view>
+    
+    <view class='main'>
+       <view class="title" wx:if="{{maskData.orderStatus == 2}}">—— 取货码 ——</view>
+      <view class='title' wx:elif="{{maskData.orderStatus == 3}}"><text>—— </text>取货码已失效 <text> ——</text></view>
+      <view class='code' wx:if="{{maskData.orderStatus == 2}}">{{maskData.getCode}}</view>
+      <view class='code-disabled' wx:elif="{{maskData.orderStatus == 3}}">{{maskData.getCode}}</view>
+      <view class='prompt'>
+        <view>取货时，请将取货码告知工作人员</view>
+        <view>请勿泄漏给其他人员</view>
+      </view>
+    </view>
+    <image class='cancel-btn' src='/img/cancel-white-icon.png' bindtap='closeMask'></image>
+  </view>
+</view>

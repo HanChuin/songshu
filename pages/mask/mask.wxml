@@ -1,0 +1,261 @@
+<scroll-view style='margin-top: 90rpx' scroll-y='true' scroll-into-view='{{toView}}'>
+
+  <view class="topView">
+    <view class="myInfo">
+      <!-- 头像 -->
+      <image class="userImg" src="{{sysUserInfo.headImg}}"></image>
+      <!-- 个人信息 -->
+      <view class="userInfo">
+        <text class="userName">{{sysUserInfo.userName?cutTopName:"请登录"}}</text>
+        <text class="userFunNum">趣味号：{{sysUserInfo.userNo?sysUserInfo.userNo:"???"}}</text>
+      </view>
+      <!-- 等级 -->
+      <view class="level">
+        <text class="levelName">{{nowLevel?nowLevel:"???"}}</text>
+      </view>
+      <image src="{{levellogo}}" class="levelImg"></image>
+      <!-- 积分成长 -->
+      <view class='points'>
+        <view class="pointsItem">
+          <view class="pointTab">
+            <text class="pointText">{{sysUserInfo.integral?sysUserInfo.integral:"???"}}</text>
+            <image src="../../img/pointLogo.png" style='width:28rpx;height:28rpx;margin-bottom:4rpx'></image>
+          </view>
+          <text class="pointText">可消费积分</text>
+        </view>
+        <view class="hr"></view>
+        <view class="pointsItem">
+          <text class="pointText">还差{{endIntegral-sysUserInfo.integral?endIntegral-sysUserInfo.integral:"???"}}分</text>
+          <text class="pointText">升级为{{nextLevel?nextLevel:"???"}}</text>
+        </view>
+      </view>
+      <!-- 积分账号 -->
+      <view class="pointAccount">
+        <view class="pointAccountItem">
+          <text class="pointAccountName"></text>
+          <text class="pointAccountText">尽请期待银行卡</text>
+        </view>
+        <view class="pointRule" bindtap="toPointCenter">
+          <text class="pointRuleText">公益积分规则</text>
+        </view>
+      </view>
+      <image src="../../img/badge.png" class="badge"></image>
+      <view class="bottom"></view>
+    </view>
+  </view>
+
+  <!-- 等级权益 -->
+  <view class="right">
+    <view class="box-title">
+      <image mode="widthFix" src="https://url.songshuqubang.com/micsoft/img/titleIcon.png"></image>等级权益</view>
+
+    <view class="powerstyle">
+
+      <image src="https://url.songshuqubang.com/image/icon/icon_left_333.png" mode="widthFix" class="powerimgstyle" bindtap="prolevelaction"></image>
+
+      <swiper class="powerswipestyle" circular="true" duration="true" easing-function="easeInOutCubic" current="{{curLevel}}">
+        <swiper-item wx:for="{{bannerUrls}}" wx:key='{{index}}'>
+          <view class="bigBox">
+            <view class="levelview">
+              <text class="levelRight">{{item.levelstr}}：等级权益</text>
+
+              <view class="pwallstyle" wx:if="{{index<2}}">
+                <view class="itemRight" wx:for="{{item.powers}}" wx:for-item="power">
+                  <view class="itemBox">
+                    <image class="itemHead" src="{{power.icon}}"></image>
+                    <view class="ge"></view>
+                    <view class="shop">
+                      <text class="good">{{power.title}}</text>
+                      <text class="shoper">商家：{{power.partner.name}}</text>
+                    </view>
+                    
+                   <image   src="https://url.songshuqubang.com/icon/power/sp{{index+1}}.png" class="levelbg"></image>
+                  </view>
+                </view>
+              </view>
+
+              <view class="pwallstyle" wx:else>
+                <view class="unlookstyle">
+                  <image src="/img/icon_lock_2c2c2c.png" class="unlockimg" mode="widthFix"></image>
+                  <text class="unlocktxt">It's a secret</text>
+                </view>
+              </view>
+            </view>
+            <view class="moreRight" id='hash1' data-index="{{index}}" bindtap="morepoweraction">
+              <text class="moreText">查收更多权益</text>
+            </view>
+          </view>
+        </swiper-item>
+      </swiper>
+    
+      <image src="https://url.songshuqubang.com/image/icon/icon_right_333.png" mode="widthFix" class="powerimgstyle" bindtap="nextlevelaction"></image>
+
+    </view>
+  </view>
+
+  <view class="right">
+    <view class="box-title">
+      <image mode="widthFix" src="https://url.songshuqubang.com/micsoft/img/titleIcon.png"></image>任务中心</view>
+    <view class="duty">
+      <view class="dutyBox">
+        <scroll-view scroll-x="true" style="width: 100%">
+          <view class="scroll">
+            <view wx:for='{{pointList}}' wx:key='{{index}}'>
+              <view class="dutyItem">
+                <view class="dutyItemBox">
+                  <view style='color:white;padding-left:10rpx'>
+                    <text style="font-size:20rpx;margin-right:3rpx;">+</text>
+                    <text style='font-size:40rpx;'>{{item.point}}</text>
+                    <text style="font-size:16rpx">积分</text>
+                  </view>
+                  <view class="dutyHead">
+                    <image src="{{item.img}}" class="markOne"></image>
+                  </view>
+                </view>
+                <view class="dutyBottom">
+                  <view class="dutybottom1">
+                    <text class="dutyText">{{item.title}}</text>
+                  </view>
+                  <button class="attention" bindtap="pointGo" data-tag="{{index}}" open-type="{{index==3?'share':''}}">
+                    {{item.finish?item.actionB:item.actionA}}
+                  </button>
+                </view>
+              </view>
+            </view>
+          </view>
+
+        </scroll-view>
+        <view class="sign">
+          <text class="sevenDay">七日签到领积分</text>
+          <view class="signView">
+            <view wx:for='{{7}}' wx:key='{{index}}'>
+              <view class="signBox" bindtap='signIn'>
+                <view class="{{item<signDay?'signViewA':'signViewB'}}">
+                  +
+                  <text style='font-size:30rpx;color:white'>{{item+1}}</text>
+                </view>
+                <text class="signText">{{item<signDay?'已领取':'未领'}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+
+    </view>
+  </view>
+
+  <view class="right">
+    <view class="box-title">
+      <image mode="widthFix" src="https://url.songshuqubang.com/micsoft/img/titleIcon.png"></image>成长排行</view>
+
+    <view class="growth">
+      <view class="growthLeft">
+
+        <view class="growthLeftFirst">
+          <text class="growthusername">HI! {{sysUserInfo.userName.length>5?cutName:sysUserInfo.userName}}</text>
+          <view class="growthLeftTitle">
+            <text class="growthLeftName">{{nowLevel?nowLevel:"???"}}</text>
+          </view>
+          <view class="growthLeftImgPlace">
+            <image src="{{levellogo}}" class="growthLeftImg"></image>
+          </view>
+
+        </view>
+        <text class="thanks">感谢您为公益事业作出的贡献！</text>
+        <view class="growthLeftSecond">
+          <view class="leftBox">
+            <text class="leftNum">{{myNum}}</text>
+            <text class="leftName">您的排名</text>
+          </view>
+          <view class="leftView">
+            <text class="leftUp">\t\t\t\t</text>
+          </view>
+
+          <view class="leftBox">
+            <text class="leftNum">{{sysUserInfo.point}}</text>
+            <!-- <text class="leftNum">{{sysUserInfo.point}}</text> -->
+            <text class="leftName">公益成长值</text>
+          </view>
+        </view>
+        <view class="growthLeftThird" bindtap="click" data-hash="hash1">
+          <text class="upupup">提升排名</text>
+        </view>
+        <view class="growthLeftForth" bindtap="changeTab">
+          <text class="upupup">我的排名</text>
+        </view>
+      </view>
+      <view class="growthRight">
+        <view class="rightFirst">
+          <view class="firstBox">
+            <image class="headImg" src="{{first.headImg}}"></image>
+            <view class="headInfo">
+              <text class="headName">{{first.userName}}</text>
+              <text class="headNum">趣味号：{{first.userNo}}</text>
+            </view>
+          </view>
+          <view class="secondBox">
+            <text class="place">NO.1</text>
+            <view class="havePlace">
+              <!-- <image src="../../img/pointLogo.png" style='width:28rpx;height:28rpx;margin-bottom:4rpx'></image> -->
+              <text class="haveNum">{{first.point}}</text>
+            </view>
+          </view>
+          <view class="thirdBox" bindtap="changeTab">
+            <text class="search">查看全部排名</text>
+          </view>
+        </view>
+        <view class="rightSecond">
+          <view class="upway">
+            <text class="upTitle">提升攻略</text>
+            <text class="upName">海量权益享不停</text>
+            <view class="goView" bindtap="click" data-hash="hash1">
+              <text class="goImedete">立即前往</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="activity">
+
+    <view class="box-title">
+      <image mode="widthFix" src="https://url.songshuqubang.com/micsoft/img/titleIcon.png"></image>积分商城</view>
+
+    <text class="activitiesMore" bindtap="skipAll">查看全部商品</text>
+  </view>
+  <view class="allList" wx:for='{{list}}' wx:key='{{index}}' bindtap='goodsDetail' data-data="{{item}}">
+    <view class="activities">
+      <image class="activityImg" src="{{item.seqimg}}"></image>
+      <view class="activityInfo">
+        <view class="activtyFirst">
+          <text class="activNum">{{item.point}}</text>
+          <view class="activPoints">
+            <text class="activName">公益</text>
+            <text class="activName">积分</text>
+          </view>
+        </view>
+
+        <view class="activSecond">
+          <text class="activTitleOne">{{item.partnerName}}</text>
+          <text class="activTitleTwo">{{item.goodsName}}</text>
+        </view>
+
+        <view class="activThird">
+          <text class="goodsNum">本月仅剩余：{{item.goodsNum}}/份</text>
+          <text class="goodsNum">已兑换数量：{{item.count}}/份</text>
+        </view>
+        <view class="space"></view>
+        <view class="activFour">
+          <text class="change">立即兑换</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</scroll-view>
+
+<tabbar tabbar="{{tabbar}}"></tabbar>

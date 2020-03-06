@@ -1,0 +1,7 @@
+/* pages/personal/forget/forget.wxss */
+
+@import '../../login/login.wxss';
+
+.inputRowReg {
+  width: 100%;
+}

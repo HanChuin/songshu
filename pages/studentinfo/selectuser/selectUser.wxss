@@ -1,0 +1,105 @@
+
+
+.activity-wrap {
+  width: 100%;
+  margin-bottom: 150rpx;
+}
+
+.user_card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  border:  1px solid #eee;
+  border-radius: 10rpx;
+  min-height: 100rpx;
+  padding: 40rpx;
+  background-color: #fff;
+}
+
+.card_head {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-right: 40rpx;
+}
+
+.card_userinfo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.card_parentinfo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.card_parentinfo text {
+  margin-bottom: 10rpx;
+  color: #333;
+  font-size: 36rpx;
+}
+
+.card_userinfo text {
+  margin-bottom: 10rpx;
+  color: #333;
+  font-size: 36rpx;
+}
+
+.card_options {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_img {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.btns-wrap {
+  display: flex;
+  height: 120rpx;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  position: fixed;
+  bottom: 10rpx;
+}
+
+.btn_add {
+  width: 80%;
+  background-color: #FF6801;
+  color: white;
+}
+
+.activity-wrap2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 150rpx;
+}
+
+.empty-view {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+  align-items: center;
+  width: 80%;
+  margin-top: 150rpx;
+  min-height: 300rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.empty_icon {
+  width: 190rpx;
+  height: 153rpx;
+  margin-bottom: 30rpx;
+}

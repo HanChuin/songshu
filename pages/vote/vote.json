@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "Tabbar": "/component/tabbar/tabbar",
+    "my-poster": "/component/poster/index"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "投票问卷"
+}

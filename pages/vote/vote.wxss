@@ -1,0 +1,138 @@
+/* pages/vote/vote.wxss */
+page {
+  background-color: #f4f5f6;
+}
+
+.tab {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #fff;
+}
+.tab-vote,.tab-ques {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  border-radius: 30rpx;
+}
+.tab-active {
+  color: #FF902E;
+}
+
+.search {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.search-wrap {
+  width: 92%;
+  margin: 0 auto;
+  height: 60rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchBar {
+  flex: 1;
+  padding-left: 20rpx;
+}
+
+.searchview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 97%;
+  padding-right: 20rpx;
+  /* padding-bottom: 5rpx; */
+  border: 1px solid rgb(224, 222, 222);
+  border-radius: 40rpx;
+}
+
+.searchimg {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+/* voteview */
+
+.voteview {
+  background: white;
+  padding-bottom: 30rpx;
+  padding-top: 20rpx;
+}
+
+.voteBox {
+  width: 678rpx;
+  padding-bottom: 10rpx;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  margin-bottom: 22rpx;
+  box-shadow: 0 22rpx 54rpx rgba(0, 0, 0, 0.18);
+  font-family: SimHei;
+  box-sizing: border-box;
+}
+.voteBoxImg{
+  width: 100%;
+  /* height: 294rpx; */
+  /* background: #ccc; */
+  border-radius: 10rpx;
+}
+.voteBoxTitle{
+  float: left;
+  font-size: 28rpx;
+  line-height: 30rpx;
+  color: #000;
+  font-weight: 400;
+  margin-left: 24rpx;
+  margin-top: 25rpx;
+}
+.voteBoxTicket{
+  font-size: 20rpx;
+  line-height: 30rpx;
+  color: #000;
+  font-weight: 400;
+  float: left;
+  clear: both;
+  margin-left: 24rpx;
+}
+
+.voteBoxTime{
+  float: right;
+  color: #555;
+  font-size: 20rpx;
+  margin-right: 10rpx;
+  font-weight: 400;
+}
+.question{
+  font-size: 50rpx;
+  color: black
+}
+
+.startAns {
+  width: 210rpx;
+  height: 40rpx;
+  background: #ec7803;
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+.startAns::after{
+  border: 0;
+}
+.ans-bot {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.startAns {
+  margin-right: 30rpx;
+  margin-top: 15rpx;
+  border-radius: 15rpx;
+}

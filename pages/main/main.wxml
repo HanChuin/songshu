@@ -1,0 +1,183 @@
+<view class="container">
+  <view class='header'>
+    <view class='banner-wrap'>
+      <swiper class='swiperview' autoplay="{{autoplay}}" interval="{{interval}}" indicator-dots="true" duration="{{duration}}" circular="{{circular}}" indicator-color="#fff" indicator-active-color="rgb(255, 94, 0)">
+        <block wx:for="{{bannerUrls}}" wx:key="{{index}}">
+          <swiper-item>
+            <image src='{{item.img}}' mode='widthFix' lazy-load="true" bindtap='toNewsDetail' class='slide-image' data-index='{{index}}'></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+</view>
+
+<!--动态模块-->
+<view class='tipmodel'>
+  <view class='tipitem'  bindtap='navigateToOrder'>
+    <image src='http://ssbbimg.tianyihui1688.com/image/icon/icon_points.png' class='tipicon'></image>
+    <text class='tiptxt'>订单</text>
+  </view>
+  <navigator class='tipitem' url="/pages/list/list" open-type="switchTab"  hover-class="none"> 
+    <image src='http://ssbbimg.tianyihui1688.com/image/icon/icon_activity.png' class='tipicon'></image>
+    <text class='tiptxt'>活动</text>
+  </navigator>
+  <navigator class='tipitem' url='/pages/vip/vip' hover-class="none">
+    <image src='http://ssbbimg.tianyihui1688.com/image/icon/icon_vips.png' class='tipicon'></image>
+    <text class='tiptxt'>权益</text>
+  </navigator>
+</view>
+
+<!-- 热点话题 -->
+<view class='funnyactivity'>
+  <text class='funnynews'>热点话题</text>
+  <view class="scroll_box" >    
+      <scroll-view class="scroll-view_x" scroll-x style="width: auto;overflow:hidden;">
+        <view class="item_list">
+            <image src="http://ssbbimg.tianyihui1688.com/image/temp/news.jpg" class="item_book_img" mode="aspectFill"></image>
+            <text class='title'>标题1</text>
+        </view>
+        <view class="item_list">
+            <image src="https://url.songshuqubang.com/micsoft/img/my3.png" class="item_book_img" mode="widthFix"></image>
+            <view class='title'>标题1</view>
+        </view>
+        <view class="item_list">
+            <image src="https://url.songshuqubang.com/micsoft/img/my3.png" class="item_book_img" mode="widthFix"></image>
+            <view class='title'>标题1</view>
+        </view>
+        <view class="item_list">
+            <image src="https://url.songshuqubang.com/micsoft/img/my3.png" class="item_book_img" mode="widthFix"></image>
+            <text class='title'>标题1</text> 
+        </view>
+        <view class="item_list">
+            <image src="https://url.songshuqubang.com/micsoft/img/my3.png" class="item_book_img" mode="widthFix"></image>
+            <text class='title'>标题1</text> 
+        </view>
+        <view class="item_list">
+            <image src="https://url.songshuqubang.com/micsoft/img/my3.png" class="item_book_img" mode="widthFix"></image>
+            <text class='title'>标题1</text> 
+        </view>
+        <view class="item_list">
+            <image src="https://url.songshuqubang.com/micsoft/img/my3.png" class="item_book_img" mode="widthFix"></image>
+            <text class='title'>标题1</text> 
+        </view>
+        <view class="item_list">
+            <image src="https://url.songshuqubang.com/micsoft/img/my3.png" class="item_book_img" mode="widthFix"></image>
+            <text class='title'>标题1</text> 
+        </view>
+        <view class="item_list">
+            <image src="https://url.songshuqubang.com/micsoft/img/my3.png" class="item_book_img" mode="widthFix"></image>
+            <text class='title'>标题1</text> 
+        </view>
+        <view class="item_list">
+            <image src="https://url.songshuqubang.com/micsoft/img/my3.png" class="item_book_img" mode="widthFix"></image>
+            <text class='title'>标题1</text> 
+        </view>
+        <view class="item_list">
+            <image src="https://url.songshuqubang.com/micsoft/img/my3.png" class="item_book_img" mode="widthFix"></image>
+            <text class='title'>标题1</text> 
+        </view>
+      </scroll-view>
+  </view>
+</view>
+
+<!-- 趣人物 -->
+<view class='funnyactivity'>
+  <text class='funnynews'>趣人物</text> 
+  <view class="scroll_box1" >    
+      <scroll-view class="scroll-view_x1" >
+        <view class="item_list1">
+            <image src="https://url.songshuqubang.com/micsoft/img/my3.png" class="item_book_img1" mode="widthFix"></image>
+            <view class='title1'>标题1</view>
+        </view>
+        <view class="item_list1">
+            <image src="https://url.songshuqubang.com/micsoft/img/my3.png" class="item_book_img1" mode="widthFix"></image>
+            <view class='title1'>标题1</view>
+        </view>
+        <view class="item_list1">
+            <image src="https://url.songshuqubang.com/micsoft/img/my3.png" class="item_book_img1" mode="widthFix"></image>
+            <view class='title1'>标题1</view>
+        </view>
+        <view class="item_list1">
+            <image src="https://url.songshuqubang.com/micsoft/img/my3.png" class="item_book_img1" mode="widthFix"></image>
+            <view class='title1'>标题1</view>
+        </view>
+      </scroll-view>
+  </view>
+</view>
+<!-- 趣动态 -->
+<view class='funnyactivity'>
+  <text class='funnynews'>趣动态</text> 
+  <view class="scroll_box2" >    
+      <scroll-view class="scroll-view_x2" >
+        <view class="item_list2">
+            <image src="https://url.songshuqubang.com/micsoft/img/my3.png" class="item_book_img2" mode="widthFix"></image>
+            <view class='title2'>公益新闻</view>
+            <view class='title2'>标题1</view>
+        </view>
+        <view class="item_list2">
+            <image src="https://url.songshuqubang.com/micsoft/img/my3.png" class="item_book_img2" mode="widthFix"></image>
+            <view class='title2'>公益新闻</view>
+            <view class='title2'>标题1</view>
+        </view>
+        <view class="item_list2">
+            <image src="https://url.songshuqubang.com/micsoft/img/my3.png" class="item_book_img2" mode="widthFix"></image>
+            <view class='title2'>公益新闻</view>
+            <view class='title2'>标题1</view>
+        </view>
+      </scroll-view>
+  </view>
+</view>
+
+<!-- 趣视频 -->
+
+<view class='funnyactivity'>
+  <text class='funnynews'>趣视频</text> 
+  <view class='goods-wrap'>
+    <view class='goods'>
+        <image class='goods-img' src='/img/temg.png'></image>
+        <view class='l1'>视频介绍</view>
+        <view class='l2'>
+          <view>标题1</view>
+        </view>
+    </view>
+  </view>
+</view>
+<!--重点活动-->
+
+<view class='bigview'>
+  <text class='funnynews'>趣活动</text> 
+  <image bindtap='toNewsDetail' src='http://ssbbimg.tianyihui1688.com/image/icon/icon_bigactivity0505.png' class='bigactivity' mode='widthFix'></image>
+</view>
+
+<view class='tab'>
+  <block wx:for="{{topics}}" wx:key="{{index}}">
+    <view class="{{index==currentIndex?'topic-active':'normal'}}" data-index='{{index}}' bindtap='changeOrder'>
+      {{item.topicText}}
+    </view>
+  </block>
+</view>
+
+<!-- <view class='hr'></view> -->
+<!-- 活动 -->
+<view class='activity-wrap'>
+  <block wx:for="{{activities}}" wx:key='this.id' wx:for-item='item'>
+    <view class='itemview' bindtap='toActivityDetail' data-id='{{item.id}}'>
+      <image class='bigimg' src='{{item.cover}}' mode='widthFix'></image>
+      <view class='btnview'>
+        <view class='leftview'>
+          <text class='titlett'>{{item.name}}</text>
+          <text class='datetxtdd'>{{item.activeTime}}</text>
+        </view>
+        <view class='addbtn'>
+          <text>报名</text>
+          <image src='https://url.songshuqubang.com/micsoft/img/icon_right.png' class='addbtnimg'></image>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class='nodataView' wx:if="{{activities.length<1}}">
+    <image src='https://url.songshuqubang.com/micsoft/img/nodata.png' class='nodataImg'></image>
+    <text class='nodataText'>暂时没有任何项目</text>
+  </view>
+</view>

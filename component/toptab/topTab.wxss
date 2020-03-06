@@ -1,0 +1,40 @@
+/* component/toptab/topTab.wxss */
+
+.toptabBox {
+  width:100%;
+  height: 60rpx;
+  display: flex;
+  border: 1px solid #eee;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+}
+
+.toptab-item {
+  flex: 1;
+  height: 58rpx;
+  border-right: 1px solid #eee;
+}
+.toptab-item-last {
+  flex: 1;
+  height: 58rpx;
+}
+.tabblank {
+  width: 100%;
+  height: 60rpx;
+}
+.itemwrapper {
+  width: 100%;
+  height: 100%;
+}
+.title {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 58rpx;
+  text-align: center;
+}

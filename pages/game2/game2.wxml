@@ -1,0 +1,116 @@
+<view class="topview">
+  <view class="topviewimg2"></view>
+  <!--活动信息-->
+  <view class="topinfoview" style="opacity:{{topopacity}}">
+    <image src="{{projectUrl}}" class="topinfoviewimg" mode="widthFix"></image>
+    <view class="ti-r">
+      <text class="ti-r-tit">美好的时代-2019张家港首届青少年文艺大赛</text>
+      <view class="ti-r-bo">
+        <text class="ti-r-bo-1"></text>
+        <view class="ti-r-bo-r" bindtap="toPointCenter">
+          <view class="ti-give">
+            <image src="https://url.songshuqubang.com/micsoft/img/add_icon__.png" class="ti-r-bo-r-img" mode="widthFix"></image>
+          </view>
+          <view class="ti-r-bo-r-i">
+            <text class="ti-r-bo-r-t">100</text>
+            <text class="ti-r-bo-r-tt">积分</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="bodystyle">
+  <view class='body-topspace'></view>
+  <view class="body-item-style">
+    <image src="https://url.songshuqubang.com/micsoft/img/icon_age.png" mode="widthFix" class="body-item-li"></image>
+    <text class="body-item-txt">参赛 作品</text>
+  </view>
+
+  <view class="body-item-input">
+    <view class="body-item-v1" bindtap="editNameAction">
+      <view class="body-input-item">{{name}}</view>
+    </view>
+
+    <view class="body-item-v2" bindtap="editDesAction">
+      <view class="body-input-item">{{desc}}</view>
+    </view>
+
+  </view>
+  <view wx:if="{{projectId == 1}}">
+    <!--作品-->
+    <view class="body-item-img1" wx:for='{{videos}}' wx:key='{{index}}'>
+      <image src="{{item.filePath}}" mode="widthFix" class="item-video-style"></image>
+      <view class="item-video-del" data-index="{{index}}" bindtap="delItemAction">
+        <image src="/img/icon_del.png" class="item-del-style"></image>
+      </view>
+    </view>
+
+    <view class='body-item-video' bindtap="chooseImage" wx:if="{{videos.length < 5}}">
+      <image src="../../img/icon_plus.png" class="pulsstyle"></image>
+      <text class='video-txt1'>上传您的作品</text>
+      <text class="video-txt2" wx:if="{{videos.length == 0}}">第一张图片作为封面</text>
+    </view>
+
+  </view>
+
+  <view wx:else>
+    <!--视频作品-->
+    <view class="body-item-video1" wx:for='{{videos}}' wx:key='{{index}}'>
+      <video src="{{item.filePath}}" class="item-video-style"></video>
+      <view class="item-video-del" data-index="{{index}}" bindtap="delItemAction">
+        <image src="/img/icon_del.png" class="item-del-style"></image>
+      </view>
+    </view>
+
+    <view class='body-item-video' bindtap="chooseVideo" wx:if="{{videos.length < 5}}">
+      <image src="../../img/icon_plus.png" class="pulsstyle"></image>
+      <text class='video-txt1'>上传您的视频作品</text>
+      <text class="video-txt2">请上传25M以内的视频文件</text>
+    </view>
+  </view>
+
+  <view class="line"></view>
+  <view class="body-item-style" wx:if="{{type == 2}}">
+    <image src="https://url.songshuqubang.com/micsoft/img/icon_age.png" mode="widthFix" class="body-item-li"></image>
+    <text class="body-item-txt">邀请队友</text>
+  </view>
+
+  <view class="teamstyle" wx:if="{{type == 2}}">
+    <view wx:for="{{teamUsers}}" class="teamitem">
+      <button open-type="share" wx:if="{{item == ''}}" class='teamSharebtn'>
+        <image class='teamitem-img' src="https://url.songshuqubang.com/micsoft/icon/icon_user_Add.png"></image>
+      </button>
+      <image wx:else src="{{item}}" class="teamitem-img2"></image>
+    </view>
+  </view>
+
+  <view class="bottomstyle"></view>
+</view>
+
+<view class='bottomBox'>
+
+  <button open-type="contact" bindcontact="handleContact" class='contactBt'>
+    <view class='item item1' bindtap='phoneCall'>
+      <image src='https://url.songshuqubang.com/micsoft/img/icon_erji.png' class='icon' mode="widthFix"></image>
+    </view>
+  </button>
+
+  <button class='shareBt' bindtap='getSharePoster' wx:if='{{!fromShare}}'>
+    <view class='item item2'>
+      <image src='https://url.songshuqubang.com/micsoft/icon/icon_share_black.png' class='icon' mode="widthFix"></image>
+    </view>
+
+  </button>
+
+  <button class='shareBt' bindtap='goToHome' wx:else>
+    <view class='item item2'>
+      <image src='/img/tab1.png' class='icon' mode="widthFix"></image>
+    </view>
+  </button>
+
+  <button class='bt' bindtap="uploadAllFiles">
+    上传作品
+  </button>
+</view>

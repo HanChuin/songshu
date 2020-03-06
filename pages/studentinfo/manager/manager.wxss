@@ -1,0 +1,144 @@
+/* pages/studentinfo/manager/manager.wxss */
+
+.mb {
+  margin-bottom: 7rpx;
+}
+
+.activity-wrap {
+  width: 100%;
+  margin-bottom: 150rpx;
+}
+
+.user_card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  border:  1px solid #eee;
+  min-height: 100rpx;
+  padding: 40rpx;
+  background-color: #fff;
+}
+
+.user_card:first-child{
+  margin-top: 20rpx;
+  border-radius: 15rpx 15rpx 0 0;
+}
+
+.card_head {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.notStudent {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  width: 90%;
+  align-items: center;
+}
+.notStudent .card_head {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  margin-top: 20rpx;
+}
+
+.notStudent .idNo {
+  color: #B1B1B1;
+  font-size: 22rpx;
+}
+.ns-items {
+  position: relative;
+  width: 30%;
+  color: #000;
+  font-size: 34rpx;
+}
+.ns-items .name {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ns-items .card_img {
+  position: absolute;
+  right: -20rpx;
+  top: 14rpx;
+}
+
+
+
+
+.isStudent{
+  width: 90%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.isStudent .isSI {
+  display: flex;
+  align-items: center;
+}
+.isStudent .card_head {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 15rpx;
+}
+
+.isStudent .name {
+  color: #000;
+}
+
+.card_img {
+  width: 22rpx;
+  height: 22rpx;
+}
+
+.btns-wrap {
+  display: flex;
+  height: 120rpx;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  position: fixed;
+  bottom: 10rpx;
+}
+
+.btn_add {
+  width: 80%;
+  background-color: #FF6801;
+  color: white;
+}
+
+.activity-wrap2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 150rpx;
+}
+
+.empty-view {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+  align-items: center;
+  width: 80%;
+  margin-top: 150rpx;
+  min-height: 300rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.empty_icon {
+  width: 190rpx;
+  height: 153rpx;
+  margin-bottom: 30rpx;
+}

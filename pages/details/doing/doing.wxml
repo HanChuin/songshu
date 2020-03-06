@@ -1,0 +1,62 @@
+<!-- <import src="../details-template/details-template.wxml" />
+<import src="../select/select.wxml" />
+<import src="../../../libs/wxParse/wxParse.wxml"></import> -->
+
+<my-poster id="getPoster" bindmyevent="myEventListener" avater="{{detail.cover}}" codeimg="{{codeImg}}" productname="{{detail.name}}" productdetail='{{detail.address}}' productstarttime='{{detail.activeTime}}' productSrc='{{productSrc}}' codeSrc='{{codeSrc}}'>
+</my-poster>
+
+<view class='swiperWrapper'>
+  <swiper class='swiperBox' autoplay='true' bindchange="swiperChange">
+    <block wx:for='{{detail.imgLst}}' wx:key='{{index}}'>
+      <swiper-item>
+        <image src='{{item}}' class='swiper-img' mode='widthFix' lazy-load="true"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="dots">
+    <block wx:for="{{detail.imgLst}}" wx:key="this.id">
+      <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+    </block>
+  </view>
+</view>
+
+<view class='richContent'>
+  <view class='blank'></view>
+  <import src="/libs/wxParse/wxParse.wxml" />
+  <template is="detailsTempate" data="{{...detail,orgDetail, goodsList,showInfo,showinfo,end,handleClick,activityDetail,sel,confirmSel}}" />
+</view>
+
+
+<view class="act-body">
+  <view class="box-cont">
+    <template is="wxParse" data="{{wxParseData:activityDetail.nodes}}"></template>
+  </view>
+</view>
+
+<view class='bottomBox'>
+
+  <button open-type="contact" bindcontact="handleContact" class='contactBt'>
+    <view class='item item1' bindtap='phoneCall'>
+      <image src='https://url.songshuqubang.com/micsoft/img/ui-biaoji01.png' class='icon'></image>
+      <text class='text'>客服</text>
+    </view>
+  </button>
+
+  <button class='shareBt' bindtap='getSharePoster' wx:if='{{!fromShare}}'>
+    <view class='item item2'>
+      <image src='https://url.songshuqubang.com/micsoft/img/ui-biaoji02.png' class='icon'></image>
+      <text class='text'>分享</text>
+    </view>
+  </button>
+
+  <button class='shareBt' bindtap='goToHome' wx:else>
+    <view class='item item2'>
+      <image src='/img/tab1.png' class='icon'></image>
+      <text class='text'>首页</text>
+    </view>
+  </button>
+
+  <button class='bt' disabled='{{detail.state!="报名中"&&detail.state!="进行中"}}' bindtap='joinActivity'>
+    {{btshow}}
+  </button>
+</view>

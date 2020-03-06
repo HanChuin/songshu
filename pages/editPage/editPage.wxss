@@ -1,0 +1,32 @@
+/* pages/editPage/editPage.wxss */
+
+page {
+  width: 100%;
+  background-color: white;
+}
+
+.containview {
+  border: 1px #eee solid;
+  margin: 20rpx;
+  padding: 20rpx;
+  border-radius: 8rpx;
+}
+
+.inputStyle {
+  width: 100%;
+  text-align: center;
+  font-size: 34rpx;
+}
+
+.btnStyle {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin: 20rpx;
+  background-color: #fd903c;
+  color: white;
+  height: 80rpx;
+  border-radius: 40rpx;
+  justify-content: center;
+  align-items: center;
+}

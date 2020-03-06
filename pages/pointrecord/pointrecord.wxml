@@ -1,0 +1,29 @@
+<view class="pointRecord">
+  <view class='activity-wrap'>
+    <block wx:for="{{data}}" wx:key='this.id' wx:for-item='item'>
+      <view class='activity' data-id='{{item.id}}' data-end='{{item.endDays}}'>
+        <!-- <image class='img' src='{{item.cover}}' mode="widthFix"></image> -->
+        <view class='intro'>
+        <view class='l1Wrapper'>
+          <view class='l1'>
+            <text>{{item.title}}</text>
+            <text class='distance'>{{item.distanceStr}}</text>
+          </view>
+          <view class='l2'>
+            <image src='https://url.songshuqubang.com/micsoft/img/clock-icon.png' mode="widthFix" class="clock-icon"></image>
+            <view>
+              <text>{{item.createTimeStr}}</text>
+            </view>
+          </view>
+        </view>
+          <view class='l4'>
+            <view class='personNum'>
+              <view class='people-score title'>积分：</view>
+              <view class='people-score'>{{item.type==1?'-':'+'}}{{item.point}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

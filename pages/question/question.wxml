@@ -1,0 +1,25 @@
+<!-- 搜索栏 -->
+<!-- <view class='search'>
+  <view class='searchview'>
+    <input class='searchBar' value='{{searchKeyQ}}' bindinput='searchKeyChange' confirm-type="search" placeholder='输入关键词...' placeholder-class='placeholder' bindconfirm='searchActivity'></input>
+    <image src='https://url.songshuqubang.com/micsoft/img/icon_search.png' class='searchimg' bindtap='searchActivity'></image>
+  </view>
+</view> -->
+
+<!-- 投票内容 -->
+<view class='voteview'>
+
+  <block wx:for='{{mode}}' wx:key='{{index}}'>
+    <view class='voteBox' data-id='{{item.id}}'>
+      <image src='{{item.cover}}' class='voteBoxImg'></image>
+      <view class="ans-bot">
+        <view class="ans-left">
+          <text class='voteBoxTitle'>{{item.name}}</text>
+          <text class='voteBoxTicket'>{{item.desc}}</text>
+        </view>
+        <button class="startAns" bindtap="startAns"  data-id='{{item.id}}'>开始答题</button>
+      </view>
+    </view>
+  </block>
+
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "报名",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": false
+}

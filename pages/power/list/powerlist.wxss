@@ -1,0 +1,72 @@
+/* pages/power/list/powerlist.wxss */
+
+
+.itemRight {
+  width: 690rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-top: 20rpx;
+  height: auto;
+  padding-bottom: 20rpx;
+  padding-top: 20rpx;
+  margin-bottom: 20rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 1px 5px 0px rgba(112, 112, 112, 0.27);
+  border-radius: 10rpx;
+}
+
+.itemBox {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  margin-top: 4rpx;
+}
+
+.itemHead {
+  width: 106rpx;
+  height: 106rpx;
+  border: 2rpx solid rgba(247, 182, 102, 1);
+  border-radius: 50%;
+  margin-left: 20rpx;
+}
+
+.ge {
+  width: 1rpx;
+  height: 76rpx;
+  border: 1rpx dashed rgba(247, 182, 102, 1);
+  margin-left: 20rpx;
+}
+
+.shop {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  color: #000;
+}
+
+.good {
+  font-size: 30rpx;
+  font-family: Adobe Heiti Std;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 17rpx;
+}
+
+.shoper {
+  font-size: 24rpx;
+  font-family: Adobe Heiti Std;
+  color: rgba(0, 0, 0, 1);
+}
+
+.levelbg {
+  z-index: 3;
+  align-self: flex-start;
+  width: 104rpx;
+  height: 83rpx;
+  margin-top: -40rpx;
+  margin-right: -11rpx;
+}

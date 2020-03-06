@@ -1,0 +1,12 @@
+<!-- 权益列表 -->
+<view class="itemRight" wx:for="{{powers}}" wx:for-item="power">
+  <view class="itemBox" bindtap="todetailaction" data-id="{{power.id}}">
+    <image class="itemHead" src="{{power.icon}}"></image>
+    <view class="ge"></view>
+    <view class="shop">
+      <text class="good">{{power.title}}</text>
+      <text class="shoper">商家：{{power.partner.name}}</text>
+    </view>
+    <image wx:if="{{index<4}}" src="https://url.songshuqubang.com/icon/power/sp{{index+1}}.png" class="levelbg"></image>
+  </view>
+</view>

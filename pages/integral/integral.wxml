@@ -1,0 +1,39 @@
+<!-- 积分兑换 -->
+<!-- 头部 -->
+<view class='user_card'>
+  <view class='cardimg'>
+    <view class='hw'></view>
+    <image src='https://url.songshuqubang.com/micsoft/img/integral_1.png' class='card_qus'></image>
+  </view>
+  <view class='cardimage'>
+    <image src='https://url.songshuqubang.com/micsoft/img/my1.png' class='card_head'></image>
+    <view class='ht'></view>
+    <view class='card_userinfo'>
+      <text>你好，***</text>
+      <text>趣味号：***</text>
+      <text>积分余额：***</text>
+    </view>
+    <view class='he'></view>
+  </view>
+</view>
+
+<!-- 等级进度条 -->
+<view class='level'>
+  <text>我的会员等级</text>
+  <view class='funny'>
+    <text>趣味V1</text>
+    <progress class='progress' percent='80' activeColor='#ffff00' active='false' stroke-width='15' border-radius='30' backgroundColor='#eeeeee' />
+    <text>趣味V2</text>
+  </view>
+  <view class='cartLeft'></view>
+</view>
+<!-- 积分兑换列表 -->
+<view class='change'>
+  <view class='base' wx:for="{{list}}" wx:key="index" bindtap='showMask' data-data="{{item}}" data-index='{{index}}'>
+    <text>{{item.goodsName}}</text>
+    <view class='yyy'></view>
+    <text>（{{item.point}} 积分）</text>
+  </view>
+  <image src='{{item.cover}}' class='card_shop'></image>
+  <text class='exchange' bindtap='showMask'>兑换</text>
+</view>

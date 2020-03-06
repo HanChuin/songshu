@@ -1,0 +1,39 @@
+<view>
+  <image src='{{goodsDetail.cover}}' class='swiper-img2' mode='widthFix' lazy-load="true"></image>
+</view>
+
+<view class='infoview'>
+  <text class='name'>{{goodsDetail.goodsName}}</text>
+  <view class='l2'>
+    <view class='l2content'>
+      <view>数量：</view>
+      <view class='convert-num'>{{goodsDetail.goodsNum}}</view>
+    </view>
+    <view class='l2content'>
+      <view class='fr'>积分：</view>
+      <view class='amount-wrap'>
+        <image src='https://url.songshuqubang.com/micsoft/img/point.png'></image>
+        <view class='amount'>{{goodsDetail.point}}</view>
+      </view>
+    </view>
+    <view class='l2content'>
+      <view class='fr'>金额：</view>
+      <view class='amount-wrap'>
+        <image src='https://url.songshuqubang.com/micsoft/img/money.png'></image>
+        <view class='amount'>{{goodsDetail.amount/100}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--富文本-->
+<view class='richContent'>
+  <!-- <text class='detailtitle'>活动详情</text> -->
+  <view class='blank'></view>
+  <import src="/libs/wxParse/wxParse.wxml" />
+  <template is="wxParse" data="{{wxParseData:goodsDetailInfo.nodes}}" />
+</view>
+
+<view class='bottomBox'>
+  <button class='bt' bindtap='convert'>立即兑换</button>
+</view>

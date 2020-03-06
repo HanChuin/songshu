@@ -1,0 +1,90 @@
+<!--pages/clock/clock.wxml-->
+<import src="../../libs/wxParse/wxParse.wxml"></import>
+
+<my-poster id="getPoster" bindmyevent="myEventListener" avater="http://pvg4lqwnx.bkt.clouddn.com/image/activity/sign/543d.png" codeimg="{{codeImg}}" productname="我正在参加松鼠趣邦{{detail.name}}" productdetail='捐助对象：湖南省沅江市灵官中心小学' productstarttime='' productSrc='{{productSrc}}'
+  codeSrc='{{codeSrc}}'>
+</my-poster>
+
+<view class="head">
+  <view class="headCover"></view>
+  <image class="headImg" src="{{detail.conver}}" mode="widthFix"></image>
+</view>
+
+<view class="top">
+  <image class="topImg" src="{{detail.conver}}" mode="widthFix"></image>
+  <view class="topR">
+    <view class="topRText">{{detail.name}}</view>
+    <view class="topTBot">
+      <view></view>
+      <view class="point">
+        <text class="point1">{{clockPoint}}</text>
+        <text class="point2">积分</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="content">
+  <view wx:if="{{detail}}">
+    <view class="clock r15">
+      <image class="clock-bookimg" mode="widthFix" src="https://url.songshuqubang.com/micsoft/img/clockbook.png"></image>
+
+      <view class="clock-content">
+        <view class="clock-content-c">
+          <view class="clock-content-line1">
+            <view class="clock-day">已累计签到
+              <text>{{clockday}}</text>天</view>
+          </view>
+          <view class="clock-content-line2">
+            <view class="clock-item" wx:for='{{clock}}' wx:key='{{index}}'>
+              <image class="clock-item-img" mode="widthFix" src="{{item.clocked?clockimgActive:clockimg}}"></image>
+              <view class="clock-item-point">
+                <text>{{item.point}}</text>公益积分</view>
+              <view class="clock-item-day">{{item.day}}</view>
+            </view>
+          </view>
+          <view class="clock-content-line3">
+            <view>
+            </view>
+            <view class="signCount">
+              <text>{{count}}</text>
+            </view>
+            <view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <image class="clock-img" src="{{detail.conver}}" mode="widthFix"></image>
+    </view>
+  </view>
+
+  <view class="detail">
+    <import src="../../libs/wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:signDetail.nodes}}" />
+  </view>
+
+</view>
+
+<view class='bottomBox'>
+  <button open-type="contact" bindcontact="handleContact" class='contactBt'>
+    <view class='item item1' bindtap='phoneCall'>
+      <image src='https://url.songshuqubang.com/micsoft/img/ui-biaoji01.png' class='icon' mode="widthFix"></image>
+    </view>
+  </button>
+
+  <button class='shareBt' bindtap='getSharePoster' wx:if='{{!fromShare}}'>
+    <view class='item item2'>
+      <image src='https://url.songshuqubang.com/micsoft/img/ui-biaoji02.png' class='icon' mode="widthFix"></image>
+    </view>
+  </button>
+
+  <button class='shareBt' bindtap='goToHome' wx:else>
+    <view class='item item2'>
+      <image src='/img/tab1.png' class='icon' mode="widthFix"></image>
+    </view>
+  </button>
+
+  <button class='bt' bindtap='clockIn'>
+    {{btnStr}}
+  </button>
+</view>

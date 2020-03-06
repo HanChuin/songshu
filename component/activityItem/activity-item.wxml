@@ -1,0 +1,13 @@
+<!-- 活动项样式 -->
+<view class='itemview' bindtap='onTap' data-id='{{item.id}}'>
+  <image class='bigimg' src='{{coverUrl+imgSet}}' mode="widthFix"></image>
+  <view class='btnview'>
+    <view class='leftview'>
+      <text class='titlett'>{{title}}</text>
+      <text class='datetxtdd'>{{subTitle}}</text>
+    </view>
+    <view class='addbtn'>
+      <text>{{btnStr}}</text>
+    </view>
+  </view>
+</view>

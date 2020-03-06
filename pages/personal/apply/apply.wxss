@@ -1,0 +1,267 @@
+/* pages/personal/apply/apply.wxss */
+page {
+  background-color: #fff;
+}
+.tabview {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #eee;
+  width: 94%;
+  height: 60rpx;
+  margin: 20rpx auto 5rpx;
+}
+.tabitem {
+  width: 30%;
+  height: 100%;
+  text-align: center;
+  line-height: 50rpx;
+  transition: all 0.5s;
+}
+.tabitem-active {
+  color: coral;
+  border-bottom: 2px solid coral;
+}
+.list-icon {
+  height: 53rpx;
+  width: 53rpx;
+}
+.search-wrap {
+  width: 92%;
+  margin: 0 auto;
+  height: 70rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.searchBar {
+  width: 85%;
+  height: 90%;
+  background-color: #eee;
+  border-radius: 5rpx;
+  padding-left: 20rpx;
+}
+.activity-wrap {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 74rpx;
+}
+
+.activity {
+  width: 92%;
+  display: flex;
+  margin: 0 auto;
+  padding: 31rpx 0 32rpx 0;
+  /* border-bottom: 1px solid #eee; */
+}
+
+/* .activity .img {
+  width: 180rpx;
+  height: 150rpx;
+  border-radius: 5rpx;
+} */
+
+/* .activity .intro {
+  width: 484rpx;
+  margin-left: 24rpx;
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} */
+
+/* .activity .l1Wrapper {
+  width: 100%;
+} */
+/* .activity .l1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 32rpx;
+  color: #222;
+} */
+
+/* .activity .l1 .distance {
+  font-size: 24rpx;
+  color: #999;
+} */
+
+.activity .l2 {
+  display: flex;
+  align-items: center;
+  margin-top: 8rpx;
+}
+
+.activity .l2 image {
+  width: 27rpx;
+  height: 27rpx;
+  display: inline-block;
+}
+
+.activity .l2 text:nth-of-type(1), text:nth-of-type(2) {
+  margin-left: 12rpx;
+}
+
+.activity .l2 text:nth-of-type(3), text:nth-of-type(4) {
+  margin-left: 6rpx;
+}
+/* 
+.activity .l3 {
+  margin-top: 9rpx;
+  margin-bottom: 15rpx;
+  display: flex;
+}
+
+.activity .l3 view {
+  padding-right: 17rpx;
+  padding-left: 17rpx;
+  border-right: 1px solid #ddd;
+}
+
+.activity .l3 view:first-child {
+  padding-left: 0;
+}
+
+.activity .l3 view:last-child {
+  border: none;
+}
+ */
+.activity .l4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.activity .l4 .personNum {
+  display: flex;
+  align-items: center;
+}
+
+.activity .l4 .people-num {
+  font-size: 23rpx;
+  color: rgb(255, 94, 0);
+}
+
+.activity .l4 .people-score{
+  font-size: 23rpx;
+  color: rgb(255, 94, 0);
+}
+
+.activity .l4 .title{
+ margin-left: 30rpx;
+}
+
+.activity .l4 .deadline {
+  background-color: coral;
+  color: #fff;
+  font-size: 20rpx;
+  border-radius: 8rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  width: 120rpx;
+  text-align: center;
+}
+
+.activity .l4 .applyfinsh {
+  background-color: #c9c9c9;
+  color: white;
+  border-radius: 10rpx;
+  height: 40rpx;
+  width: 120rpx;
+  font-size: 20rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+.activity .l4 .day-num {
+  font-size: 32rpx;
+  color: #ff734b;
+  margin-left: 15rpx;
+  margin-right: 10rpx;
+}
+
+.activity .l4 .deadline-end {
+  width: 121rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  background: #ccc;
+  border-radius: 18rpx;
+}
+/* .placeholder {
+  margin-left: 2rpx;
+  color: #999;
+} */
+.nodataView {
+  width: 100%;
+  height: 700rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nodataView .nodataImg {
+  width: 230rpx;
+  height: 200rpx;
+}
+.nodataView .nodataText {
+  color: #777;
+  margin-top: 30rpx;
+  font-size: 35rpx;
+}
+
+.itemview {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 15rpx;
+}
+
+.bigimg {
+  width: 100%;
+  height: auto;
+  margin-bottom: 6rpx;
+  border-top-left-radius: 15rpx;
+  border-top-right-radius: 15rpx;
+}
+
+.btnview {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.leftview {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.titlett {
+  font-size: 26rpx;
+  color: #4C4C4C;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.datetxtdd {
+  font-size: 22rpx;
+}
+
+.addbtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  height: 60rpx;
+  background-color: #ec7803;
+  color: white;
+  border-radius: 30rpx;
+}

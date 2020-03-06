@@ -1,0 +1,13 @@
+
+
+<my-poster id="getPoster1" bindmyevent="myEventListener" avater="{{cover1}}" codeimg="{{codeImg}}" productname="{{name}}" productdetail='{{address}}' userName="{{userName}}" 
+productstarttime='{{activeTime}}' productSrc='{{productSrc}}' codeSrc='{{codeSrc}}'>
+</my-poster>
+
+
+<poster-activity id="getPoster2" bindmyevent="myEventListener" avater="{{detail.cover}}" codeimg="{{codeImg}}" userName="{{userName}}"  activityName="{{name}}" activityAddress='{{address}}' activityDateStr='{{activeTime}}' productSrc='{{productSrc}}' qrCodeImg='{{codeSrc}}' logoSrc='{{userSrc}}'>
+</poster-activity>
+
+<button bindtap="toast1"  class="poster1" type="primary">生成海报1</button>
+
+<button bindtap="toast2"  class="poster2" type="primary">生成海报2</button>

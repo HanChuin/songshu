@@ -1,0 +1,3 @@
+/* pages/bindphone/bindphone.wxss */
+@import "../login/login.wxss";
+

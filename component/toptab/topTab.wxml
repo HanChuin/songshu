@@ -1,0 +1,20 @@
+<!--component/toptab/topTab.wxml-->
+<view class="toptabBox">
+<block wx:if="{{index<tabArr.length-1}}" wx:for="{{tabArr}}" wx:key="id" wx:for-item='item' wx:for-index='index'>
+  <view class='toptab-item'>
+    <navigator url="{{item.url}}" class='itemwrapper'>
+      <!-- <image src="{{item.icon}}" class='icon'></image> -->
+      <text class='title'>{{item.title}}</text>
+    </navigator>
+  </view>
+</block>
+<block wx:for="{{tabArr}}" wx:key="id" wx:for-item='item' wx:for-index='index' wx:if="{{index==tabArr.length-1}}">
+   <view class='toptab-item-last'>
+    <navigator url="{{item.url}}" class='itemwrapper'>
+      <!-- <image src="{{item.icon}}" class='icon'></image> -->
+      <text class='title'>{{item.title}}</text>
+    </navigator>
+  </view>
+</block>
+</view>
+<view class='tabblank' />

@@ -1,0 +1,32 @@
+<!--pages/details/select/select.wxml-->
+<template name='selectTemplate'>
+<view class='tophover' hidden='{{!selectShow}}' bindtap='hiddenSelect' />
+<view class='selectWrapper' animation="{{animationData}}" hidden='{{!selectShow}}'>
+<view class='shopInfo'>
+  <view class='imgBox'>
+    <image src="{{detail.cover}}" class='img'></image>
+  </view>
+  <view class='rightBox'>
+    <text class='title'>{{detail.name}}</text>
+    <text class='price'>
+      ¥ {{detail.amount/100}}
+    </text>
+  </view>
+</view>
+<view class='line' />
+<view class='whiteBlank' />
+<view class='whiteBlank' />
+<text class='typeTitle'>类别</text>
+<view class='typeWrapper'>
+  <block wx:for="{{categrory}}" wx:key="{{index}}">
+    <button class="{{index==typeSel?'typeItem-active':'typeItem'}}" catchtap='handleSelect' data-index='{{index}}' disabled='{{item.applyNum>=item.limitNum}}'>{{item.standardName+item.amount/100+'元'}}</button>
+  </block>
+</view>
+<view class='whiteBlank' />
+<button class='confirmBt' disabled="{{disabled}}"  bindtap='joinActivity'>确认</button>
+<view class='whiteBlank' />
+</view>
+</template>
+
+
+

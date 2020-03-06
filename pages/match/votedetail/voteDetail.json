@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "my-poster": "/component/poster/index"
+  },
+  "navigationBarTitleText": "作品详情",
+  "enablePullDownRefresh": false
+}

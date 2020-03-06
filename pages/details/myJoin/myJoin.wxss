@@ -1,0 +1,37 @@
+/* pages/details/myJoin/myJoin.wxss */
+/* 活动详情-公共结构 */
+/* @import "../details-template/details-template.wxss";
+@import "../doing/doing.wxss"; */
+
+.btBox {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.btBox .bt {
+  flex: 1;
+  height: 100%;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+.btBox .bt1{
+  color: #333;
+  background-color: lightblue;
+}
+.btBox .bt2{
+  color: #fff;
+  background-color: coral;
+}
+.shareBt {
+  background-color: #fff;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  line-height: 35rpx;
+}
+button::after{ border: none; }

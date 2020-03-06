@@ -1,0 +1,28 @@
+/* pages/swiper/swiper1.wxss */
+
+.allviews {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemstyle {
+  width: 240rpx;
+  height: 320rpx;
+}
+
+
+.viewStyle {
+  position: absolute;
+  top: 350rpx;
+  left: 150rpx;
+  width: 240rpx;
+  height: 320rpx;
+}
+
+.viewStyle2 {
+  position: absolute;
+  top: 350rpx;
+  left: 150rpx;
+  width: 240rpx;
+  height: 320rpx;
+}

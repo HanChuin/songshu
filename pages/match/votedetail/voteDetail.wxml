@@ -1,0 +1,84 @@
+<my-poster id="getPoster" bindmyevent="myEventListener" avater="" codeimg="{{codeImg}}" productname="{{matchUserInfo.worksName}}" productdetail='{{matchUserInfo.worksDescription}}' productstarttime='' productSrc='{{productSrc}}' codeSrc='{{codeSrc}}'>
+</my-poster>
+
+<scroll-view scroll-x="true" class="topscrollview" wx:if='{{fromShare}}'>
+  <view wx:for="{{itemArray}}" class="itemstyle" bindtap="chooseItemAction" data-index="{{index}}">
+    <view class="item1">
+      <text class="label1">{{item.label}}</text>
+    </view>
+    <view class="item1">
+      <text class="label2">{{item.group}}</text>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="lstview">
+  <view class="containview">
+    <video src="{{matchUserInfo.furl}}" class="videoview" wx:if="{{matchUserInfo.projectId > 1}}"></video>
+    <image wx:else src="{{matchUserInfo.furl}}?imageView2/0/q/75|imageslim" class="videoview" mode="aspectFill" bindtap="previewImage" data-src="{{matchUserInfo.furl}}"></image>
+
+    <view class="voteNumView">
+      <text class="voteNumTxt">已投 {{matchUserInfo.voteNum}} 票</text>
+    </view>
+
+    <view class="rowNoView">
+      <text class="voteNumTxt">{{rowNo}}</text>
+    </view>
+  </view>
+
+  <view class="t1view">
+    <view class="yv"></view>
+    <text class="tittxt">{{matchUserInfo.worksName}}</text>
+
+    <view class="txtview-right">
+      <image src="https://url.songshuqubang.com/micsoft/micsoft/icon_tp_2.png" class="item-tp-img" mode="widthFix" wx:if="{{points > 0}}"></image>
+      <image src="https://url.songshuqubang.com/micsoft/micsoft/icon_tp_1.png" class="item-tp-img" mode="widthFix" wx:else></image>
+    </view>
+  </view>
+  <text class="destxt">{{matchUserInfo.worksDescription}}</text>
+</view>
+
+
+<view class="lstview" wx:if="{{matchUserInfo.projectId == 1}}">
+  <view class="t1view">
+    <view class="yv"></view>
+    <text class="tittxt">作品详情</text>
+  </view>
+  <view class="imgview" wx:for="{{imgs}}">
+    <image src="{{item}}?imageView2/0/q/75|imageslim" data-src="{{item}}" bindtap="previewImage" mode="widthFix" class="xzimgview"></image>
+  </view>
+</view>
+
+<view class="voteview">
+  <view class="t1view">
+    <view class="yv"></view>
+    <text class="tittxt">上传您的笑脸，用笑脸为公益助力:</text>
+    <image bindtap="catCyds2Action" src="https://url.songshuqubang.com/micsoft/micsoft/icon_tip_yellow.png" class="tipimg" mode="widthFix"></image>
+  </view>
+  <!--笑脸-->
+  <view class='weui-grids'>
+    <view class="weui-grid" wx:for="{{voteUsers}}" wx:key="{{index}}">
+      <view class="weui-grid__icon">
+        <image class='weuiImg' src=" {{item.img}}" mode="scaleToFill" />
+      </view>
+    </view>
+  </view>
+
+</view>
+
+
+<view class='bottomBox'>
+  <button open-type="contact" bindcontact="handleContact" class='contactBt'>
+    <view class='item item1' bindtap='phoneCall'>
+      <image src='https://url.songshuqubang.com/micsoft/img/icon_erji.png' class='icon' mode="widthFix"></image>
+    </view>
+  </button>
+
+  <button class='shareBt' bindtap="getSharePoster">
+    <view class='item item2'>
+      <image src='https://url.songshuqubang.com/micsoft/icon/icon_share_black.png' class='icon' mode="widthFix"></image>
+    </view>
+  </button>
+
+  <button class='bt' disabled="true" bindtap="uploadSmileAction">上传笑脸投票</button>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tabbar": "../../component/tabbar/tabbar"
+  },
+  "navigationBarTitleText": "积分排行",
+  "enablePullDownRefresh": true
+}

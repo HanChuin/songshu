@@ -1,0 +1,41 @@
+
+<view class="tab">
+  <view class="tab-vote {{tab==0?'tab-active':''}}" bindtap="changeTab" data-type="vote">投票</view>
+  <view class="tab-ques {{tab==0?'':'tab-active'}}" bindtap="changeTab" data-type="ques">问卷</view>
+</view>
+
+<!-- 投票内容 -->
+<view class='voteview' wx:if='{{tab==0}}'>
+
+<block wx:for='{{mode}}' wx:key='{{index}}'>
+  <view class='voteBox' bindtap='goToDetail' data-id='{{item.id}}'>
+    <image src='{{item.cover+imgSet}}' class='voteBoxImg' mode="widthFix"></image>
+    <view class="ans-bot">
+    <view class="ans-left">
+    <text class='voteBoxTitle'>{{item.title}}</text>
+    <text class='voteBoxTicket'>{{item.personCount}}人参与，已投{{item.personCount}}票</text>
+    </view>
+    <text class='voteBoxTime'>{{item.ft}} 结束</text>
+    </view>
+  </view>
+</block>
+
+</view>
+
+
+<!-- 问卷内容 -->
+<view class='voteview' wx:if='{{tab==1}}'>
+  <block wx:for='{{modeQ}}' wx:key='{{index}}'>
+    <view class='voteBox' data-id='{{item.id}}' bindtap="{{item.isFinish?'':'startAns'}}">
+      <image src='{{item.cover+imgSet}}' class='voteBoxImg' mode="widthFix"></image>
+      <view class="ans-bot">
+        <view class="ans-left">
+          <text class='voteBoxTitle'>{{item.name}}</text>
+          <text class='voteBoxTicket'>{{item.desc}}</text>
+        </view>
+        <button class="startAns" data-id='{{item.id}}' disabled='{{item.isFinish}}'>{{item.isFinish?"已答题":"开始答题"}}</button>
+      </view>
+    </view>
+  </block>
+
+</view>

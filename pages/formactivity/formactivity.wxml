@@ -1,0 +1,113 @@
+<!-- 顶部 -->
+<view class="topview">
+  <view class="topviewimg2"></view>
+  <!--活动信息-->
+  <view class="topinfoview" style="opacity:{{topopacity}}">
+    <image src="{{info.cover}}" class="topinfoviewimg" mode="widthFix"></image>
+    <view class="ti-r">
+      <text class="ti-r-tit">{{info.name}}</text>
+      <view class="ti-r-bo">
+        <text class="ti-r-bo-1"></text>
+        <view class="ti-r-bo-r" bindtap="toPointCenter">
+          <view class="ti-give">
+            <image src="https://url.songshuqubang.com/micsoft/img/add_icon__.png" class="ti-r-bo-r-img" mode="widthFix"></image>
+          </view>
+          <view class="ti-r-bo-r-i">
+            <text class="ti-r-bo-r-t">{{info.point}}</text>
+            <text class="ti-r-bo-r-tt">积分</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="bodystyle">
+  <view class='body-topspace'></view>
+  <!-- 定义表单 -->
+  <form bindsubmit='formSubmit' bindreset='formReset'>
+    <view class='ques' wx:for='{{problems}}' wx:key='{{index}}' wx:for-item='ansItem' wx:for-index="ansIndex">
+      <!-- 单选 -->
+      <view class="body-item-style">
+        <!-- <image src="https://url.songshuqubang.com/micsoft/img/icon_age.png" mode="widthFix" class="body-item-li"></image> -->
+        <view class="skstyle"></view>
+        <text class="body-item-txt">{{ansItem.label}}</text>
+      </view>
+      <!-- 单行文本输入 -->
+      <input wx:if="{{ansItem.type == 1}}" data-fId='{{ansItem.id}}' bindinput="textInput" class="inputstyle"></input>
+      <!-- 多行文本输入 -->
+      <view wx:if='{{ansItem.type==2}}' class='mulinputstyle'>
+        <textarea class='answer-area' auto-height bindinput='textInput' data-fId='{{ansItem.id}}'></textarea>
+      </view>
+      <radio-group wx:if='{{ansItem.type==3}}' bindchange="radioChange">
+        <label class='answer-items' wx:for='{{ansItem.answer}}' wx:key='{{index}}' bindtap='radioTap' data-id='{{item.id}}' data-fId='{{ansItem.id}}'>
+          <radio class='answer-box' value="" checked="{{item.checked}}" color='#ef8c16' />
+          <text class='answer-item'>{{item.answer}}</text>
+        </label>
+      </radio-group>
+      <!-- 复选 -->
+      <checkbox-group data-id='{{ansItem.id}}' wx:if='{{ansItem.type==4}}' bindchange="checkboxChange">
+        <label class='answer-items' wx:for='{{ansItem.answer}}' wx:key='{{index}}' data-id='{{item.id}}' data-fId='{{ansItem.id}}' bindtap='checkboxTap'>
+          <checkbox class='answer-box' value="" checked="{{item.checked}}" color='#ef8c16' />
+          <text class='answer-item'>{{item.answer}}</text>
+        </label>
+      </checkbox-group>
+      <!-- 上传图片 -->
+      <view wx:if="{{ansItem.type == 5}}" class="uploadstyle">
+        <view class="body-item-img1" wx:for='{{ansItem.chooseImgs}}' wx:key='{{index}}'>
+          <image src="{{item.filePath}}" mode="widthFix" class="item-video-style"></image>
+          <view class="item-video-del" data-index="{{index}}" data-fId='{{ansItem.id}}'   bindtap="delItemAction">
+            <image src="/img/icon_del.png" class="item-del-style"></image>
+          </view>
+        </view>
+        <view class='body-item-video' bindtap="chooseImage" data-fId='{{ansItem.id}}' wx:if="{{ansItem.chooseImgs.length < ansItem.params.count}}">
+          <image src="../../img/icon_plus.png" class="pulsstyle"></image>
+          <text class='video-txt1'>{{ansItem.params.tip}}</text>
+        </view>
+      </view>
+      <!-- 上传视频 -->
+      <view wx:if="{{ansItem.type == 6}}" class="uploadstyle">
+        <view class="body-item-img1" wx:for='{{ansItem.chooseImgs}}' wx:key='{{index}}'>
+          <video src="{{item.filePath}}" class="item-video-style"></video>
+          <view class="item-video-del" data-index="{{index}}" data-fId='{{ansItem.id}}' bindtap="delItemAction">
+            <image src="/img/icon_del.png" class="item-del-style"></image>
+          </view>
+        </view>
+        <view class='body-item-video' bindtap="chooseVideo"  data-fId='{{ansItem.id}}' wx:if="{{ansItem.chooseImgs.length < ansItem.params.count}}">
+          <image src="../../img/icon_plus.png" class="pulsstyle"></image>
+          <text class='video-txt1'>{{ansItem.params.tip}}</text>
+        </view>
+      </view>
+    </view>
+  </form>
+  <view class="bottomstyle"></view>
+</view>
+
+<view class='bottomBox'>
+
+  <button open-type="contact" bindcontact="handleContact" class='contactBt'>
+    <view class='item item1' bindtap='phoneCall'>
+      <image src='https://url.songshuqubang.com/micsoft/img/icon_erji.png' class='icon' mode="widthFix"></image>
+    </view>
+  </button>
+
+  <button class='shareBt' open-type="share" wx:if='{{!fromShare}}'>
+    <view class='item item2'>
+      <image src='https://url.songshuqubang.com/micsoft/icon/icon_share_black.png' class='icon' mode="widthFix"></image>
+    </view>
+
+  </button>
+
+  <button class='shareBt' bindtap='goToHome' wx:else>
+    <view class='item item2'>
+      <image src='/img/tab1.png' class='icon' mode="widthFix"></image>
+    </view>
+  </button>
+
+  <button class='bt' bindtap="submit" disabled="{{info.state!=1}}" wx:if="{{!hasJoin}}">
+    {{btnStr}}
+  </button>
+
+  <button class="bt2" disabled="true" wx:else>已报名</button>
+
+</view>

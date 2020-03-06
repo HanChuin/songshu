@@ -1,0 +1,68 @@
+/* component/posterIndex.wxss */
+.commodity_screen2 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(243, 244, 247, .5);
+  overflow: hidden;
+  z-index: 9999;
+  color: #fff;
+}
+
+/* 海报 */
+
+.poste_box {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* background-color: red; */
+}
+
+.poste_content {
+  width: 600rpx;
+  height: 880rpx;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -7px 6px 20rpx rgba(0, 0, 0, .4);
+  left: 15%;
+  z-index: 200;
+}
+
+.close-poste {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  z-index: 9999;
+  text-align: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.btn {
+  padding: 0;
+  width: 220rpx;
+  height: 60rpx;
+  margin: 30rpx auto 0;
+  font-size: 30rpx;
+  border-radius: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F08200;
+  color: #fff;
+}
+.btn::after {
+  border: 0;
+}
+.canvasView{
+  border-radius:25rpx
+}

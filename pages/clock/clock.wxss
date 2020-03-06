@@ -1,0 +1,314 @@
+/* pages/clock/clock.wxss */
+page {
+  background: #fff;
+  font-size: 28rpx;
+  color: #4c4c4c;
+}
+button::after {
+  border: none;
+}
+
+.head {
+  position: relative;
+  width: 100%;
+  height: 240rpx;
+}
+.headImg {
+  width: 100%;
+  opacity: 0.1;
+}
+.headCover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, .3);
+}
+.top {
+  display: flex;
+  width: 100%;
+  height: 33%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  padding: 35rpx;
+}
+.topImg {
+  width: 30%;
+}
+.topR {
+  width: 62%;
+  color: #fff;
+  font-size: 38rpx;
+  font-weight: bold;
+  margin: 10rpx 0 0 44rpx;
+}
+.topRText {
+}
+.topTBot {
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  color: #F08200;
+  font-weight: normal;
+  font-size: 40rpx;
+  padding: 0 20rpx;
+}
+.point {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: #F08200;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow:  0 -5px 10rpx rgba(228, 180, 22, 0.719) */
+}
+.point1 {
+  font-size: 48rpx;
+  line-height: 50rpx;
+}
+.point2 {
+  font-size: 20rpx;
+  line-height: 22rpx;
+}
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  background: url('https://url.songshuqubang.com/micsoft/img/oaBg.png');
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 240rpx;
+  background: white;
+  padding-top: 50rpx;
+}
+.c-c {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.c-c-l,.c-c-r {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.detail {
+  font-size: 32rpx;
+  width: 100%;
+  margin-top: 40rpx;
+  margin-bottom: 150rpx;
+}
+
+
+/* bottom */
+.bottomBox {
+  width: 100%;
+  height: 150rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 30rpx 5%;
+}
+
+.contactBt,.shareBt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  height: 80rpx;
+  width: 10%;
+  border-radius: 0;
+  line-height: 35rpx;
+  padding-top: 10rpx;
+}
+.bottomBox .bt {
+  width: 76%;
+  height: 80rpx;
+  border-radius: 40rpx;
+  background: #FF902E;
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.icon {
+  width: 30rpx;
+  height: 30rpx;
+}
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item .icon {
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.item .text {
+  font-size: 20rpx;
+  color: #666;
+  margin-top: 5rpx;
+}
+
+
+
+.clock {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.clock-img {
+  width: 100%;
+}
+.clock_share {
+  position: absolute;
+  right: 0;
+  top: 30rpx;
+  height: 38rpx;
+  width: 111rpx;
+}
+.clock-bookimg {
+  position: absolute;
+  left: 22.5%;
+  top: 30rpx;
+  width: 55%;
+}
+
+.clock-content {
+  position: absolute;
+  width: 94%;
+  height: 80%;
+  top: 52.5%;
+}
+.clock-content-c {
+  width: 100%;
+  height: 80%;
+  background: url('https://url.songshuqubang.com/micsoft/img/clockbg.png');
+  background-size: 100% 100%;
+  padding-top: 50rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+.clock-content-line1 {
+  width: 88%;
+  height: 60rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26rpx;
+}
+.clock-day text{
+  color: #ED9229;
+}
+.clock-share {
+  padding: 0;
+  margin: 0;
+  background: rgba(255, 255, 255, 0);
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  color: #fff;
+}
+.clock-share::after {
+  border: 0;
+}
+.clock-share-img {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 5rpx;
+}
+.clock-content-line2 {
+  width: 90%;
+  height: 110rpx;
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.clock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.clock-item-img {
+  width: 70rpx;
+}
+.clock-item-point {
+  font-size: 12rpx;
+}
+.clock-item-point text{
+  font-size: 18rpx;
+}
+.clock-item-day {
+  font-size: 20rpx;
+}
+
+.clock-content-line3 {
+  width: 96%;
+  height: 80rpx;
+  margin-top: 7rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #888;
+  font-size: 22rpx;
+}
+.clock-content-line3 view {
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
+.clock-btn {
+  background: #F2942B;
+  border-radius: 19rpx;
+}
+.clock-rule>image {
+  width: 30rpx;
+  transform: rotateY(180deg);
+}
+.clock-detail>image {
+  width: 30rpx;
+  transform: rotate(-90deg);
+}
+.clock-detail {
+  justify-content: flex-end;
+}
+.clock-empty {
+  height: 85rpx;
+  width: 91%;
+  background: #fff;
+  margin: -10rpx auto 0;
+  border-radius: 0 0 15rpx 15rpx;
+}
+.signCount {
+  margin-top: 16rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 120rpx;
+  height: 60rpx;
+  background-color: #fd903c;
+  border-radius: 30rpx;
+  color: white;
+}

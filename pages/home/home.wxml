@@ -1,0 +1,22 @@
+<!--pages/home/home.wxml-->
+<view class="container">
+  <view class='header'>
+    <!-- 轮播图 -->
+    <view class='banner-wrap'>
+      <swiper class='swiperview' autoplay="{{autoplay}}" interval="{{interval}}" indicator-dots="true" duration="{{duration}}" circular="{{circular}}" indicator-color="#fff" indicator-active-color="rgb(255, 94, 0)">
+        <block wx:for="{{bannerUrls}}" wx:key="{{index}}">
+          <swiper-item>
+            <image 
+            src='{{item.img}}' 
+            mode='aspectFit'
+            lazy-load="true"
+            bindtap='toNewsDetail'
+            class='slide-image' 
+            data-index='{{index}}'></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+</view>
+<view class='hr'></view>

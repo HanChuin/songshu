@@ -1,0 +1,119 @@
+{
+  "pages": [
+    "pages/project/list/projectList",
+    "pages/index/index",
+    "pages/vote/vote",
+    "pages/changeHead/changeHead",
+    "pages/votenroll/votenroll",
+    "pages/votenroll/registration/registration",
+    "pages/votenroll/detail/detail",
+    "pages/home/home",
+    "pages/login/login",
+    "pages/bindphone/bindphone",
+    "pages/search/search",
+    "pages/personal/worker/worker",
+    "pages/personal/profile/profile",
+    "pages/activity/list/list",
+    "pages/details/doing/doing",
+    "pages/shop/shop",
+    "pages/shop1/shop1",
+    "pages/points/convert",
+    "pages/news/news",
+    "pages/list/list",
+    "pages/details/select/select",
+    "pages/personal/apply/apply",
+    "pages/personal/modifyMi/modifyMi",
+    "pages/personal/forget/forget",
+    "pages/details/myJoin/myJoin",
+    "pages/about/about",
+    "pages/registinfo/registinfo",
+    "pages/pointrecord/pointrecord",
+    "pages/studentinfo/studentedit/studentinfo",
+    "pages/order/order",
+    "pages/order/order-result/order-result",
+    "pages/faq/faq",
+    "pages/orderList/orderList",
+    "pages/orderDetail/orderDetail",
+    "pages/vip/vip",
+    "pages/goods/goods",
+    "pages/studentinfo/manager/manager",
+    "pages/studentinfo/parentedit/parentinfo",
+    "pages/notice/notice",
+    "pages/integral/integral",
+    "pages/goods_detail/goods_detail",
+    "pages/shopper/shopper",
+    "pages/main/main",
+    "pages/notice/template/selectUser",
+    "pages/studentinfo/selectuser/selectUser",
+    "pages/video/playvideo",
+    "pages/activity/detail/activitydetail",
+    "pages/question/question",
+    "pages/question/questionnaire/questionnaire",
+    "pages/question/feedbacks/feedbacks",
+    "pages/clock/clock",
+    "pages/url/url",
+    "pages/PartnerDetail/PartnerDetail",
+    "pages/activity/detailnew/detailnew",
+    "pages/test/test",
+    "pages/swiper/swiper1",
+    "pages/game/game",
+    "component/select/select",
+    "pages/game2/game2",
+    "pages/editPage/editPage",
+    "pages/gameTeam/gameTeam",
+    "pages/match/vote/vote",
+    "pages/match/votedetail/voteDetail",
+    "pages/project/detail/detail",
+    "pages/formactivity/formactivity",
+    "pages/mask/mask",
+    "pages/paihang/sort",
+    "pages/allList/allList",
+    "component/productList/productList",
+    "pages/power/detail/powerdetail",
+    "pages/timeLine/timeLine",
+    "pages/power/list/powerlist",
+    "pages/index/city/city"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "松鼠趣邦",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor": "#ff8100",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/img/tab1.png",
+        "selectedIconPath": "/img/tab1Act.png"
+      },
+      {
+        "pagePath": "pages/project/list/projectList",
+        "text": "公益项目",
+        "iconPath": "/img/tab2.png",
+        "selectedIconPath": "/img/tab2Act.png"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "text": "公益积分",
+        "iconPath": "/img/tab3.png",
+        "selectedIconPath": "/img/tab3Act.png"
+      },
+      {
+        "pagePath": "pages/timeLine/timeLine",
+        "text": "会员中心",
+        "iconPath": "/img/tab4.png",
+        "selectedIconPath": "/img/tab4Act.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

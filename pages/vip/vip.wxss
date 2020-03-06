@@ -1,0 +1,44 @@
+/* pages/vip/vip.wxss */
+
+.vipimg {
+  width: 100%;
+}
+
+.infoview {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5rpx;
+  margin: 20rpx;
+  padding: 20rpx;
+}
+
+.infotxt {
+  font-size: 40rpx;
+  font-weight: "bold";
+  color: #222;
+  margin-bottom: 10rpx;
+}
+
+.infoitem {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+
+.infoicon {
+  width: 70rpx;
+  height: 70rpx;
+  margin-right: 20rpx;
+}
+
+.infoitemtitile {
+  color: #666;
+  font-size: 36rpx;
+}
+
+.infoitemtxt {
+  flex:1;
+  flex-direction: column;
+}

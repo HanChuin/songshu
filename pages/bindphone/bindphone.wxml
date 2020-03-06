@@ -1,0 +1,57 @@
+<view class='mainpage' style='background:#fff;'>
+  <view class='topview'>
+    <!-- banner背景图片 -->
+    <image class='banner' src='https://url.songshuqubang.com/micsoft/img/org1.png' mode='widthFix'></image>
+    <!-- banner logo -->
+    <image src='https://url.songshuqubang.com/micsoft/img/org3.png' class='banner-logo' mode='widthFix'></image>
+  </view>
+
+  <view class='middleview'>
+    <!-- 中间登录注册 -->
+    <view class='middleContent'>
+      <!-- 登录和注册tab切换 -->
+      <view class='middleTab'>
+        <view class='tabLeft tabClass' bindtap='tabLogin'>绑定手机号</view>
+      </view>
+
+      <!-- 登录注册tab切换内容 -->
+      <view class='tabContent'>
+
+        <!-- 注册内容 -->
+        <block>
+          <view class='inputBoxReg'>
+            <view class='inputRowReg'>
+              <input type="number" maxlength='11' bindinput="phoneInp" value='{{registerData.phone}}' placeholder='手机号' placeholder-class='placeholder'></input>
+              <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class='phoneBtn' data-type='reg'>获取手机号</button>
+            </view>
+            <view class='inputRowReg'>
+              <input class="rowinput" type="text" maxlength='11' bindinput="yzmInp" value='{{registerData.yzm}}' placeholder='验证码' placeholder-class='placeholder'></input>
+              <text class='sendCode' catchtap='sendCode' wx:if="{{canSendR}}">发送</text>
+              <text class='sendCode timing' wx:else>{{sendTimeR}}</text>
+            </view>
+            <view class='inputRowReg'>
+              <input type="password" bindinput="passwordInpR" value='{{registerData.password}}' placeholder='密码' placeholder-class='placeholder'></input>
+            </view>
+          </view>
+        </block>
+
+      </view>
+
+      <!-- 注册按钮 -->
+      <button class='registerBt' bindtap='toRegister'>立即绑定</button>
+    </view>
+
+    <!-- 服务条款 -->
+    <block >
+      <view class='rules'>
+        <image class="rulestyle" wx:if="{{agreeRule}}" src="https://url.songshuqubang.com/micsoft/img/check-box-outline.png" bindtap='aggreeRules'></image>
+        <image class="rulestyle" wx:else src="https://url.songshuqubang.com/micsoft/img/check-box-outline-bl.png"  bindtap='aggreeRules'></image>
+        <view>
+          <text class='rules-text'>我已同意</text>
+          <text class='rules-text2' bindtap='tocatAction'>服务条款</text>
+        </view>
+      </view>
+    </block>
+  </view>
+
+</view>

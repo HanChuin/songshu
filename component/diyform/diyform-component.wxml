@@ -1,0 +1,23 @@
+
+
+<form bindsubmit="formSubmit" bindreset="formRest">
+  
+  <view wx:for="{{formValue}}" wx:key="{{index}}">
+
+      <view wx:if="{{item.type == 'input'}}">
+        <input name="{{item.name}}" placeholder="please input here" />
+      </view>
+
+      <view wx:if="{{item.type == 'mulinput'}}">
+        <text>多行输入</text>
+      </view>
+  
+  </view>
+  
+  
+  
+  <view class="btn-area">
+    <button formType="submit">{{submitBtn}}</button>
+    <button formType="reset">Reset</button>
+  </view>
+</form>

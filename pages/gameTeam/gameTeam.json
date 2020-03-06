@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "Select": "/component/select/select"
+  },
+  "navigationBarTitleText": "文艺赛组队"
+}

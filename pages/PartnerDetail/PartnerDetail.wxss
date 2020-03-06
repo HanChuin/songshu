@@ -1,0 +1,5 @@
+/* pages/PartnerDetail/PartnerDetail.wxss */
+page {
+  background: #fff;
+}
+

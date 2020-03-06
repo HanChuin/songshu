@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+      "tabbar": "../../component/tabbar/tabbar",
+      "activityItem": "/component/activityItem/activity-item"
+  },
+  "navigationBarTitleText": "公益项目",
+  "enablePullDownRefresh":true
+}

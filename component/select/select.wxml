@@ -1,0 +1,8 @@
+
+<view class='contain-style'>
+  <view wx:for="{{items}}" wx:key='{{index}}' >
+      <view data-index="{{index}}" bindtap="selectItem" class="{{currentIndex == index ? 'item-select' : 'item-noselect' }}">
+        <text>{{item.key}}</text>
+      </view>
+  </view>
+</view>

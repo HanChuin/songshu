@@ -1,0 +1,31 @@
+
+<view class='activity-wrap' wx:if="{{users.length > 0 }}">
+      <view wx:for="{{users}}" wx:key="*this" class='user_card' bindtap='chooseitem' data-index='{{index}}'>
+        <image src='{{item.headImg}}' class='card_head'></image>
+        <view class='card_userinfo' wx:if="{{item.isStudent}}">
+          <text>{{item.name}}</text>
+          <text>{{item.school.name}}</text>
+          <text>{{item.idNo}}</text>
+        </view>
+
+        <view class='card_parentinfo' wx:else>
+          <text>{{item.name}}</text>
+          <text>成年人</text>
+          <text>{{item.idNo}}</text>
+        </view>
+        <view class='card_options' bindtap='editUser' data-index='{{index}}' data-id='{{item.id}}'>
+          <image src='https://url.songshuqubang.com/micsoft/img/icon_edit.png' class='card_img'></image>
+        </view>
+      </view>
+  </view>
+
+  <view class='activity-wrap2' wx:else>
+      <view class='empty-view'>
+        <image src='https://url.songshuqubang.com/micsoft/img/icon_empty_data.png' class='empty_icon'></image>
+        <text>{{emptyStr}}</text>
+      </view>
+  </view>
+
+  <view class='btns-wrap'>
+    <button class='btn_add' bindtap='addUser' size="default">新增</button>
+  </view>

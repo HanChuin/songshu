@@ -1,0 +1,13 @@
+<import src="../../../libs/wxParse/wxParse.wxml" />
+
+
+<view class="container">
+    <view class="box-app">
+        <view class="box-cont">
+            <view class="act-body">
+                <template is="wxParse" data="{{wxParseData:activityart.nodes}}" />
+            </view>
+        </view>
+    </view>
+</view>
+

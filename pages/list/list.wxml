@@ -1,0 +1,62 @@
+<view class='search'>
+  <view class='searchview'>
+    <input class='searchBar' value='{{searchKey}}' bindinput='searchKeyChange' confirm-type="search" placeholder='输入关键词...' placeholder-class='placeholder' bindconfirm='searchActivity'></input>
+    <image src='https://url.songshuqubang.com/micsoft/img/icon_search.png' class='searchimg' bindtap='searchActivity'></image>
+  </view>
+</view>
+
+<!--4分类-->
+<view class='bigtags'>
+  <scroll-view class="scroll-view_x1" scroll-x style="width: auto;overflow:hidden;">
+    <view wx:for="{{bigClasses}}" wx:key="{{index}}" class='bigitem'>
+      <view class='{{chooseBigIndex!=index?"tagsItem":"tagsItem1"}}' bindtap='chooseItemAction' data-index='{{index}}'>
+        {{item.codeText}}
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<!-- 3分类 -->
+<view class='tabview'>
+  <view class='tabitem {{index==0?"tabitem-active":""}}' bindtap='changeState' data-index='0'>
+    即将发布
+  </view>
+  <view class='tabitem {{index==1?"tabitem-active":""}}' bindtap='changeState' data-index='1'>
+    正在进行
+  </view>
+  <view class='tabitem {{index==2?"tabitem-active":""}}' bindtap='changeState' data-index='2'>
+    精彩回顾
+  </view>
+</view>
+
+<!-- 分类活动 -->
+<view class='listwrapper'>
+  <view class='activity-wrap'>
+    <block wx:for="{{activities}}" wx:key='{{index}}' wx:for-item='item'>
+      <view class='itemview' bindtap='toNewsDetail' data-id='{{item.id}}'>
+        <image class='bigimg' src='{{item.cover}}' mode="widthFix"></image>
+        <view class='btnview'>
+          <view class='leftview'>
+            <text class='titlett'>{{item.name}}</text>
+            <text class='datetxtdd'>{{item.activeTime}}</text>
+          </view>
+          <view class='addbtn' wx:if="{{item.activeState == 0}}">
+            <text>预览</text>
+          </view>
+          <view class='addbtn' wx:if="{{item.activeState == 2 || item.activeState == 1}}">
+            <text>报名</text>
+          </view>
+          <view class='addbtn' wx:if="{{item.activeState == 3}}">
+            <text>回顾</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class='nodataView' wx:if="{{activities.length<=0}}">
+      <image src='https://url.songshuqubang.com/micsoft/img/nodata.png' class='nodataImg'></image>
+      <text class='nodataText'>暂时没有任何项目</text>
+    </view>
+  </view>
+</view>
+<view class="empty"></view>
+<tabbar tabbar="{{tabbar}}"></tabbar> 

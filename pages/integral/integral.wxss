@@ -1,0 +1,160 @@
+/*白框整体排版*/
+.user_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  margin-top: 30rpx;
+  border:  1px solid rgba(151, 22, 22, 0);
+  border-radius: 30rpx;
+  min-height: 100rpx;
+  padding: 10rpx;
+  background-color: #fff;
+  /* padding-top: 30px */
+}
+/*头像左右排版*/
+.cardimage{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  flex-direction: row;
+}
+/*问号排版*/
+.cardimg{
+  display: flex;
+  align-items: right;
+  justify-content: flex-end;
+  
+}
+/*问号图片处理*/
+.card_qus{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin-right:50rpx;
+  
+}
+/*头像处理*/
+.card_head{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-right: 50rpx;
+  margin-bottom: 20rpx;
+  
+}
+
+/*你好上下排版*/
+.card_userinfo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: left;
+  line-height: 50rpx;
+}
+/*问号左部填充*/
+.hw{
+  width: 600rpx;
+}
+/*你好右部填充*/
+.he{
+  width: 125rpx;
+}
+/*你好左部填充*/
+.ht{
+  width: 30rpx;
+}
+/*分割线*/
+.hr{
+  width: 125rpx;
+}
+/*虚线 */
+.cartLeft{
+  width: 50%;
+  height: 10rpx;
+  border-top: 1rpx dashed #a7a8a8;
+}
+/*进度条上下排版*/
+.level {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  margin-top: 20rpx;
+  /* min-height: 100rpx; */
+}
+/*进度条边框处理*/
+.progress {
+  width: 400rpx;
+  margin: 20rpx;
+  height: 30rpx;
+  border: solid 1rpx rgb(255, 174, 0);
+  border-radius: 30rpx;
+}
+/*进度条左右排版*/
+.funny{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center ;
+}
+/* 样式 */
+.change{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20rpx;
+  /* padding-top: 10rpx */
+}
+.yyy{
+  width: 50%;
+  height: 50rpx;
+  border-top: 1rpx dashed #a7a8a800;
+}
+.teo{
+  display: flex;
+  flex-direction: column;
+}
+.base{
+  width: 170rpx;
+  height: 170rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 50rpx;
+  background-color: white;
+  padding-top: 18rpx;
+  color: black;
+  /* border:  1px solid rgba(151, 22, 22, 0); */
+  border-top-left-radius: 15%;
+  border-bottom-left-radius: 15%;
+  /* background:radial-gradient(45rpx at right top,transparent 50%,#1889F6 50%);
+   */
+}
+/*商品图片*/
+.card_shop{
+  width: 340rpx;
+  height: 170rpx;
+  /* border-radius: 50%;
+  margin-right: 50rpx;
+  margin-bottom: 20rpx;
+   */
+  border-top-right-radius: 15%;
+  border-bottom-right-radius: 15%;
+  
+}
+/* 兑换样式 */
+.exchange{
+  width: 110rpx;
+  height: 110rpx;
+  color: black;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 40rpx
+}

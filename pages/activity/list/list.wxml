@@ -1,0 +1,42 @@
+<!--pages/activity/activity.wxml-->
+<!-- 待上线活动 、历史活动、进行中活动、招募中活动、页面 -->
+<!-- js控制title -->
+  <!-- 活动详情-公共结构  -->
+  <view class='activity-wrap'>
+    <!-- 循环下面的 -->
+     <view  data-id='{{item.id}}' bindtap='toActivityDetail' class='activity' wx:for='{{activities}}' wx:key="{{index}}">
+        <image class='img' src='{{item.activityThumb}}'></image>
+        <view class='intro'>
+          <view class='l1'>
+            <text>{{item.name}}</text>
+          </view>
+          <view class='l2'>
+            <image src='https://url.songshuqubang.com/micsoft/img/clock-icon.png'></image>
+            <view>
+              <text>活动时间</text>
+              <text>{{item.start}}</text>
+              <text>-</text>
+              <text>{{item.end}}</text>
+            </view>
+          </view>
+          <view class='l4'>
+            <!-- 历史活动、进行中活动、招募中、待开始 -->
+            <view wx:if="{{activityType == 2 || activityType == 3 || activityType==4}}">参加人数</view>
+            <view class='people-num'>{{item.inUsers}}</view>
+            <!-- 历史活动、进行中活动 -->
+            <view wx:if="{{activityType == 3 || activityType== 4}}">已签到人数</view>
+            <view wx:if="{{activityType == 3 || activityType== 4}}" class='people-num'>{{item.signNum}}</view>
+            <!-- 待上线活动 -->
+            <view wx:if="{{activityType==1}}" class='day-num'>{{item.applyDays}}</view>
+            <view wx:if="{{activityType==1}}">天后报名开始时</view>
+            <!-- 招募中，待开始 -->
+            <view class='deadline' wx:if="{{activityType == 2}}">
+              还剩
+              <text class='day-num'>{{item.endDays}}</text>
+              天报名截止
+            </view>
+          </view>
+        </view>
+      </view>
+    <text  wx:if="{{activities.length==0}}" class="empty">无活动</text>
+</view>

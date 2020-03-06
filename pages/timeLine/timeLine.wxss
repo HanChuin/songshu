@@ -1,0 +1,462 @@
+/* pages/timeLine/timeLine.wxss */
+
+page {
+  background: rgba(255, 255, 255, 1);
+}
+
+
+
+.topview {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0 4px 6px 0 rgba(220, 220, 220, 0.50);
+  padding-top: 30rpx;
+}
+
+.userinfoview {
+  display: flex;
+  flex-direction: row;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+}
+
+.headview {
+  display: flex;
+  flex-direction: column;
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 20rpx;
+}
+
+.headlogoview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  border: 2px solid rgba(240, 130, 0, 1);
+}
+
+.headimg {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+}
+
+.userlevellog {
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: -80rpx;
+  margin-left: 110rpx;
+}
+
+.infoview {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  height: 200rpx;
+}
+
+.nickview {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.nicktview {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.nicknametxt {
+  color: #000;
+  width: 320rpx;
+  font-size: 32rpx;
+  margin-bottom: 6rpx;
+  display: block;
+  line-height: 40rpx;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.desctext {
+  font-size: 24rpx;
+}
+
+.editimg {
+  width: 40rpx;
+  height: 50rpx;
+  margin-right: 60rpx;
+  margin-bottom: 6rpx;
+}
+
+.dataview {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10rpx;
+}
+
+.dataitemview {
+  width: 120rpx;
+  display: flex;
+  height: 100rpx;
+  flex-direction: column;
+  align-items: center;
+}
+
+.datalabelview {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.datalabelview .txt1 {
+  font-size: 34rpx;
+  color: #000;
+  font-weight: bold;
+}
+
+.datalabelview .txt2 {
+  font-size: 22rpx;
+  color: #000;
+  margin-left: 10rpx;
+}
+
+.datatiptxt {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.modelview {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  justify-content: space-between;
+  background-color: white;
+  padding-bottom: 20rpx;
+}
+
+.modelview2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  background-color: white;
+  padding-bottom: 20rpx;
+  box-shadow: 0 4px 6px 0 rgba(220, 220, 220, 0.50);
+}
+
+.modelitemview {
+  display: flex;
+  width: 120rpx;
+  height: 100rpx;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.modefimg1 {
+  width: 71rpx;
+  height: 60rpx;
+}
+
+.modefimg2 {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.modefimg3 {
+  width: 50rpx;
+  height: 42rpx;
+}
+
+.modefimg4 {
+  width: 69rpx;
+  height: 50rpx;
+}
+
+.modelitemview text {
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 5rpx;
+}
+
+.timelineview {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 500rpx;
+  background-image: url('https://url.songshuqubang.com/image/micsoft/bg/bg_center.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative; 
+}
+
+.timelineview2 {
+  display: flex;
+  position: relative;
+  min-height: 500rpx;
+  flex-direction: column;
+  width: 100%;
+  background-image: url('https://url.songshuqubang.com/image/micsoft/bg/bg_center.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-top: 120rpx;
+}
+
+.timelinedateview {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 180rpx;
+  margin-bottom: 20rpx;
+  z-index: 10;
+}
+
+.labelview {
+  display: flex;
+  flex-direction: column;
+  margin-left: 45rpx;
+  margin-right: 45rpx;
+  margin-top: 40rpx;
+  margin-bottom: 47rpx;
+}
+
+.labelview .txt1 {
+  font-size: 46rpx;
+  color: #000;
+  margin-bottom: 10rpx;
+  font-weight: bold;
+}
+
+.labelview .txt2 {
+  font-size: 26rpx;
+  color: #000;
+}
+
+.infosview {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.activityview {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  width: auto;
+}
+
+.leftview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.iconview {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  border: 1px solid #e6792b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconimg {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.iconimg1 {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.location {
+  width: 18rpx;
+  height: 22rpx;
+  margin-left: 15rpx;
+}
+
+.locationView {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-left: 10rpx;
+  width: auto;
+}
+
+.date {
+  font-family: PingFangSC-Medium;
+  font-size: 26rpx;
+  color: #787878;
+  letter-spacing: 1rpx;
+  width: 100rpx;
+}
+
+.address {
+  width: 460rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 26rpx;
+  color: #787878;
+  letter-spacing: 1rpx;
+  flex: 1;
+  margin-right: 10rpx;
+ 
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis; 
+}
+
+.title {
+  width: 635rpx;
+  height: auto;
+  background: rgba(151, 151, 151, 0.18);
+  box-shadow: 0 2px 4px 0 rgba(221, 221, 221, 0.50);
+  border-radius: 12rpx;
+  margin-top: 0rpx;
+  margin-left: 60rpx;
+  margin-bottom: 30rpx;
+}
+
+.titleB {
+  width: 635rpx;
+  height: auto;
+  background: rgba(151, 151, 151, 0.18);
+  box-shadow: 0 2px 4px 0 rgba(221, 221, 221, 0.50);
+  border-radius: 12rpx;
+  margin-top: 0rpx;
+  margin-left: 28rpx;
+  margin-bottom: 30rpx;
+}
+
+.avtiTitle {
+  margin-top: 16rpx;
+  margin-left: 20rpx;
+}
+
+.activitiesTitle {
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #787878;
+  letter-spacing: 1rpx;
+  flex: 1;
+}
+
+.activitiesPoint {
+  width: auto;
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #787878;
+}
+
+.activitiesView {
+  margin-left: 20rpx;
+  margin-top: 15rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  height: auto;
+  flex-direction: row;
+  align-items: center;
+}
+
+.firstView {
+  width: 263rpx;
+  height: 100rpx;
+  border: 2px solid #fff;
+  display: inline-block;
+}
+
+.secondView {
+  width: 100rpx;
+  height: 100rpx;
+  border: 2px solid #fff;
+  margin-left: 30rpx;
+  display: inline-block;
+}
+
+.shoperTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20rpx;
+}
+
+.dutyTitle {
+  margin: 20rpx;
+}
+
+.timeAxis {
+  height: auto;
+  width: 2rpx;
+  background: gray;
+  margin-left: 30rpx;
+}
+
+.rightView {
+  display: flex;
+  flex-direction: row;
+}
+
+.nologin {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-top: 30rpx;
+  align-items: center;
+  color: #e6792b;
+  margin-bottom: 20rpx;
+}
+
+.loginbtn {
+  width: 320rpx;
+  height: 80rpx;
+  margin-top: 30rpx;
+  border: #e6792b 1px solid;
+  border-radius: 40rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #e6792b;
+}
+
+.topitemView {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.bottomview1 {
+  height: 230rpx;
+}
+
+.bottomview2 {
+  height: 290rpx;
+}
